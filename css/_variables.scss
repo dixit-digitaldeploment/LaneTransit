@@ -1,0 +1,28 @@
+$primary:#1E2859;
+$secondary:#EA0029;
+$red:#EA0029;
+$red-hover:#C50105;
+$green:#008943;
+$blue:#004B8F;
+$darkblue:#10204E;
+$black:#000000;
+$white:#ffffff;
+$gray:#504D49;
+$lightgray:#EFEFEF;
+$primary-font: 'Proxima Nova Rg';
+$secondary-font:'Helvetica Neue';
+$shadow:0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+// color paltte - 
+$colors:( "primary":$primary, "secondary":$secondary, "green":#008943, "black":#000000, "lightgray":#EFEFEF);
+.test-btn {
+    background-color: map-get($colors, "blue");
+}
+
+@mixin fancy-border($size:1px, $color:#000) {
+    border: $size solid $color;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
