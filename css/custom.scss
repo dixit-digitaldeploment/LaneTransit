@@ -404,7 +404,7 @@ strong {
 }
 
 .container {
-    max-width: 1300px;
+    max-width: 1230px;
 }
 
 img {
@@ -417,7 +417,7 @@ video {
 }
 
 .form-control {
-    min-height: 50px;
+    min-height: 40px;
     background-color: $white;
     border: 1px solid $black;
     border-radius: 0px;
@@ -435,14 +435,14 @@ video {
 }
 
 select {
-    min-height: 45px;
+    min-height: 40px;
     background-image: url(../img/select-arrow.svg);
     background-repeat: no-repeat;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-position: top 19px right 12px;
+    background-position: top 12px right 12px;
     min-width: 130px;
-    background-size: 20px;
+    background-size: 18px;
     color: $black;
     border: 1px solid #000;
     min-height: 50px;
@@ -1739,20 +1739,22 @@ label.title {
     text-align: center;
     padding-bottom: 50px;
     position: relative;
+    flex-direction: column;
     h1 {
         position: relative;
         z-index: 9;
         display: table;
     }
-    &::before {
-        content: "";
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        width: 210px;
-        background-size: cover;
-        height: 100%;
-        /* background-image: url(../img/title-background.svg);*/
+    p {
+        max-width: 930px;
+        margin-left: auto;
+        margin-right: auto;
+        @include hel-bold;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .btn_sm {
+        padding: 10px 16px;
     }
 }
 
@@ -2478,31 +2480,37 @@ h2+.expand_img_grid {
         margin-bottom: 40px;
     }
     h1 {
-        font-size: 90px;
+        font-size: 85px;
+    }
+    h2 {
+        font-size: 21px;
     }
     .btn_sm {
         min-width: 140px;
-        margin-top: 30px;
+        margin-top: 15px;
+        padding: 8px 20px;
     }
 }
 
 
 /* result page start */
 
-.page_title.resut_title {
-    padding-top: 100px;
-    padding-bottom: 20px;
-}
+.page_title.resut_title {}
 
 .main_search_content {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $lightgray;
-    padding: 45px 15px 40px 15px;
+    padding: 10px 15px 40px 15px;
+    flex-direction: column;
     .h6 {
         margin-right: 20px;
         margin-bottom: 0px;
+        color: $gray;
+        font-size: 21px;
+        font-family: $secondary-font;
+        font-weight: normal;
+        text-transform: none;
     }
     .search_box {
         margin-bottom: 0px;
@@ -2595,15 +2603,16 @@ h2+.expand_img_grid {
 }
 
 .rslt_txt {
-    padding: 00px 0px 30px 0px;
+    padding: 40px 0px 30px 0px;
     margin: auto;
-    background: #f5f5f5;
-    margin-top: -10px;
+    background: #F5F5F5;
     .container {
         max-width: 900px;
     }
-    .top-Title.text-center {
-        margin-bottom: 0;
+    .top-Title.text-left {
+        h2 {
+            margin-left: 0px;
+        }
     }
 }
 
@@ -2673,29 +2682,27 @@ h2+.expand_img_grid {
 }
 
 .result_row {
-    background: $lightgray;
+    background: $white;
     margin-bottom: 15px;
     border-radius: 0px;
     position: relative;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     border: 0;
+    padding: 15px;
     h3,
     h4,
     h5,
     h2 {
-        font-size: 16px;
-        font-weight: 700;
+        font-size: 21px;
+        color: $primary;
     }
-    .rsltBody {
-        padding: 15px 20px 20px 20px;
-    }
+    .rsltBody {}
     .re_category {
-        font-weight: normal;
-        margin-bottom: 0px;
-        background: $black;
-        color: #fff;
-        padding: 5px 20px;
-        display: inline-block;
-        text-transform: capitalize;
+        font-size: 14px;
+        color: $gray;
+        font-family: $secondary-font;
+        display: block;
+        margin-bottom: 10px;
     }
     >a {
         display: block;
@@ -2705,15 +2712,31 @@ h2+.expand_img_grid {
     }
     &:hover {
         h3 {
-            color: $primary;
+            color: $secondary;
             text-decoration: underline;
         }
     }
 }
 
 .filterBlocks {
+    max-width: 900px;
+    margin: 0 auto;
     .topTitle {
         margin-bottom: 20px;
+    }
+    .filter_sort {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        select {
+            min-width: 280px;
+        }
+        @include md {
+            display: block;
+            select {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -2801,6 +2824,10 @@ h2+.expand_img_grid {
     .container {
         max-width: 1200px;
     }
+}
+
+.newsArea {
+    padding: 40px 0px;
 }
 
 .news_category {
@@ -2918,7 +2945,7 @@ p.date {
 }
 
 .newsSearchEra {
-    padding-top: 30px;
+    padding-top: 40px;
     padding-bottom: 40px;
 }
 
@@ -2934,15 +2961,29 @@ p.date {
 }
 
 .search_filter_title {
-    display: grid;
-    grid-template-columns: 260px auto;
-    .filter_box {
-        margin-right: 12px;
+    .search-box {
+        max-width: 280px;
+        @include md {
+            max-width: 100%;
+        }
+    }
+    .filterwrap {
+        form {
+            display: grid;
+            grid-template-columns: 280px 120px 110px;
+            grid-column-gap: 10px;
+            @include md {
+                grid-template-columns: auto;
+            }
+            select {
+                min-width: 110px;
+            }
+        }
     }
 }
 
 .newsInRow {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .nsRight {
@@ -2950,15 +2991,18 @@ p.date {
     flex-direction: column;
     justify-content: flex-end;
     .newsSort {
-        width: 210px;
+        width: 280px;
         margin-left: auto;
-        margin-bottom: 25px;
+        @include md {
+            width: 100%;
+        }
     }
 }
 
 //News Details
 .news_detail {
     padding-bottom: 50px;
+    padding-top: 50px;
     .page_title {
         padding-bottom: 30px;
     }
@@ -5017,11 +5061,14 @@ body .is-layout-constrained>.wp-block-group {
 .alertsWrap {
     padding-bottom: 60px;
     .container {
-        max-width: 1200px;
+        max-width: 1030px;
     }
     .filter_top {
-        max-width: 340px;
-        margin-bottom: 40px;
+        max-width: 230px;
+        margin-bottom: 20px;
+        select {
+            background-image: url(../img/red-arrow.svg);
+        }
     }
 }
 
@@ -5033,52 +5080,64 @@ body .is-layout-constrained>.wp-block-group {
     padding-top: 10px;
     .accordion_bk {
         margin-bottom: 10px;
-        background: $lightgray;
+        background: $white;
+        box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        .route {
+            margin-bottom: 12px;
+            span {
+                background: $lightgray;
+                border: 1px solid $primary;
+                min-width: 52px;
+                display: inline-block;
+                padding: 6px 10px;
+                margin-left: 2px;
+                color: $primary;
+                @include pro-bold;
+                font-size: 18px;
+            }
+        }
+        h3 {
+            font-size: 21px;
+            color: $primary;
+        }
+        .date_info {
+            margin-bottom: 0px;
+        }
     }
     .main_acco_sv {
         border: 0;
-        padding: 22px;
+        padding: 16px 25px;
         position: relative;
         padding-right: 45px;
         cursor: pointer;
-        h3 {
-            font-size: 16px;
-            @include proxima;
-        }
-        h4 {
-            font-size: 16px;
-            @include proxima;
-        }
-        h5 {
-            font-weight: normal;
-            @include proxima;
-            font-weight: normal;
-            margin-bottom: 0px;
-        }
-        h6 {
-            margin-bottom: 10px;
-        }
         &.active {
             .accosign {
                 img {
                     @include rotate;
+                    @include img-red;
                 }
             }
         }
         &:hover {
             h3 {
-                color: $primary;
+                color: $secondary;
                 text-decoration: underline;
+            }
+            .accosign {
+                img {
+                    @include img-red;
+                }
             }
         }
     }
     .accosign {
         position: absolute;
-        top: 30px;
-        right: 20px;
+        top: 50%;
+        right: 30px;
         transform: translateY(-50%);
         img {
-            width: 23px;
+            width: 16px;
         }
     }
     .acco_panel_sv {

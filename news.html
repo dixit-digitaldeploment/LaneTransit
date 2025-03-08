@@ -5,12 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>News</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <link href="css/owl.carousel.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
@@ -21,7 +19,7 @@
 <body>
     <header class="main_header">
         <div class="navbar navbar-expand-xl  ">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="logo_wrap">
                     <a class="navbar-brand" href="#">
                         <img src="img/Logo.svg" alt="logo">
@@ -33,82 +31,58 @@
                <span class="icon-bar last"></span>
                </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <div class="top_header_cont">
-                        <div class="top_menu">
-                            <div class="social_media">
-                                <ul>
-                                    <li>
-                                        <a href=""><img src="img/facebook.svg" alt=""> </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><img src="img/instagram.svg" alt=""> </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><img src="img/twitter.svg" alt=""> </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><img src="img/linkedin.svg" alt=""> </a>
-                                    </li>
-                                    <li>
-                                        <a href=""><img src="img/youtube.svg" alt=""> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <ul class="top_inner_menu">
-                                <li> <a href="#"> Contact Us </a> </li>
-                                <li> <a href="#"> Service Alerts</a> </li>
-                                <li> <a href="#"> Lost & Found</a> </li>
+                    <div class="nav_bottom  ">
+                        <div class="nav_wrap">
+                            <ul class="navbar-nav ">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#">Transit Options</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Fares & Guides</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"> Events Calendar </a> </li>
+                                        <li><a href="#"> District News </a> </li>
+                                        <li><a href="#"> How To’s, Guides And Webinars </a> </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About Trinity Metro</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"> Contact Us </a>
+                                </li>
                             </ul>
-                            <div class="select_language">
-                                <select class="form_control">
-                              <option>Translate</option>
-                              <option>English</option>
-                              <option>Spain</option>
-                           </select>
-                            </div>
-                            <div class="top_search">
-                                <img src="img/search.png" style="max-height: 35px;width: 180px;" alt="">
+                            <div class="nav_right">
+                                <div class="alerts">
+                                    <a href="#">
+                                        <img src="img/alert-icon.svg" alt="alert icon">Alerts</a>
+                                </div>
+                                <div class="top_search">
+                                    <a href="#">
+                                        <div class="search_txt">
+                                            <img src="img/search-white.svg" alt="search">Search
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="chatus">
+                                    <a href="#">
+                                        <img src="img/sms.svg" alt="sms">CHAT WITH US
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="nav_bottom  ">
-                        <ul class="navbar-nav ">
-                            <li class="nav-item ">
-                                <a class="nav-link" href="#">Local and Express Routes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Fares & Guides</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#"> Events Calendar </a> </li>
-                                    <li><a href="#"> District News </a> </li>
-                                    <li><a href="#"> How To’s, Guides And Webinars </a> </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Tri MyRide</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"> Paratransit </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Work With Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <div class="main_wrapper" style="">
-        <div class="main_breadcrumb ">
+        <div class="main_breadcrumb">
             <div class="container">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="#"> Home</a>
+                            <a href="#"> <img src="img/house.svg" alt="house"> Home</a>
                         </li>
                         <li class="breadcrumb-item"><a href="#">page title </a></li>
                         <li class="breadcrumb-item"><a href="#">page title </a></li>
@@ -118,160 +92,119 @@
             </div>
         </div>
         <div class="news_wraper">
-            <div class="container">
-                <div class="page_title text-center">
-                    <h1>News & Events</h1>
-                </div>
-                <div class="newsRow row">
-                    <div class="newsColumn ">
-                        <div class="news_content">
-                            <a href="#">
-                                <div class="news_category">
-                                    CATEGORY
-                                </div>
-                                <div class="newsimg ">
-                                    <img src="img/news1.png " alt="">
-                                </div>
-                                <div class="newsinfo">
-                                    <div class="newsBody">
-                                        <div class="newsbody_inner">
-                                            <h3>
-                                                This is a Title
-                                            </h3>
-                                            <h4>July 01, 2024</h4>
-                                            <p>
-                                                Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
-                                            </p>
+            <div class="page_title text-center">
+                <h1>News & Events</h1>
+                <p>
+                    Welcome to the Lorem Ipsum Generator Pro, the ultimate source of placeholder text for all your design needs. Whether you're creating a website, designing a brochure, or crafting the next great novel, our nonsensical text will help you fill in those empty
+                    spaces with style.
+                </p>
+                <a href="#" class="btn_sm">Media Kit</a>
+            </div>
+            <div class="newsArea gray">
+                <div class="container">
+                    <div class="newsRow row">
+                        <div class="newsColumn ">
+                            <div class="news_content">
+                                <a href="#">
+                                    <div class="newsimg ">
+                                        <img src="img/news1.png " alt="">
+                                        <div class="news_category">
+                                            News & Events
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                    <div class="newsinfo">
+                                        <div class="newsBody">
+                                            <div class="newsbody_inner">
+                                                <h3>
+                                                    This is a Title
+                                                </h3>
+                                                <span class="date">Jan 01, 2025</span>
+                                                <p>
+                                                    Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="newsColumn ">
-                        <div class="news_content  no-img">
-                            <a href="#">
-                                <div class="news_category">
-                                    CATEGORY
-                                </div>
-                                <div class="newsinfo">
-                                    <div class="newsBody">
-                                        <div class="newsbody_inner">
-                                            <h3>
-                                                This is a Title
-                                            </h3>
-                                            <h4>July 01, 2024</h4>
-                                            <p>
-                                                Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
-                                            </p>
+                        <div class="newsColumn ">
+                            <div class="news_content no-img">
+                                <a href="#">
+                                    <div class="news_category">
+                                        News & Events
+                                    </div>
+                                    <div class="newsinfo">
+                                        <div class="newsBody">
+                                            <div class="newsbody_inner">
+                                                <h3>
+                                                    This is a Title
+                                                </h3>
+                                                <span class="date">Jan 01, 2025</span>
+                                                <p>
+                                                    Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="newsColumn ">
-                        <div class="news_content">
-                            <a href="#">
-                                <div class="news_category">
-                                    CATEGORY
-                                </div>
-                                <div class="newsimg ">
-                                    <img src="img/news1.png " alt="">
-                                </div>
-                                <div class="newsinfo">
-                                    <div class="newsBody">
-                                        <div class="newsbody_inner">
-                                            <h3>
-                                                This is a Title
-                                            </h3>
-                                            <h4>July 01, 2024</h4>
-                                            <p>
-                                                Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
-                                            </p>
+                        <div class="newsColumn ">
+                            <div class="news_content">
+                                <a href="#">
+                                    <div class="newsimg ">
+                                        <img src="img/news1.png " alt="">
+                                        <div class="news_category">
+                                            News & Events
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                    <div class="newsinfo">
+                                        <div class="newsBody">
+                                            <div class="newsbody_inner">
+                                                <h3>
+                                                    This is a Title
+                                                </h3>
+                                                <span class="date">Jan 01, 2025</span>
+                                                <p>
+                                                    Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="newsColumn ">
-                        <div class="news_content">
-                            <a href="#">
-                                <div class="news_category">
-                                    CATEGORY
-                                </div>
-                                <div class="newsimg ">
-                                    <img src="img/news1.png " alt="">
-                                </div>
-                                <div class="newsinfo">
-                                    <div class="newsBody">
-                                        <div class="newsbody_inner">
-                                            <h3>
-                                                This is a Title
-                                            </h3>
-                                            <h4>July 01, 2024</h4>
-                                            <p>
-                                                Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
-                                            </p>
+                        <div class="newsColumn ">
+                            <div class="news_content">
+                                <a href="#">
+                                    <div class="newsimg ">
+                                        <img src="img/news1.png " alt="">
+                                        <div class="news_category">
+                                            News & Events
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="newsColumn ">
-                        <div class="news_content">
-                            <a href="#">
-                                <div class="news_category">
-                                    CATEGORY
-                                </div>
-                                <div class="newsimg ">
-                                    <img src="img/news1.png " alt="">
-                                </div>
-                                <div class="newsinfo">
-                                    <div class="newsBody">
-                                        <div class="newsbody_inner">
-                                            <h3>
-                                                This is a Title
-                                            </h3>
-                                            <h4>July 01, 2024</h4>
-                                            <p>
-                                                Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
-                                            </p>
+                                    <div class="newsinfo">
+                                        <div class="newsBody">
+                                            <div class="newsbody_inner">
+                                                <h3>
+                                                    This is a Title
+                                                </h3>
+                                                <span class="date">Jan 01, 2025</span>
+                                                <p>
+                                                    Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="newsColumn ">
-                        <div class="news_content">
-                            <a href="#">
-                                <div class="news_category">
-                                    CATEGORY
-                                </div>
-                                <div class="newsimg ">
-                                    <img src="img/news1.png " alt="">
-                                </div>
-                                <div class="newsinfo">
-                                    <div class="newsBody">
-                                        <div class="newsbody_inner">
-                                            <h3>
-                                                This is a Title
-                                            </h3>
-                                            <h4>July 01, 2024</h4>
-                                            <p>
-                                                Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="newsSearchEra">
+            </div>
+            <div class="newsSearchEra">
+                <div class="container">
                     <div class="top-title text-left">
                         <h2>Press Releases</h2>
                     </div>
@@ -285,16 +218,16 @@
                                             <div class="input-group">
                                                 <input type="text" id="" class="form-control" placeholder="Search" name="s">
                                                 <button class="btn btn-default" id="" type="submit">
-                                       <img src="img/search-icon.svg" alt="search icon">
+                                       <img src="img/search-blue.svg" alt="search icon">
                                        </button>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
-                                <div class="filterWrap ">
+                                <div class="filterwrap ">
                                     <form>
                                         <div class="filter_box col-one" id="">
-                                            <label class="title" for="SEARCH filter">Filter</label>
+                                            <label class="title" for="SEARCH filter">Category</label>
                                             <select id="" class="form-control">
                                        <option>By Category</option>
                                        <option class="">All</option>
@@ -303,7 +236,7 @@
                                     </select>
                                         </div>
                                         <div class="filter_box col-two" id="">
-                                            <label style="visibility: hidden" class="title" for="SEARCH filter">Month</label>
+                                            <label class="title" for="SEARCH filter">Publish Date</label>
                                             <select id="" class="form-control">
                                        <option>Month</option>
                                        <option class="">All</option>
@@ -340,11 +273,11 @@
                         <div class="newsColumn ">
                             <div class="news_content">
                                 <a href="#">
-                                    <div class="news_category">
-                                        CATEGORY
-                                    </div>
                                     <div class="newsimg ">
                                         <img src="img/news1.png " alt="">
+                                        <div class="news_category">
+                                            News & Events
+                                        </div>
                                     </div>
                                     <div class="newsinfo">
                                         <div class="newsBody">
@@ -352,7 +285,7 @@
                                                 <h3>
                                                     This is a Title
                                                 </h3>
-                                                <h4>July 01, 2024</h4>
+                                                <span class="date">Jan 01, 2025</span>
                                                 <p>
                                                     Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
                                                 </p>
@@ -363,10 +296,10 @@
                             </div>
                         </div>
                         <div class="newsColumn ">
-                            <div class="news_content  no-img">
+                            <div class="news_content no-img">
                                 <a href="#">
                                     <div class="news_category">
-                                        CATEGORY
+                                        News & Events
                                     </div>
                                     <div class="newsinfo">
                                         <div class="newsBody">
@@ -374,32 +307,7 @@
                                                 <h3>
                                                     This is a Title
                                                 </h3>
-                                                <h4>July 01, 2024</h4>
-                                                <p>
-                                                    Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="newsColumn ">
-                            <div class="news_content">
-                                <a href="#">
-                                    <div class="news_category">
-                                        CATEGORY
-                                    </div>
-                                    <div class="newsimg ">
-                                        <img src="img/news1.png " alt="">
-                                    </div>
-                                    <div class="newsinfo">
-                                        <div class="newsBody">
-                                            <div class="newsbody_inner">
-                                                <h3>
-                                                    This is a Title
-                                                </h3>
-                                                <h4>July 01, 2024</h4>
+                                                <span class="date">Jan 01, 2025</span>
                                                 <p>
                                                     Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
                                                 </p>
@@ -412,11 +320,11 @@
                         <div class="newsColumn ">
                             <div class="news_content">
                                 <a href="#">
-                                    <div class="news_category">
-                                        CATEGORY
-                                    </div>
                                     <div class="newsimg ">
                                         <img src="img/news1.png " alt="">
+                                        <div class="news_category">
+                                            News & Events
+                                        </div>
                                     </div>
                                     <div class="newsinfo">
                                         <div class="newsBody">
@@ -424,7 +332,7 @@
                                                 <h3>
                                                     This is a Title
                                                 </h3>
-                                                <h4>July 01, 2024</h4>
+                                                <span class="date">Jan 01, 2025</span>
                                                 <p>
                                                     Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
                                                 </p>
@@ -437,44 +345,19 @@
                         <div class="newsColumn ">
                             <div class="news_content">
                                 <a href="#">
-                                    <div class="news_category">
-                                        CATEGORY
-                                    </div>
                                     <div class="newsimg ">
                                         <img src="img/news1.png " alt="">
-                                    </div>
-                                    <div class="newsinfo">
-                                        <div class="newsBody">
-                                            <div class="newsbody_inner">
-                                                <h3>
-                                                    This is a Title
-                                                </h3>
-                                                <h4>July 01, 2024</h4>
-                                                <p>
-                                                    Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
-                                                </p>
-                                            </div>
+                                        <div class="news_category">
+                                            News & Events
                                         </div>
                                     </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="newsColumn ">
-                            <div class="news_content">
-                                <a href="#">
-                                    <div class="news_category">
-                                        CATEGORY
-                                    </div>
-                                    <div class="newsimg ">
-                                        <img src="img/news1.png " alt="">
-                                    </div>
                                     <div class="newsinfo">
                                         <div class="newsBody">
                                             <div class="newsbody_inner">
                                                 <h3>
                                                     This is a Title
                                                 </h3>
-                                                <h4>July 01, 2024</h4>
+                                                <span class="date">Jan 01, 2025</span>
                                                 <p>
                                                     Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus. Nullam interdum, enim aliquam lacinia interdum, ipsum risus.
                                                 </p>
@@ -493,69 +376,74 @@
         </div>
     </div>
     <footer class="footer ">
-        <div class="bg-footer">
-            <img src="img/footer-bg.svg" alt=" footer background">
-        </div>
         <div class="footer-content">
-            <div class="container ">
+            <div class="container-fluid ">
                 <div class="footer-row row ">
                     <div class="foot_col  ">
                         <div class="foot_logo ">
                             <img src="img/footer-logo.svg " alt="logo ">
                         </div>
-                        <h2>Connect</h2>
                         <div class="foot_media ">
                             <ul>
                                 <li>
-                                    <a href=""><img src="img/facebook.svg" alt=""> </a>
+                                    <a href=""><img src="img/facebook-w.svg" alt=""> </a>
                                 </li>
                                 <li>
-                                    <a href=""><img src="img/instagram.svg" alt=""> </a>
+                                    <a href=""><img src="img/Instagram-w.svg" alt=""> </a>
                                 </li>
                                 <li>
-                                    <a href=""><img src="img/twitter.svg" alt=""> </a>
+                                    <a href=""><img src="img/X-w.svg" alt=""> </a>
                                 </li>
                                 <li>
-                                    <a href=""><img src="img/linkedin.svg" alt=""> </a>
-                                </li>
-                                <li>
-                                    <a href=""><img src="img/youtube.svg" alt=""> </a>
+                                    <a href=""><img src="img/linked-w.svg" alt=""> </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="foot_col   ">
-                        <div class="foo_info">
-                            <h2>Route Information:</h2>
-                            <a href="#">1-925-754-4040</a>
-                        </div>
-                        <div class="foo_info">
-                            <h2>Lost and Found:</h2>
-                            <a href="#">1-925-754-6622</a>
-                        </div>
-                        <div class="foo_info">
-                            <h2>Customer Service:</h2>
-                            <a href="#">1-925-754-6622</a>
-                        </div>
-                    </div>
-                    <div class="foot_col  ">
-                        <div class="footmenu ">
-                            <ul class=" ">
-                                <li> <a href="# ">Local and Express Routes</a> </li>
-                                <li> <a href="# ">Fares & Guides</a></li>
-                                <li> <a href="# ">Tri MyRide</a></li>
-                                <li> <a href="# ">Paratransit</a></li>
-                                <li> <a href="# ">Work With Us</a></li>
-                                <li> <a href="# ">Contact Us</a></li>
-                                <li> <a href="# ">Report a Safety or Other Issue</a></li>
-                                <li> <a href="# ">About</a></li>
-                                <li> <a href="# ">Career Opportunities</a></li>
+                        <div class="foot_menu">
+                            <ul>
+                                <li> <a href="#">Transit Options</a> </li>
+                                <li> <a href="#">Fares & Guides</a> </li>
+                                <li> <a href="#">About Trinity Metro</a> </li>
+                                <li> <a href="#">Alerts</a> </li>
+                                <li> <a href="#">Contact Us</a> </li>
+                                <li> <a href="#">Employee Site</a> </li>
+                                <li> <a href="#">Careers</a> </li>
+                                <li> <a href="#">Newsroom</a> </li>
+                                <li> <a href="#">Performance Dashboard</a> </li>
                             </ul>
                         </div>
                     </div>
+                    <div class="foot_col  ">
+                        <div class="connect">
+                            <h3>Stay Connected</h3>
+                            <p>
+                                Sign up to receive information and alerts.
+                            </p>
+                            <form>
+                                <img style="max-width: 300px;" src="img/stay-connect.png" alt="">
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="copyright ">
-                    <p>©Tri Delta Transit 2024 | Privacy Policy</p>
+                <div class="foot_bt_menu">
+                    <ul>
+                        <li>
+                            <a href="#"> <img src="img/gopass.svg" alt="gopass"> </a>
+                        </li>
+                        <li> <a href="#"> Privacy Policy</a> </li>
+                        <li> © Copyright 2024</li>
+                        <li>
+                            <div class="select_language">
+                                <select class="form_control">
+                              <option>Translate</option>
+                              <option>English</option>
+                              <option>Spain</option>
+                           </select>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -565,82 +453,7 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/expand.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/owlmain.js"></script>
-    <script>
-        $(document).on("scroll", function() {
-            if ($(document).scrollTop() > 0) {
-                $(".main_header").addClass("shrink");
-
-            } else {
-                $(".main_header").removeClass("shrink");
-
-            }
-        });
-    </script>
-    <script>
-        (function($) {
-            /* $('.accordion_event > li:eq(0) .acco_title').addClass('active').next().slideDown();*/
-
-            $('.acc__main .acc__title').click(function(j) {
-                var dropDown = $(this).closest('.acc__card').find('.acc__panel');
-
-                $(this).closest('.acc__main').find('.acc__panel').not(dropDown).slideUp();
-
-                if ($(this).hasClass('active')) {
-                    $(this).removeClass('active');
-                } else {
-                    $(this).closest('.acc__main').find('.acc__title.active').removeClass('active');
-                    $(this).addClass('active');
-                }
-
-                dropDown.stop(false, true).slideToggle();
-
-                j.preventDefault();
-            });
-        })(jQuery);
-    </script>
-    <script>
-        (function($) {
-            /* $('.accordion_event > li:eq(0) .acco_title').addClass('active').next().slideDown();*/
-
-            $('.service_acco .main_acco_sv').click(function(j) {
-                var dropDown = $(this).closest('.accordion_bk').find('.acco_panel_sv');
-
-                $(this).closest('.service_acco').find('.acco_panel').not(dropDown).slideUp();
-
-                if ($(this).hasClass('active')) {
-                    $(this).removeClass('active');
-                } else {
-                    $(this).closest('.service_acco').find('.main_acco_sv.active').removeClass('active');
-                    $(this).addClass('active');
-                }
-
-                dropDown.stop(false, true).slideToggle();
-
-                j.preventDefault();
-            });
-        })(jQuery);
-        (function($) {
-            /* $('.accordion_event > li:eq(0) .acco_title').addClass('active').next().slideDown();*/
-
-            $('.accordion_era .main_acco_title').click(function(j) {
-                var dropDown = $(this).closest('.accordion_block').find('.acco_panel');
-
-                $(this).closest('.accordion_era').find('.acco_panel').not(dropDown).slideUp();
-
-                if ($(this).hasClass('active')) {
-                    $(this).removeClass('active');
-                } else {
-                    $(this).closest('.accordion_era').find('.main_acco_title.active').removeClass('active');
-                    $(this).addClass('active');
-                }
-
-                dropDown.stop(false, true).slideToggle();
-
-                j.preventDefault();
-            });
-        })(jQuery);
-    </script>
+    <script src="js/custom.js"></script>
 </body>
 
 </html>

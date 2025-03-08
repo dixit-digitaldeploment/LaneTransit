@@ -678,14 +678,6 @@
   .main_banner .carousel-item img {
     min-height: 500px;
   }
-  .newsInRow .col-md-9,
-  .newsInRow .nsRight {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  .nsRight .newsSort {
-    margin-left: 0px;
-  }
 }
 @media (min-width: 768px) {
   .four .img_block > a > img {
