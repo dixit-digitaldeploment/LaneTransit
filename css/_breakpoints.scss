@@ -35,6 +35,12 @@ $breakpoints:( "xs":0, "sm":480px, "md":768px, "lg":992px, "xl":1200px, );
     }
 }
 
+@mixin tab {
+    @media (min-width: 768px) and (max-width: map-get($breakpoints, "lg") - 1) {
+        @content;
+    }
+}
+
 //ini custom breakpoints
 @mixin breakpoint($bp:0) {
     @media (min-width: $bp) {

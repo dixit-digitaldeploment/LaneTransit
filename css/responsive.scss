@@ -6,6 +6,7 @@
 @media (max-width:767px) {
     .tripPlanner_wrap {
         position: static;
+        width: 100% !important;
     }
     .main_banner {
         .carousel {
@@ -75,23 +76,13 @@
     }
     .innerHero {
         .fixmapAlert {
-            left: 0%;
-            transform: none;
-            flex-wrap: nowrap;
-            right: 0%;
+            left: 10px;
+            right: 10px;
             a {
-                margin-right: 2px;
-                padding: 6px 15px;
-                display: flex;
-                text-align: left;
-                img {
-                    max-width: 18px;
-                }
+                margin-right: 0px;
+                width: 100%;
             }
         }
-    }
-    .RouteWraper .leftScFtr {
-        padding-top: 0;
     }
     .innerHero div#route_map {
         height: 250px !important;
@@ -305,6 +296,7 @@
             width: 50%;
             padding-left: 0px;
             padding-right: 10px;
+            border-bottom: 1px solid #cacaca;
             .navBlock_col {
                 flex-direction: column;
             }
@@ -447,14 +439,13 @@
         padding-left: 15px;
         padding-right: 15px;
     }
-    .destination-info .input-group-one .form-control {
-        font-size: 16px;
-    }
     .accostpanel {
         overflow: auto;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .accostpanel table td {
-        font-size: 12px;
+        font-size: 13px;
         padding: 6px;
     }
     .accoRt_block .alerticon {
@@ -535,9 +526,6 @@
     .no-found-info h3 {
         font-size: 30px;
         line-height: 35px;
-    }
-    .main_banner .carousel-caption {
-        text-align: center;
     }
     .main_banner .carousel-control-next,
     .main_banner .carousel-control-prev {
@@ -770,14 +758,14 @@
     }
     .detail-row {
         .det-left-col {
-            -ms-flex: 0 0 25%;
-            flex: 0 0 25%;
-            max-width: 25%;
+            -ms-flex: 0 0 27%;
+            flex: 0 0 27%;
+            max-width: 27%;
         }
         .det-right-col {
-            -ms-flex: 0 0 75%;
-            flex: 0 0 75%;
-            max-width: 75%;
+            -ms-flex: 0 0 73%;
+            flex: 0 0 73%;
+            max-width: 73%;
         }
     }
 }
@@ -1076,7 +1064,8 @@
     .main_header .navbar-nav .dropdown-menu>li {
         margin-bottom: 5px;
     }
-    .tripPlanner_wrap {
+    .tripPlanner_wrap,
+    .main_banner .carousel-caption {
         width: calc(100% - 40px);
         left: 20px;
     }

@@ -310,7 +310,7 @@ strong {
 
 .btn_sm {
     color: #fff;
-    padding: 13px 20px;
+    padding: 8px 16px;
     display: inline-block;
     text-align: center;
     position: relative;
@@ -323,6 +323,60 @@ strong {
     text-transform: uppercase;
     &:hover {
         background: #c50105;
+        color: #fff;
+        text-decoration: none;
+        img {}
+    }
+    img {
+        margin-right: 10px;
+    }
+    &:focus {
+        color: #fff;
+    }
+}
+
+.btn_brown {
+    color: #fff;
+    padding: 8px 16px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    background: #7B0000;
+    border-radius: 0px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 0;
+    text-transform: uppercase;
+    &:hover {
+        background: #c50105;
+        color: #fff;
+        text-decoration: none;
+        img {}
+    }
+    img {
+        margin-right: 10px;
+    }
+    &:focus {
+        color: #fff;
+    }
+}
+
+.btn_blue {
+    color: #fff;
+    padding: 8px 16px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    background: $primary;
+    border-radius: 0px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 0;
+    text-transform: uppercase;
+    &:hover {
+        background: #141D46;
         color: #fff;
         text-decoration: none;
         img {}
@@ -806,22 +860,24 @@ label.title {
             &:hover {
                 >a {
                     text-decoration: underline;
+                    color: $secondary !important;
                 }
             }
             &:last-child>a {}
         }
         .dropdown-menu {
-            width: 300px;
+            width: 260px;
             border-radius: 0px;
             padding: 0px;
             text-align: left;
             margin-top: 0;
-            left: -20px;
+            left: 10px;
             background: #fff;
             top: 100%;
             border: 0;
             padding-top: 5px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            border-top: 5px solid var(--Red, #EA0029);
             border-radius: 0;
             padding-bottom: 15px;
             >li {
@@ -835,8 +891,8 @@ label.title {
                     font-size: 18px;
                     font-weight: 700;
                     &:hover {
-                        color: $primary;
-                        text-decoration: underline;
+                        color: $secondary;
+                        text-decoration: none;
                     }
                 }
             }
@@ -1097,22 +1153,35 @@ label.title {
         position: relative;
         z-index: 9;
     }
+    .caption_wrap {
+        display: flex;
+        justify-content: center;
+    }
     .carousel-caption {
-        left: 10%;
-        right: 10%;
+        position: absolute;
+        width: 1200px;
+        top: 10%;
+        z-index: 9;
+        margin: 0 auto;
+        display: table;
+        left: 0;
+        right: 0;
         text-align: left;
-        top: 30%;
-        max-width: 650px;
-        bottom: auto;
-        transform: translateY(-50%);
         h1 {
             color: $white;
             text-transform: uppercase;
-            font-variant: all-small-caps;
+            max-width: 700px;
         }
         p {
             font-size: 21px;
             color: $white;
+            max-width: 700px;
+        }
+        @include md {
+            text-align: left;
+            h1 {
+                font-size: 36px;
+            }
         }
     }
     .carousel-control-next {
@@ -1144,6 +1213,12 @@ label.title {
     bottom: 50px;
     width: 1200px;
     z-index: 9;
+    .form-control {
+        min-height: 50px;
+    }
+    select {
+        background-position: top 18px right 12px;
+    }
 }
 
 .banner-caption {
@@ -1163,10 +1238,12 @@ label.title {
 .search_wrap {
     display: grid;
     grid-template-columns: 1fr 1fr 0.5fr 0.5fr 1fr;
-    grid-column-gap: 15px;
+    grid-column-gap: 10px;
     align-items: end;
     .btn_sm {
         width: 100%;
+        height: 50px;
+        padding: 11px 16px;
     }
 }
 
@@ -1408,6 +1485,8 @@ label.title {
         border-radius: 100px;
         width: 80px;
         height: 80px;
+        min-width: 80px;
+        min-height: 80px;
         @include all;
         margin-bottom: 20px;
         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
@@ -1437,9 +1516,11 @@ label.title {
 .main-services {
     padding-bottom: 40px;
     .container-fluid {
-        padding-left: 15px;
-        padding-right: 15px;
-        max-width: 1900px;
+        @include desk {
+            padding-left: 20px;
+            padding-right: 20px;
+            max-width: 1900px;
+        }
     }
 }
 
@@ -1482,6 +1563,9 @@ label.title {
     margin-bottom: 15px;
     &.text-left {
         align-items: flex-start;
+        h2 {
+            margin-left: 0px;
+        }
     }
     &.text-center {
         margin-bottom: 30px;
@@ -1732,12 +1816,12 @@ label.title {
 }
 
 .page_title {
-    padding-top: 50px;
+    padding-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
     position: relative;
     flex-direction: column;
     h1 {
@@ -2392,6 +2476,7 @@ h2+.expand_img_grid {
         margin-top: -10px;
         box-shadow: none;
         background: $white;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
     }
     .expanding-container.expanded,
     .expanding-grid .expanding-container:target {
@@ -2758,64 +2843,6 @@ h2+.expand_img_grid {
     //result end
 }
 
-//Event starts
-.event_wraper {
-    .event_top_filter {
-        display: grid;
-        max-width: 900px;
-        margin: 0 auto;
-        grid-template-columns: 1.3fr 1fr 1fr;
-        grid-column-gap: 10px;
-        margin-bottom: 35px;
-    }
-    .event_item {
-        background-color: map-get($colors, "lightgray");
-        height: 100%;
-        h5 {
-            background-color: $black;
-            color: #fff;
-            font-size: 14px;
-            padding: 6px 10px;
-            margin: 0px;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-        .text_evt_block {
-            padding: 15px;
-            h4 {
-                font-size: 18px;
-                line-height: 30px;
-            }
-        }
-        .cancel-info {
-            color: #bf1e2e;
-            font-weight: bold;
-            margin-left: 15px;
-            padding-left: 10px;
-            position: relative;
-            &::before {
-                content: "";
-                position: absolute;
-                left: 0px;
-                width: 2px;
-                height: 20px;
-                background: #000000;
-                top: 1px;
-            }
-        }
-        .img_evt_block {
-            img {
-                width: 100%;
-            }
-        }
-    }
-    .event_col {
-        padding-left: 8px;
-        padding-right: 8px;
-        margin-bottom: 30px;
-    }
-}
-
 //News page
 .news_wraper {
     .page_title {
@@ -2861,6 +2888,9 @@ h2+.expand_img_grid {
             .news_category+.newsinfo {
                 padding-top: 30px;
             }
+        }
+        @include tab {
+            width: 50%;
         }
     }
 }
@@ -3053,104 +3083,6 @@ p.date {
                     &:hover {
                         background: $green;
                     }
-                }
-            }
-        }
-    }
-}
-
-//Contact page
-.contact_wraper {
-    overflow: hidden;
-    .contact-row {
-        .ct_right {
-            padding-right: 8%;
-        }
-    }
-    .contactcard_row .col-md-6.contact_col {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .col-md-4.contact_col {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .contact-us-detail-block {
-        padding-bottom: 15px;
-        padding-top: 30px !important;
-        &:last-child {
-            padding-top: 0px !important;
-        }
-    }
-    .page_title {
-        padding-bottom: 30px;
-    }
-    .cont_info {
-        p {
-            margin-bottom: 15px;
-            img {
-                margin-right: 6px;
-            }
-        }
-    }
-    .hour-info {
-        padding-top: 15px;
-        h3 {
-            margin-bottom: 15px;
-        }
-    }
-    .img_text_card {
-        /* padding: 60px 0px;*/
-    }
-    .container {
-        max-width: 1200px;
-    }
-    .cont_form {
-        padding-bottom: 60px;
-        padding-top: 10px;
-    }
-    .topTitle {
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-        p {
-            padding-top: 10px;
-        }
-    }
-    .cont-btns {
-        background: $lightgray;
-        padding: 15px;
-        p {
-            text-align: center;
-        }
-    }
-    .simple_list_col {
-        width: 100%;
-        a {
-            font-size: 16px;
-            width: 100%;
-            min-height: 50px;
-            @include proxima;
-        }
-    }
-    .form_row {
-        padding-top: 10px;
-    }
-    .cont_info {
-        max-width: 580px;
-    }
-    .contact-us-form-block {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-left: 15px;
-        padding-top: 50px !important;
-        padding-right: 15px;
-        .cont_accrd {
-            .advgb-column-inner {
-                background: $lightgray;
-                padding: 20px;
-                @include md {
-                    margin-top: 20px;
                 }
             }
         }
@@ -4294,6 +4226,8 @@ body .is-layout-constrained>.wp-block-group {
             .hero_map {
                 >img {
                     width: 100%;
+                    height: 500px;
+                    object-fit: c;
                 }
             }
         }
@@ -4304,6 +4238,23 @@ body .is-layout-constrained>.wp-block-group {
     .tripPlanner_wrap {
         position: static;
         width: auto;
+        background: $lightgray;
+        padding: 24px 40px;
+        height: 100%;
+        @include md {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .tab-content {
+            background: $lightgray;
+            padding: 0;
+        }
+        .tp_title {
+            margin-bottom: 20px;
+            h2 {
+                font-size: 24px;
+            }
+        }
         .tripPlanner {
             .nav-tabs a {
                 font-size: 24px;
@@ -4322,10 +4273,11 @@ body .is-layout-constrained>.wp-block-group {
                 grid-column: 1/3;
             }
             .sub_btn {
-                grid-column: 1/2;
+                grid-column: 1/3;
                 a,
                 .btn_sm {
                     height: 50px;
+                    width: 100%;
                 }
             }
             .date_time_wrap .dt_col {
@@ -4354,24 +4306,47 @@ body .is-layout-constrained>.wp-block-group {
         display: flex;
         margin: auto;
         text-align: center;
-        left: 50%;
-        transform: translateX(-50%);
         flex-wrap: wrap;
+        left: 30px;
         a {
-            margin-right: 5px;
-            @media (max-width: 767px) {
-                margin-bottom: 5px;
+            margin-right: 15px;
+            padding: 8px 16px;
+            margin-top: 5px;
+            @media (max-width: 767px) {}
+            &.smap {
+                background: $primary;
+                &:hover {
+                    background: #141d46;
+                }
             }
+            &.dtmap {
+                background: $red;
+                &:hover {
+                    background: #c50105;
+                }
+            }
+            &.cmap {
+                background: $gray;
+                &:hover {
+                    background: #474542;
+                }
+            }
+        }
+        &.center {
+            left: 50%;
+            transform: translateX(-50%);
         }
     }
     .alert-left {
         position: absolute;
         left: 0px;
         top: 0px;
-        a {
-            background: $red;
+        >a {
+            background: #7B0000;
+            border: 1px solid $white;
+            text-transform: uppercase;
             color: #fff;
-            font-weight: 700;
+            font-weight: bold;
             padding: 14px 20px;
             display: flex;
             align-items: center;
@@ -4439,15 +4414,26 @@ body .is-layout-constrained>.wp-block-group {
 .RouteWraper {
     padding-top: 60px;
     padding-bottom: 50px;
-    .container {
-        max-width: 1200px;
+    @include desk {
+        .leftColumn {
+            -ms-flex: 0 0 28%;
+            flex: 0 0 28%;
+            max-width: 28%;
+        }
+        .rightColumn {
+            -ms-flex: 0 0 72%;
+            flex: 0 0 72%;
+            max-width: 72%;
+        }
     }
+    .container {}
     .checkWraper {
         margin-bottom: 30px;
         padding-top: 5px;
     }
     .leftScFtr {
-        padding-top: 65px;
+        background: $lightgray;
+        padding: 24px;
         .s-icon {
             display: none;
         }
@@ -4478,20 +4464,6 @@ body .is-layout-constrained>.wp-block-group {
     .select2-selection__rendered,
     .select2-selection__placeholder {
         color: #000 !important;
-    }
-}
-
-.text-Holder-sr {
-    background: $blue;
-    padding: 22px;
-    margin-top: 20px;
-    display: block;
-    h4 {
-        color: #fff;
-    }
-    .btn_sm {
-        width: 100%;
-        margin-bottom: 8px;
     }
 }
 
@@ -4532,11 +4504,10 @@ body .is-layout-constrained>.wp-block-group {
 }
 
 .route-info-wrap {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     h2 {
-        margin-bottom: 30px;
+        margin-bottom: 24px;
         text-align: center;
-        color: #10204e;
     }
     .routeAccdn {
         padding-top: 10px;
@@ -4545,8 +4516,9 @@ body .is-layout-constrained>.wp-block-group {
 
 .accoRt_block {
     margin-bottom: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+    border-radius: 5px;
     .rtTitle {
-        background: $lightgray;
         display: flex;
         align-items: center;
         min-height: 55px;
@@ -4554,17 +4526,24 @@ body .is-layout-constrained>.wp-block-group {
         justify-content: space-between;
         position: relative;
         cursor: pointer;
-        padding-right: 60px;
-        padding-left: 45px;
+        padding-right: 70px;
+        padding-left: 55px;
         h3 {
             margin: 0;
             display: flex;
             align-items: center;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 21px;
             @include proxima;
             .rtNo {
-                margin-right: 5px;
+                margin-right: 10px;
+                color: $primary;
+                @include pro-bold;
+                background: #EFEFEF;
+                border: 1px solid $primary;
+                min-width: 45px;
+                padding: 5px;
+                text-align: center;
             }
         }
         p {
@@ -4572,8 +4551,8 @@ body .is-layout-constrained>.wp-block-group {
         }
         .accordion_sign {
             position: absolute;
-            right: 15px;
-            top: 15px;
+            right: 20px;
+            top: 12px;
             img {
                 width: 20px;
             }
@@ -4586,16 +4565,12 @@ body .is-layout-constrained>.wp-block-group {
             }
         }
         &:hover {
-            background: $primary;
-            h3,
-            p,
-            p a {
-                color: #fff;
+            h3 {
+                text-decoration: underline;
+                color: $secondary;
             }
             .accordion_sign {
-                img {
-                    @include img-white;
-                }
+                img {}
             }
         }
     }
@@ -4605,6 +4580,10 @@ body .is-layout-constrained>.wp-block-group {
         +p {
             min-width: 110px;
             padding: 6px 0px;
+            font-size: 16px;
+            color: $primary;
+            text-decoration: underline;
+            font-weight: bold;
             a {
                 font-weight: normal;
                 color: $black;
@@ -4626,27 +4605,21 @@ body .is-layout-constrained>.wp-block-group {
         height: 35px;
         @include all;
         position: absolute;
-        left: 5px;
+        left: 15px;
         top: 10px;
     }
 }
 
 .inner-alert {
-    background: $red;
-    padding: 15px;
+    background: rgba(123, 0, 0, 0.10);
+    padding: 15px 40px;
     margin-bottom: 20px;
+    margin-top: -15px;
+    margin-left: -40px;
+    margin-right: -40px;
     p {
         margin-bottom: 5px;
-        color: #fff;
-        a {
-            color: $black;
-            font-weight: 600;
-            text-decoration: underline;
-            &:hover {
-                text-decoration: none;
-                font-weight: 700;
-            }
-        }
+        a {}
     }
     h4 {
         color: $white;
@@ -4662,11 +4635,59 @@ body .is-layout-constrained>.wp-block-group {
 
 .accoRtpanel {
     display: none;
-    padding: 20px;
-    background: $lightgray;
-    .btn_sm {}
+    padding: 15px 40px;
+    .btn_sm {
+        text-transform: capitalize;
+    }
     .document_era {
         padding-bottom: 10px;
+    }
+    .connections {
+        padding-top: 5px;
+        h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+        p {
+            margin-bottom: 5px;
+        }
+        .rt_info {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+ul.numbers {
+    padding: 0px;
+    list-style: none;
+    margin-bottom: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+        margin-right: 5px;
+        color: $primary;
+        @include pro-bold;
+        background: #EFEFEF;
+        border: 1px solid $primary;
+        min-width: 45px;
+        padding: 0px;
+        text-align: center;
+        display: inline-block;
+        font-size: 18px;
+        min-height: 38px;
+        @include all;
+        a {
+            width: 100%;
+            height: 100%;
+            @include all;
+            text-decoration: none;
+            padding-left: 3px;
+            padding-right: 3px;
+            &:hover {
+                background: #1E2859;
+                color: $white;
+            }
+        }
     }
 }
 
@@ -4681,67 +4702,73 @@ body .is-layout-constrained>.wp-block-group {
 .centerInfo {
     max-width: 900px;
     margin: 0 auto;
-    padding-bottom: 40px;
-    padding-top: 40px;
-    .btn_sm {
-        display: table;
-        margin-left: auto;
-        margin-right: auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    .btn_sm {}
+}
+
+.btn_row {
+    display: flex;
+    flex-wrap: wrap;
+    a {
+        margin-right: 15px;
+        margin-bottom: 5px;
     }
 }
 
 .route-detail-info {
-    .container {
-        max-width: 1200px;
-    }
-}
-
-.generic_form-news {
-    background: $primary;
-    box-shadow: 0px 0px 3px #00000029;
-    padding: 25px 25px;
-    h2,
-    p,
-    p a {
-        color: #fff;
-    }
-    h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-    p {
-        margin-bottom: 15px;
-    }
-    .wp-block-code {
-        padding: 0;
+    padding-top: 40px;
+    .connect_info {
+        background: $lightgray;
+        padding: 24px;
+        padding-bottom: 5px;
+        border-radius: 5px;
+        h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+        p {
+            margin-bottom: 5px;
+        }
+        .rt_info {
+            margin-bottom: 15px;
+        }
+        ul.numbers li {
+            margin-bottom: 10px;
+        }
     }
 }
 
 .general-tabs {
     background: #fff;
     .nav-tabs {
-        border-bottom: 1px solid $black;
+        border-bottom: 1px solid $primary;
+        padding-left: 24px;
+        padding-right: 24px;
     }
     .nav-tabs .nav-item {
+        flex-grow: 1;
         a {
             font-size: 21px;
-            color: $black;
-            text-align: center;
-            padding: 12px 10px;
+            @include pro-bold;
+            text-transform: uppercase;
             background: $lightgray;
-            border-radius: 0px;
-            min-width: 300px;
-            @include proxima;
-            border: 1px solid $black;
+            border-radius: 5px 5px 0px 0px;
+            padding: 13px 20px;
+            text-align: center;
+            &:hover {
+                background: $red;
+                color: $white;
+            }
             &.active {
-                background: $black;
+                background: $primary;
                 color: #fff;
-                border-color: $black;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
             }
         }
     }
     .tab-content {
-        padding-top: 25px;
+        padding-top: 40px;
         padding-bottom: 80px;
     }
 }
@@ -4767,17 +4794,18 @@ body .is-layout-constrained>.wp-block-group {
     margin-bottom: 30px;
     .input-group-one {
         flex: 1;
-        min-height: 50px;
+        min-height: 40px;
         display: flex;
         align-items: center;
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 400;
         border: 1px solid $black;
         line-height: 28px;
+        @include hel;
         .form-control {
             border: 0;
             border-bottom: 0;
-            color: $black;
+            color: $gray;
             font-weight: normal;
             padding-left: 0;
             padding-bottom: 0px !important;
@@ -4785,23 +4813,23 @@ body .is-layout-constrained>.wp-block-group {
             font-size: 14px;
             text-align: center;
             background: #fff;
+            padding-top: 0px;
+            @include hel;
         }
     }
     .to-text {
         padding: 5px 20px;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 16px;
         text-transform: lowercase;
-        @include proxima;
+        @include hel;
+        ;
     }
     .dest-row {
-        /*
-            padding: 0px 30px;
-            max-width: 700px;*/
         align-items: center;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
     .switch {
         text-align: center;
@@ -4809,7 +4837,9 @@ body .is-layout-constrained>.wp-block-group {
             font-weight: 700;
             color: $primary;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 16px;
+            font-family: $secondary-font;
+            text-decoration: underline;
             img {
                 margin-right: 6px;
             }
@@ -4817,16 +4847,18 @@ body .is-layout-constrained>.wp-block-group {
                 color: $black;
                 text-decoration: underline;
                 cursor: pointer;
-                img {
-                    filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(0%) hue-rotate(13deg) brightness(95%) contrast(105%);
-                }
             }
         }
     }
 }
 
+.accostp_block {
+    margin-bottom: 6px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+}
+
 .stTitle {
-    background: $lightgray;
+    background: $white;
     padding: 10px 20px;
     padding-right: 40px;
     position: relative;
@@ -4836,51 +4868,54 @@ body .is-layout-constrained>.wp-block-group {
     cursor: pointer;
     .accordion-sign {
         position: absolute;
-        right: 15px;
+        right: 20px;
         top: 14px;
-        img {
-            width: 23px;
-        }
+        img {}
     }
     h3 {
         margin: 0px;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 21px;
+        .number {
+            border: 1px solid $primary;
+            color: $primary;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px;
+            min-width: 25px;
+            margin-right: 10px;
+        }
     }
     &.active .accordion-sign {
         transform: rotate(180deg);
+        img {
+            @include img-red;
+        }
     }
     &:hover {
-        background: $blue;
         h3 {
-            color: #fff;
-        }
-        .accordion-sign {
-            img {
-                @include img-white;
+            .name {
+                color: $secondary;
+                text-decoration: underline;
             }
         }
     }
 }
 
 .accostpanel {
-    padding: 15px 20px;
+    padding: 24px 60px;
     padding-bottom: 15px;
     display: none;
-    background: $lightgray;
     table {
+        margin-bottom: 20px;
         tr:nth-child(odd) {
-            background: #ececec;
+            background: #F5F5F5
         }
     }
 }
 
-.accostp_block {
-    margin-bottom: 6px;
-}
-
 .accostpanel table tbody tr:nth-of-type(2n) {
-    background-color: #fff;
+    background: #EBEBEB;
 }
 
 .accostpanel table {
@@ -4888,51 +4923,47 @@ body .is-layout-constrained>.wp-block-group {
         padding: 8px;
         border: 0;
         text-align: center;
-        border: 1px solid $black;
-        a {
-            font-weight: 700;
-            color: $green;
-            @include proxima;
-        }
+        border: 1px solid #fff;
+        a {}
     }
 }
 
 .tooltip-inner {
-    background-color: $blue;
+    background-color: $white;
     box-shadow: 0px 0px 3px #00000029;
     border: 1px solid #dbdbdb;
     border-radius: 0px;
-    color: #fff;
-    padding: 10px 10px;
+    color: $black;
+    padding: 5px 5px;
     font-size: 16px;
-    min-width: 260px;
+    min-width: 220px;
 }
 
 .tooltip.bs-tooltip-right .arrow:before {
-    border-right-color: $blue !important;
+    border-right-color: $white !important;
 }
 
 .tooltip.bs-tooltip-left .arrow:before {
-    border-left-color: $blue !important;
+    border-left-color: $white !important;
 }
 
 .tooltip.bs-tooltip-bottom .arrow:before {
-    border-bottom-color: $blue !important;
+    border-bottom-color: $white !important;
 }
 
 .tooltip.bs-tooltip-top .arrow:before {
-    border-top-color: $blue !important;
+    border-top-color: $white !important;
 }
 
 .tooltip .arrow:before {
     content: "";
     position: absolute;
-    background: $blue;
+    background: $white;
     width: 24px;
     height: 24px;
     transform: translateX(-50%) rotate(45deg);
     z-index: 2;
-    border: 1px solid $blue;
+    border: 1px solid $white;
     border-width: 0 1px 1px 0;
     border-top-left-radius: 100%;
     margin-left: 10px;
@@ -5015,7 +5046,7 @@ body .is-layout-constrained>.wp-block-group {
 
 .modal-alert {
     .modal-dialog {
-        max-width: 750px;
+        max-width: 700px;
         min-height: calc(100vh - 60px);
         display: flex;
         flex-direction: column;
@@ -5027,22 +5058,20 @@ body .is-layout-constrained>.wp-block-group {
         }
     }
     .modal-alert-info {
-        padding: 25px 25px;
+        padding: 30px;
         position: relative;
-        background: $lightgray;
         .close {
             position: absolute;
-            right: 5px;
+            right: 15px;
             top: 5px;
             opacity: 1;
             &:hover {
-                filter: brightness(0) saturate(100%) invert(27%) sepia(79%) saturate(6468%) hue-rotate(152deg) brightness(98%) contrast(103%);
                 opacity: 1;
             }
         }
     }
     .modal-content {
-        border-radius: 0px;
+        border-radius: 5px;
         border: 0;
     }
     .modal-body {
@@ -5054,6 +5083,57 @@ body .is-layout-constrained>.wp-block-group {
                 margin-right: 6px;
             }
         }
+    }
+}
+
+//Train Stattion
+.st_exandable_grid {
+    padding: 40px 0px;
+    .links {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .container {
+        max-width: 930px;
+    }
+    .links>li {
+        width: 33.3%;
+    }
+    .expand-content {
+        padding: 45px;
+        max-width: 100%;
+    }
+    .tt_row {
+        h4 {
+            font-size: 18px;
+        }
+        ul.numbers {
+            margin-bottom: 15px;
+            li {
+                margin-right: 10px;
+            }
+        }
+        .tt_right {
+            border-left: 2px solid #504D49;
+            padding-left: 20px;
+        }
+    }
+    @include md {
+        .tt_right {
+            border-top: 2px solid #504D49;
+            padding-top: 10px;
+        }
+        .expand-content {
+            padding: 20px;
+        }
+    }
+}
+
+ul.icons {
+    padding: 0px;
+    list-style: none;
+    li {
+        display: inline-block;
     }
 }
 
@@ -5249,24 +5329,125 @@ body .is-layout-constrained>.wp-block-group {
     }
 }
 
-.page-template-template-board-meetings {
-    .meeting-wraper {
-        > {
-            .wp-block-group {
-                padding-top: 0px;
-                padding-bottom: 0px;
+//Event Details
+.event-detail {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    .evt-row {}
+    h1 {
+        font-size: 36px;
+        margin-bottom: 25px;
+    }
+    .evt_img_info {
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    .cancel-info {
+        margin-bottom: 20px;
+    }
+    .category {
+        color: $gray;
+    }
+    .date {
+        color: $black;
+        font-size: 16px;
+    }
+    .dt-info {
+        p {
+            margin-bottom: 5px;
+        }
+    }
+    .document_era {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .img_caption {
+        padding-top: 5px;
+        p {
+            font-style: italic;
+        }
+    }
+}
+
+.backlink {
+    margin-bottom: 30px;
+    a {
+        display: flex;
+        align-items: center;
+        img {
+            margin-right: 6px;
+        }
+    }
+}
+
+.related_events {
+    padding-top: 60px;
+}
+
+.evt_row {
+    margin-left: -8px;
+    margin-right: -8px;
+    a {
+        font-weight: normal;
+        text-decoration: none;
+    }
+    .evt_col {
+        padding-left: 6px;
+        padding-right: 6px;
+        margin-bottom: 12px;
+    }
+    .category {
+        color: $gray;
+        font-size: 14px;
+        font-family: $secondary-font;
+    }
+    .event_item {
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        height: 100%;
+        &:hover {
+            h3 {
+                text-decoration: underline;
+                color: $secondary;
             }
         }
-        .advgb-tabs-panel {
-            border-bottom: 0px !important;
-            li.advgb-tab {
-                a {
-                    min-width: 300px;
-                    @media (max-width: 992px) {
-                        min-width: 100px;
-                    }
-                }
+    }
+    .evt_img {
+        img {
+            width: 100%;
+        }
+    }
+    .text_evt_block {
+        display: grid;
+        grid-template-columns: 40px auto;
+        grid-column-gap: 15px;
+        padding: 15px;
+        .evt-date {
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: $black;
+            text-align: center;
+            font-family: $secondary-font;
+            line-height: 30px;
+            span {
+                font-size: 36px;
+                font-weight: 700;
+                color: $primary;
+                font-family: $secondary-font;
             }
+        }
+        .evt-time {
+            margin-bottom: 3px;
+            font-size: 14px;
+            color: $gray;
+            font-family: $secondary-font;
+            padding-top: 4px;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 21px;
+            color: $primary;
         }
     }
 }
@@ -5403,15 +5584,15 @@ body .is-layout-constrained>.wp-block-group {
 }
 
 .cancel-info {
-    background: #be0528;
-    color: #fff;
+    background: $lightgray;
+    color: #B61717;
     text-align: center;
-    font-weight: 600;
-    min-width: 170px;
+    min-width: 120px;
     line-height: 20px;
-    padding: 2px 10px;
-    font-size: 15px;
+    padding: 4px 10px;
+    font-size: 16px;
     display: table;
+    @include pro-bold;
 }
 
 .acco_panel {
@@ -6577,12 +6758,6 @@ p.map {
     .sbi_caption {
         font-size: 16px !important;
         color: #121212 !important;
-    }
-}
-
-.accoRt_block {
-    .inner-alert {
-        display: none;
     }
 }
 
