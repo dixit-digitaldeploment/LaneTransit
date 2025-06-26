@@ -344,26 +344,61 @@
             <div class="modal-content">
                 <div class="rt-modal-info">
                     <button type="button" class="close" data-dismiss="modal">
-                  <img src="img/close-blue.svg" alt="close icon">
+                  <img src="img/close.svg" alt="close icon">
                   </button>
                     <h2>Stop Name</h2>
-                    <div class="stpAccdn">
-                        <div class="accostp_block">
-                            <div class="stTitle ">
-                                <h3> 01 Stop Name</h3>
-                                <div class="rt-time">7:30am</div>
+                    <div class="accordion_stp">
+                        <div class="accordion_stp_item">
+                            <div class="accordion_stp_header">
+                                <div class="accordion_stp_toggleicon"><img src="img/select-arrow.svg" alt="arrow"></div>
+                                <span class="stp_head_span">5 Stops</span>
+                                <div class="stp_head">
+                                    <div class="accordion_stp_stopheader">
+                                        <div class="accordion_stp_stopnumber">1</div>
+                                        <strong>STOP NAME</strong>
+                                    </div>
+                                    <div class="accordion_stp_stoptime">10:55 AM</div>
+                                </div>
                             </div>
-                            <div class="accostpanel">
-                                <p>PORT HUENEME - CENTERPOINT MALL via PV RD</p>
+                            <div class="accordion_stp_body">
+                                <div class="accordion_stp_stopinfo">
+                                    <ul class="accordion_stp_stoplist">
+                                        <li>Downtown St Name</li>
+                                        <li>Stop Name</li>
+                                        <li>Stop Name</li>
+                                        <li>Stop Name</li>
+                                        <li>Stop Name</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="accostp_block">
-                            <div class="stTitle ">
-                                <h3> 01 Stop Name</h3>
-                                <div class="rt-time">7:30am</div>
+                        <div class="accordion_stp_item">
+                            <div class="accordion_stp_header">
+                                <div class="accordion_stp_toggleicon"><img src="img/select-arrow.svg" alt="arrow"></div>
+                                <span class="stp_head_span">5 Stops</span>
+                                <div class="stp_head">
+                                    <div class="accordion_stp_stopheader">
+                                        <div class="accordion_stp_stopnumber">1</div>
+                                        <strong>STOP NAME</strong>
+                                    </div>
+                                    <div class="accordion_stp_stoptime">10:55 AM</div>
+                                </div>
+                            </div>
+                            <div class="accordion_stp_body">
+                                <div class="accordion_stp_stopinfo">
+                                    <ul class="accordion_stp_stoplist">
+                                        <li>Downtown St Name</li>
+                                        <li>Stop Name</li>
+                                        <li>Stop Name</li>
+                                        <li>Stop Name</li>
+                                        <li>Stop Name</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -447,6 +482,24 @@
         $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('.accordion_stp_header').on('click', function() {
+                const $item = $(this).closest('.accordion_stp_item');
+                const $body = $item.find('.accordion_stp_body');
+                const $icon = $(this).find('.accordion_stp_toggleicon');
+
+                // Toggle current item
+                $body.slideToggle(200);
+                $icon.toggleClass('accordion_stp_rotate');
+
+                // Optionally: close others
+                $item.siblings('.accordion_stp_item').find('.accordion_stp_body').slideUp(200);
+                $item.siblings('.accordion_stp_item').find('.accordion_stp_toggleicon').removeClass('accordion_stp_rotate');
+            });
+        });
     </script>
 </body>
 
