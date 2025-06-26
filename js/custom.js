@@ -44,6 +44,106 @@ $(document).ready(function () {
     }*/
   });
 
+  // for thumb slider
+  $(document).ready(function() {
+    var bigimage = $(".thumb #big");
+    var thumbs = $(".thumb  #thumbs");
+    //var totalslides = 10;
+    var syncedSecondary = true;
+  
+    bigimage
+      .owlCarousel({
+        // loop: true,
+        dots: false,
+        autoplay: true,
+        margin: 10,
+        nav: false,
+        autoWidth: false,
+        items: 1,
+        // navText: [
+        //   '<img src="/wp-content/themes/planeteriaweb/img/arrow_forward.svg">',
+        //   '<img src="/wp-content/themes/planeteriaweb/img/arrow_forward.svg">',
+        // ],
+        // navContainer: ".owl-general .custom-nav",
+    })
+      .on("changed.owl.carousel", syncPosition);
+  
+    thumbs
+      .on("initialized.owl.carousel", function() {
+      thumbs
+        .find(".owl-item")
+        .eq(0)
+        .addClass("current");
+    })
+      .owlCarousel({
+      items: 5,
+      dots: true,
+      nav: true,
+      margin: 4,
+      navText: [
+        '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+        '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+      ],
+      smartSpeed: 200,
+      slideSpeed: 500,
+      slideBy: 5,
+      responsiveRefreshRate: 100
+    })
+      .on("changed.owl.carousel", syncPosition2);
+  
+    function syncPosition(el) {
+      //if loop is set to false, then you have to uncomment the next line
+      //var current = el.item.index;
+  
+      //to disable loop, comment this block
+      var count = el.item.count - 1;
+      var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+  
+      if (current < 0) {
+        current = count;
+      }
+      if (current > count) {
+        current = 0;
+      }
+      //to this
+      thumbs
+        .find(".owl-item")
+        .removeClass("current")
+        .eq(current)
+        .addClass("current");
+      var onscreen = thumbs.find(".owl-item.active").length - 1;
+      var start = thumbs
+      .find(".owl-item.active")
+      .first()
+      .index();
+      var end = thumbs
+      .find(".owl-item.active")
+      .last()
+      .index();
+  
+      if (current > end) {
+        thumbs.data("owl.carousel").to(current, 100, true);
+      }
+      if (current < start) {
+        thumbs.data("owl.carousel").to(current - onscreen, 100, true);
+      }
+    }
+  
+    function syncPosition2(el) {
+      if (syncedSecondary) {
+        var number = el.item.index;
+        bigimage.data("owl.carousel").to(number, 100, true);
+      }
+    }
+  
+    thumbs.on("click", ".owl-item", function(e) {
+      e.preventDefault();
+      var number = $(this).index();
+      bigimage.data("owl.carousel").to(number, 300, true);
+    });
+  });
+  
+
   // Function to activate the tab based on URL fragment
   var hash = window.location.hash;
   if (hash) {
@@ -297,24 +397,27 @@ $(document).on("scroll ", function () {
     j.preventDefault();
   });
 })(jQuery);
-(function($) {
+(function ($) {
   /* $('.accordion_event > li:eq(0) .acco_title').addClass('active').next().slideDown();*/
 
-  $('.acc__main .acc__title').click(function(j) {
-      var dropDown = $(this).closest('.acc__card').find('.acc__panel');
+  $(".acc__main .acc__title").click(function (j) {
+    var dropDown = $(this).closest(".acc__card").find(".acc__panel");
 
-      $(this).closest('.acc__main').find('.acc__panel').not(dropDown).slideUp();
+    $(this).closest(".acc__main").find(".acc__panel").not(dropDown).slideUp();
 
-      if ($(this).hasClass('active')) {
-          $(this).removeClass('active');
-      } else {
-          $(this).closest('.acc__main').find('.acc__title.active').removeClass('active');
-          $(this).addClass('active');
-      }
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active");
+    } else {
+      $(this)
+        .closest(".acc__main")
+        .find(".acc__title.active")
+        .removeClass("active");
+      $(this).addClass("active");
+    }
 
-      dropDown.stop(false, true).slideToggle();
+    dropDown.stop(false, true).slideToggle();
 
-      j.preventDefault();
+    j.preventDefault();
   });
 })(jQuery);
 $(function () {
