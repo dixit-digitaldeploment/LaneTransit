@@ -1134,27 +1134,26 @@ label.title {
   width: 100%;
   text-align: center;
   justify-content: center;
-  min-height: 55px;
+  min-height: 40px;
   align-items: center;
   font-size: 18px;
-  padding: 10px;
-  background-color: #002B49;
-  border-radius: 0px;
-  font-weight: 700;
+  font-weight: 500;
+  padding: 16px;
+  border-radius: 8px;
+  background: #002b49;
   height: 100%;
   position: relative;
-  border: 0;
+  border: 2px solid transparent;
   transition: background-color 0.3s ease-in-out;
-  text-transform: uppercase;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-  font-family: "Roboto", sans-serif;
+  line-height: 1;
+  text-decoration: none;
 }
 .simple_list_col a:hover {
   color: #fff;
-  background-color: #F69944;
+  border-color: #9ecde8;
+  background-color: #000000;
   color: #ffffff;
   text-decoration: none;
-  border: 0;
 }
 
 .icon_buttons_row a:hover {
@@ -1225,11 +1224,17 @@ label.title {
   justify-content: center;
   align-items: center;
   margin-right: 20px;
-  color: #F69944;
+  color: #000000;
   font-weight: 700;
-  font-size: 21px;
-  border: 2px solid #F69944;
-  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  border: 2px solid #0081c6;
+  background: #ceeeff;
+}
+.how_to_cont .how_row .how_title {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1;
 }
 .how_to_cont .how_row p.how_title {
   margin-bottom: 5px;
@@ -1243,25 +1248,39 @@ label.title {
   justify-content: flex-end;
 }
 .contactcard_row .cont_inner {
-  padding: 15px 20px;
-  min-height: 170px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
+  background: #f5f5f5;
 }
 .contactcard_row .contact_box {
   background: #ffffff;
   border: 0;
   height: 100%;
+  overflow: hidden;
+  border-radius: 16px;
 }
 .contactcard_row .contact_box p {
   margin-bottom: 5px;
 }
+.contactcard_row .contact_box h3 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.contactcard_row .contact_box h3::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none"><path d="M18.75 9.27344C18.75 8.27888 18.3549 7.32505 17.6517 6.62179C16.9484 5.91853 15.9946 5.52344 15 5.52344C14.0054 5.52344 13.0516 5.91853 12.3483 6.62179C11.6451 7.32505 11.25 8.27888 11.25 9.27344C11.25 10.268 11.6451 11.2218 12.3483 11.9251C13.0516 12.6283 14.0054 13.0234 15 13.0234C15.9946 13.0234 16.9484 12.6283 17.6517 11.9251C18.3549 11.2218 18.75 10.268 18.75 9.27344ZM9 9.27344C9 7.68214 9.63214 6.15602 10.7574 5.0308C11.8826 3.90558 13.4087 3.27344 15 3.27344C16.5913 3.27344 18.1174 3.90558 19.2426 5.0308C20.3679 6.15602 21 7.68214 21 9.27344C21 10.8647 20.3679 12.3909 19.2426 13.5161C18.1174 14.6413 16.5913 15.2734 15 15.2734C13.4087 15.2734 11.8826 14.6413 10.7574 13.5161C9.63214 12.3909 9 10.8647 9 9.27344ZM6.81094 25.0234H23.1937C22.7766 22.0562 20.2266 19.7734 17.1469 19.7734H12.8625C9.78281 19.7734 7.23281 22.0562 6.81563 25.0234H6.81094ZM4.5 25.8812C4.5 21.2641 8.24063 17.5234 12.8578 17.5234H17.1422C21.7594 17.5234 25.5 21.2641 25.5 25.8812C25.5 26.65 24.8766 27.2734 24.1078 27.2734H5.89219C5.12344 27.2734 4.5 26.65 4.5 25.8812Z" fill="%23404040"/></svg>');
+  display: inline-block;
+  height: 30px;
+}
 .contactcard_row .contact_box h4 {
-  font-weight: normal;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 14px;
   text-transform: none;
-  font-family: "Helvetica Neue";
-  text-transform: capitalize;
+  line-height: 1;
 }
 .contactcard_row .contact_box .cont_img img {
   width: 100%;
@@ -1273,7 +1292,6 @@ label.title {
 }
 .contactcard_row .tel_em_fax {
   margin-top: 0;
-  padding-top: 10px;
 }
 .contactcard_row .tel_em_fax strong {
   color: #000000;
@@ -1309,6 +1327,11 @@ label.title {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+@media (max-width: 767px) {
+  #thumbs .owl-item img {
+    height: 85px;
+  }
 }
 
 .thumb .owl-carousel .owl-item img {
@@ -1776,27 +1799,24 @@ figure.aligncenter {
   max-width: 100% !important;
 }
 
-.simple_list_info,
-.contactcard_row {
-  max-width: 910px;
+.simple_list_info {
+  max-width: 930px;
   margin: 0 auto;
 }
 .simple_list_info > h3,
-.simple_list_info > .topTitle,
-.contactcard_row > h3,
-.contactcard_row > .topTitle {
+.simple_list_info > .topTitle {
   width: 100%;
 }
 
 .alignwide .img_text_card_row,
 .alignwide .simple_list_info,
 .alignwide .contactcard_row {
-  max-width: 1210px;
+  max-width: 1350px;
 }
 .alignwide .wp-block-media-text,
 .alignwide .wp-block-table,
 .alignwide .wp-block-kadence-table {
-  max-width: 1200px !important;
+  max-width: 1350px !important;
 }
 
 .alignfull .img_text_card_row,
