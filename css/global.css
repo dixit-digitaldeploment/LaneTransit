@@ -569,6 +569,17 @@ video {
   max-width: 100%;
 }
 
+input[type=radio] {
+  width: 16px;
+  height: 16px;
+}
+
+label:has(input[type=radio]) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .form-control {
   min-height: 40px;
   background-color: #ffffff !important;
@@ -687,8 +698,9 @@ select.form-control {
 }
 
 label.title {
-  font-weight: 700;
+  font-weight: 500;
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 ::-moz-placeholder {
@@ -795,7 +807,7 @@ label.title {
 }
 
 .main_breadcrumb {
-  padding-top: 15px;
+  padding: 0;
   font-family: "Roboto", sans-serif;
 }
 .main_breadcrumb .container {
@@ -804,16 +816,16 @@ label.title {
 .main_breadcrumb .breadcrumb {
   background: none;
   margin: 0px;
-  padding-left: 10px;
-  padding-right: 30px;
+  padding: 4px 10px;
   font-size: 16px;
   padding-top: 6px;
   padding-bottom: 6px;
   align-items: center;
+  gap: 24px;
 }
 .main_breadcrumb .breadcrumb a {
-  color: #002B49;
-  font-weight: bold;
+  color: "Roboto", sans-serif;
+  font-weight: 400;
   text-decoration: none;
 }
 .main_breadcrumb .breadcrumb a:hover {
@@ -821,22 +833,19 @@ label.title {
 }
 .main_breadcrumb .breadcrumb li.active {
   color: #000000;
-  font-weight: bold;
 }
 .main_breadcrumb .breadcrumb img {
   vertical-align: unset;
   margin-right: 2px;
 }
+.main_breadcrumb .breadcrumb-item {
+  gap: 24px;
+  align-items: center;
+}
 .main_breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-  content: "";
-  background: url(../img/angle-right.svg);
-  background-repeat: repeat;
-  background-repeat: no-repeat;
-  margin-top: 6px;
-  margin-right: 5px;
-  margin-left: 5px;
-  padding-right: 4px;
-  padding-left: 4px;
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.7688 10.5459C16.9156 10.4053 17 10.2084 17 10.0022C17 9.79592 16.9156 9.60217 16.7688 9.45842L11.2688 4.20842C10.9688 3.92092 10.4938 3.93342 10.2094 4.23342C9.925 4.53342 9.93437 5.00842 10.2344 5.29279L14.3781 9.25217H3.75C3.33437 9.25217 3 9.58654 3 10.0022C3 10.4178 3.33437 10.7522 3.75 10.7522H14.3781L10.2312 14.7084C9.93125 14.9959 9.92188 15.4678 10.2063 15.7678C10.4906 16.0678 10.9656 16.0772 11.2656 15.7928L16.7656 10.5428L16.7688 10.5459Z" fill="%23202020"/></svg>');
+  padding: 0;
+  height: 18px;
 }
 .main_breadcrumb .breadcrumb-item + .breadcrumb-item {
   padding-left: 3px;

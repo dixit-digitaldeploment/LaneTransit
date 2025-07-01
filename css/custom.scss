@@ -6,6 +6,105 @@
 // @import "global";
 //componenets (button, anchor tags, heading tags etc)
 
+// add route-badges
+// 1. Define grouped routes by color
+$route-groups: (
+  (#7bc043, #202020):
+    (
+      emx
+    ),
+  (#93bfe5, #000):
+    (
+      "01"
+    ),
+  (#ffd200, #000):
+    (
+      11,
+      12,
+      13,
+      17,
+      18
+    ),
+  (#b20837, #fff):
+    (
+      24,
+      28
+    ),
+  (#7968ae, #fff):
+    (
+      33,
+      36
+    ),
+  (#0068a0, #fff):
+    (
+      40,
+      41
+    ),
+  (#7dd2a6, #000):
+    (
+      51,
+      52,
+      55
+    ),
+  (#c0d72f, #000):
+    (
+      66,
+      67
+    ),
+  (#90278e, #fff):
+    (
+      79x
+    ),
+  (#f7971e, #fff):
+    (
+      81,
+      82,
+      85
+    ),
+  (#3f3f97, #fff):
+    (
+      91,
+      92,
+      93,
+      95,
+      96,
+      98
+    )
+);
+
+// Base styling
+@mixin base-badge-style {
+  display: inline-flex;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--Grayscale-Gray-400, #a0a0a0);
+  min-width: 28px;
+  height: 28px;
+  align-items: center;
+}
+.route-badge {
+  @include base-badge-style;
+}
+// Dynamic badge generator
+@mixin generate-route-badges {
+  @each $color-pair, $routes in $route-groups {
+    $bg: nth($color-pair, 1);
+    $text: nth($color-pair, 2);
+
+    @each $route in $routes {
+      .r-#{$route} {
+        background-color: #{$bg};
+        color: #{$text};
+      }
+    }
+  }
+}
+
+@include generate-route-badges;
+
 //Header
 .main_header {
   position: fixed;
@@ -73,9 +172,9 @@
     .container-fluid,
     .container {
       // align-items: center;
-     @media (min-width:1200px) {
-      align-items: stretch;
-     }
+      @media (min-width: 1200px) {
+        align-items: stretch;
+      }
     }
   }
   .social_media {
@@ -837,7 +936,7 @@
     grid-template-columns: 65% 1fr;
     grid-template-rows: auto;
     background: $blue;
-    background-image: url('/img/dotsbg.png');
+    background-image: url("/img/dotsbg.png");
     background-repeat: no-repeat;
     background-size: cover;
     > .wp-block-media-text__media {
@@ -1577,13 +1676,13 @@
     grid-template-columns: 65% 1fr;
     grid-template-rows: auto;
     background: $blue;
-    &.pattrenbg{
-      background-image: url('/img/pattrenbg.png');
+    &.pattrenbg {
+      background-image: url("/img/pattrenbg.png");
       background-repeat: no-repeat;
       background-size: cover;
     }
-    &.dotsbg{
-      background-image: url('/img/dotsbg.png');
+    &.dotsbg {
+      background-image: url("/img/dotsbg.png");
       background-repeat: no-repeat;
       background-size: cover;
     }
@@ -1829,6 +1928,216 @@
     }
   }
 }
+
+// trip-planner-template
+.trip-planner-template {
+  .main_wrapper {
+    > * {
+      &.container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    }
+  }
+  .tripPlanner {
+    .tab-content {
+      border-radius: 16px;
+      .plan_trip {
+        .d-flex {
+          gap: 16px;
+          align-items: center;
+          .content {
+            flex: 1;
+            h2 {
+              margin: 0;
+              font-size: 22px;
+              font-weight: 600;
+            }
+            p {
+              margin: 0;
+            }
+          }
+        }
+
+        .seprator {
+          background: #a0a0a0;
+          height: 0.5px;
+          margin: 24px 0;
+        }
+        .form-container {
+          position: relative;
+          margin-bottom: 24px;
+          &:has(.from_to) {
+            padding-left: 32px;
+            display: flex;
+            gap: 16px;
+          }
+          .from_to {
+            flex: 1;
+            position: relative;
+            &::before {
+              content: "";
+              width: 1px;
+              height: 30px;
+              position: absolute;
+              left: -22px;
+              border-left: 3px dotted black;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+          .input-group {
+            &:not(:last-child) {
+              margin-bottom: 16px;
+            }
+            &.from {
+              &::before {
+                content: "";
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                left: -25px;
+                background: #0081c6;
+                border-radius: 50%;
+                box-shadow: 0 0 0px 4px #9ecde8;
+              }
+            }
+            &.to {
+              &::before {
+                content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M14.5 8C14.5 5.51562 12.4844 3.5 10 3.5C7.51562 3.5 5.5 5.51562 5.5 8C5.5 8.50938 5.74062 9.3125 6.27187 10.3562C6.78437 11.3625 7.48438 12.4313 8.2125 13.4281C8.84688 14.3 9.48438 15.0938 10 15.7125C10.5156 15.0938 11.1531 14.3 11.7875 13.4281C12.5125 12.4313 13.2125 11.3594 13.7281 10.3562C14.2594 9.3125 14.5 8.50938 14.5 8ZM16 8C16 10.5969 12.7 14.8438 10.9938 16.8625C10.4 17.5656 10 18 10 18C10 18 9.6 17.5656 9.00625 16.8625C7.3 14.8438 4 10.5969 4 8C4 4.6875 6.6875 2 10 2C13.3125 2 16 4.6875 16 8ZM11 8C11 7.73478 10.8946 7.48043 10.7071 7.29289C10.5196 7.10536 10.2652 7 10 7C9.73478 7 9.48043 7.10536 9.29289 7.29289C9.10536 7.48043 9 7.73478 9 8C9 8.26522 9.10536 8.51957 9.29289 8.70711C9.48043 8.89464 9.73478 9 10 9C10.2652 9 10.5196 8.89464 10.7071 8.70711C10.8946 8.51957 11 8.26522 11 8ZM7.5 8C7.5 7.33696 7.76339 6.70107 8.23223 6.23223C8.70107 5.76339 9.33696 5.5 10 5.5C10.663 5.5 11.2989 5.76339 11.7678 6.23223C12.2366 6.70107 12.5 7.33696 12.5 8C12.5 8.66304 12.2366 9.29893 11.7678 9.76777C11.2989 10.2366 10.663 10.5 10 10.5C9.33696 10.5 8.70107 10.2366 8.23223 9.76777C7.76339 9.29893 7.5 8.66304 7.5 8Z" fill="%23202020"/></svg>');
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                left: -30px;
+                // background: #0081c6;
+                // border-radius: 50%;
+                // box-shadow: 0 0 0px 6px #9ecde8;
+              }
+            }
+          }
+          .swap {
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            background: var(--Routes-EmX, #7bc043);
+            border: none;
+            position: absolute;
+            right: -22px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          #leave {
+            margin-bottom: 16px;
+          }
+          select {
+            min-width: 105px;
+            width: auto;
+            // font-weight: 500;
+          }
+        }
+        .options {
+          display: flex;
+          align-content: flex-start;
+          gap: 16px;
+          margin-bottom: 24px;
+        }
+        .routes {
+          .accordion-item {
+            background: #fff;
+            border: 2px solid transparent;
+            &:not(:last-child) {
+              border-bottom: 0.5px solid #a0a0a0;
+            }
+            &:has(.show) {
+              border: 2px solid var(--Grayscale-Gray-400, #a0a0a0);
+              .accordion-header {
+                border-bottom: 0.5px solid #a0a0a0;
+              }
+            }
+            .accordion-header {
+              margin: 0;
+            }
+            .accordion-button {
+              border: none;
+              background: none;
+              width: 100%;
+              padding: 8px;
+              display: flex;
+              justify-content: space-between;
+              color: #404040;
+              span {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+              }
+              .route {
+                display: flex;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                color: #404040;
+                gap: 8px;
+                > div {
+                  display: flex;
+                  align-items: center;
+                  + div {
+                    &::before {
+                      content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13.5313 9.4687C13.8251 9.76245 13.8251 10.2375 13.5313 10.5281L8.53135 15.5312C8.2376 15.825 7.7626 15.825 7.47197 15.5312C7.18135 15.2375 7.17822 14.7625 7.47197 14.4718L11.9407 10.0031L7.46885 5.5312C7.1751 5.23745 7.1751 4.76245 7.46885 4.47183C7.7626 4.1812 8.2376 4.17808 8.52822 4.47183L13.5313 9.4687Z" fill="%23404040"/></svg>');
+                      padding: 0;
+                      width: 20px;
+                      height: 20px;
+                      margin-right: 8px;
+                    }
+                  }
+                }
+              }
+            }
+            .accordion-body {
+              > div {
+                padding: 8px;
+                display: flex;
+                gap: 16px;
+                &:not(:last-child) {
+                  border-bottom: 0.5px solid #a0a0a0;
+                }
+                .left {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 8px;
+                  div {
+                    &:not(.route-badge){
+                      font-size: 14px;
+                      font-style: normal;
+                      font-weight: 400;
+                      color: #404040;
+                      display: flex;
+                      align-items: center;
+                      gap: 5px;
+                    }
+                  }
+                }
+                .right {
+                  padding-left: 16px;
+                  border-left: 1px solid #a0a0a0;
+                  flex: 1;
+                  align-self: center;
+                }
+              }
+            }
+          }
+        }
+        .btn_sm {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .map-area{
+    border-radius: 16px;
+  }
+}
+// trip-planner-template end
 
 //map
 .alignfull {

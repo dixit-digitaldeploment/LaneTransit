@@ -98,7 +98,10 @@
         grid-template-columns: auto;
     }
     .page_title {
-        padding-bottom: 15px;
+        // padding-bottom: 15px;
+        img{
+            display: none;
+        }
     }
     .for-desk {
         display: none;
@@ -144,9 +147,15 @@
         font-size: 14px;
     }
     .page_title h1 {
-        font-size: 40px;
-        padding-left: 10px;
-        padding-right: 5px;
+        font-size: 24px;
+        padding-left: 25px;
+        padding-right: 25px;
+        width: 100%;
+    }
+    .page_title p {
+        padding-left: 25px;
+        padding-right: 25px;
+        width: 100%;
     }
     .page_title.resut_title {
         padding-top: 30px;
