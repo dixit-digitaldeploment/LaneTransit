@@ -45,12 +45,12 @@ $(document).ready(function () {
   });
 
   // for thumb slider
-  $(document).ready(function() {
+  $(document).ready(function () {
     var bigimage = $(".thumb #big");
     var thumbs = $(".thumb  #thumbs");
     //var totalslides = 10;
     var syncedSecondary = true;
-  
+
     bigimage
       .owlCarousel({
         // loop: true,
@@ -65,40 +65,37 @@ $(document).ready(function () {
         //   '<img src="/wp-content/themes/planeteriaweb/img/arrow_forward.svg">',
         // ],
         // navContainer: ".owl-general .custom-nav",
-    })
+      })
       .on("changed.owl.carousel", syncPosition);
-  
+
     thumbs
-      .on("initialized.owl.carousel", function() {
-      thumbs
-        .find(".owl-item")
-        .eq(0)
-        .addClass("current");
-    })
+      .on("initialized.owl.carousel", function () {
+        thumbs.find(".owl-item").eq(0).addClass("current");
+      })
       .owlCarousel({
-      items: 5,
-      dots: true,
-      nav: true,
-      margin: 4,
-      navText: [
-        '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
-        '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
-      ],
-      smartSpeed: 200,
-      slideSpeed: 500,
-      slideBy: 5,
-      responsiveRefreshRate: 100
-    })
+        items: 5,
+        dots: true,
+        nav: true,
+        margin: 4,
+        navText: [
+          '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+          '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
+        ],
+        smartSpeed: 200,
+        slideSpeed: 500,
+        slideBy: 5,
+        responsiveRefreshRate: 100,
+      })
       .on("changed.owl.carousel", syncPosition2);
-  
+
     function syncPosition(el) {
       //if loop is set to false, then you have to uncomment the next line
       //var current = el.item.index;
-  
+
       //to disable loop, comment this block
       var count = el.item.count - 1;
       var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
-  
+
       if (current < 0) {
         current = count;
       }
@@ -112,15 +109,9 @@ $(document).ready(function () {
         .eq(current)
         .addClass("current");
       var onscreen = thumbs.find(".owl-item.active").length - 1;
-      var start = thumbs
-      .find(".owl-item.active")
-      .first()
-      .index();
-      var end = thumbs
-      .find(".owl-item.active")
-      .last()
-      .index();
-  
+      var start = thumbs.find(".owl-item.active").first().index();
+      var end = thumbs.find(".owl-item.active").last().index();
+
       if (current > end) {
         thumbs.data("owl.carousel").to(current, 100, true);
       }
@@ -128,21 +119,20 @@ $(document).ready(function () {
         thumbs.data("owl.carousel").to(current - onscreen, 100, true);
       }
     }
-  
+
     function syncPosition2(el) {
       if (syncedSecondary) {
         var number = el.item.index;
         bigimage.data("owl.carousel").to(number, 100, true);
       }
     }
-  
-    thumbs.on("click", ".owl-item", function(e) {
+
+    thumbs.on("click", ".owl-item", function (e) {
       e.preventDefault();
       var number = $(this).index();
       bigimage.data("owl.carousel").to(number, 300, true);
     });
   });
-  
 
   // Function to activate the tab based on URL fragment
   var hash = window.location.hash;
@@ -400,24 +390,31 @@ $(document).on("scroll ", function () {
 (function ($) {
   /* $('.accordion_event > li:eq(0) .acco_title').addClass('active').next().slideDown();*/
 
-  $(".acc__main .acc__title").click(function (j) {
-    var dropDown = $(this).closest(".acc__card").find(".acc__panel");
+  $(".acc__main .acc__title").on("click keydown", function (event) {
+    if (
+      event.type === "click" ||
+      event.key === "Enter" ||
+      event.key === " "
+    ) {
+      var dropDown = $(this).closest(".acc__card").find(".acc__panel");
+      var parentAccordion = $(this).closest(".acc__main");
 
-    $(this).closest(".acc__main").find(".acc__panel").not(dropDown).slideUp();
-
-    if ($(this).hasClass("active")) {
-      $(this).removeClass("active");
-    } else {
-      $(this)
-        .closest(".acc__main")
+      parentAccordion.find(".acc__panel").not(dropDown).slideUp();
+      parentAccordion
         .find(".acc__title.active")
+        .not(this)
         .removeClass("active");
-      $(this).addClass("active");
+
+      if ($(this).hasClass("active")) {
+        $(this).removeClass("active");
+      } else {
+        $(this).addClass("active");
+      }
+
+      dropDown.stop(false, true).slideToggle();
+
+      event.preventDefault();
     }
-
-    dropDown.stop(false, true).slideToggle();
-
-    j.preventDefault();
   });
 })(jQuery);
 $(function () {
@@ -591,3 +588,75 @@ if (jQuery(window).width() < 1200) {
     });
   });
 }
+
+// from multiselect
+$(document).ready(function () {
+  $(".custom-multiselect").each(function () {
+    const $container = $(this);
+    const $dropdownButton = $container.find(".dropdown-toggle");
+    const $dropdownMenu = $container.find(".dropdown-menu");
+    const $checkboxes = $dropdownMenu.find('input[type="checkbox"]');
+    const $selectedItems = $container.find(".selected-items");
+
+    // Prevent dropdown from closing when clicking inside
+    $dropdownMenu.on("click", function (e) {
+      e.stopPropagation();
+    });
+
+    // Toggle dropdown visibility
+    $dropdownButton.on("click", function (e) {
+      e.stopPropagation(); // Prevent the click event from propagating to the document
+      $dropdownMenu.toggleClass("show");
+    });
+
+    // Close dropdown when clicking outside
+    $(document).on("click", function () {
+      $dropdownMenu.removeClass("show");
+    });
+
+    // Update selected items and button label
+    function updateSelectedItems() {
+      const selectedOptions = [];
+      $selectedItems.empty();
+
+      $checkboxes.each(function () {
+        if ($(this).is(":checked")) {
+          const value = $(this).val();
+          console.log($(this))
+          const name = $(this).attr('name');
+          selectedOptions.push(name);
+
+          const $item = $(`
+                  <span class="route-item r-${value}">
+                ${name}
+                      <span class="remove" data-value="${value}">✕</span>
+                  </span>
+                  `);
+          $selectedItems.append($item);
+        }
+      });
+
+      // Update button label
+      if (selectedOptions.length === 0) {
+        // $dropdownButton.text();
+      } else if (selectedOptions.length === 1) {
+        $dropdownButton.children(".selected-labels").text(selectedOptions[0]);
+      } else {
+        $dropdownButton.children(".selected-labels").text(`${selectedOptions}`);
+      }
+    }
+
+    // Handle checkbox change
+    $checkboxes.change(updateSelectedItems);
+
+    // Remove selected item
+    $selectedItems.on("click", ".remove", function () {
+      const value = $(this).data("value");
+      $checkboxes.filter(`[value="${value}"]`).prop("checked", false);
+      updateSelectedItems();
+    });
+
+    // Initialize selected items on page load
+    updateSelectedItems();
+  });
+});
