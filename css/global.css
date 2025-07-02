@@ -914,6 +914,9 @@ label.title {
   right: 0;
   width: 35%;
 }
+.page_title > .container {
+  max-width: 1200px;
+}
 .page_title .col {
   position: static;
 }
@@ -1090,7 +1093,7 @@ label.title {
   -webkit-box-orient: vertical;
 }
 .img_text_card_row .text-img-wrap .text_card_block h3 {
-  font-size: 21px;
+  font-size: 22px;
 }
 .img_text_card_row .text-img-wrap .text_card_block .email a {
   word-wrap: anywhere;

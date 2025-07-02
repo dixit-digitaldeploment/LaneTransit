@@ -1015,6 +1015,9 @@ label.title {
     right: 0;
     width: 35%;
   }
+  >.container{
+    max-width: 1200px;
+  }
   .col {
     position: static;
   }
@@ -1220,7 +1223,7 @@ label.title {
         -webkit-box-orient: vertical;
       }
       h3 {
-        font-size: 21px;
+        font-size: 22px;
       }
       .email {
         a {

@@ -18,7 +18,7 @@
   <link href="css/responsive.css" rel="stylesheet">
 </head>
 
-<body class="route-direction-template">
+<body class="plan-and-project-template">
   <header class="main_header">
     <div class="navbar navbar-expand-xl  ">
       <div class="container-fluid">
@@ -230,7 +230,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h1>Routes, Maps & Schedules</h1>
+            <h1>Plans & Projects</h1>
             <p>The modular page builder blocks available to build website pages</p>
             <img src="/img/pattrenbg.png" alt="bgimage">
           </div>
@@ -239,57 +239,89 @@
     </div>
     <div class="middle_wrap main_content">
       <div class="wp-block-group alignwide">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur interdum, nisl
-          nunc egestas nunc, vitae tincidunt nisl nunc euismod nunc. Sed euismod, nisi vel consectetur interdum, nisl
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur
+          interdum, nisl
+          nunc egestas nunc, vitae tincidunt nisl nunc euismod nunc. Sed euismod, nisi vel consectetur
+          interdum, nisl
           nunc
-          egestas nunc, vitae tincidunt nisl nunc euismod nunc. Praesent vestibulum, nisi at lacinia tincidunt, augue
-          dolor pretium nunc, eget tincidunt nunc nunc id nunc. Sed euismod, nisi vel consectetur interdum, nisl nunc
+          egestas nunc, vitae tincidunt nisl nunc euismod nunc. Praesent vestibulum, nisi at lacinia
+          tincidunt, augue
+          dolor pretium nunc, eget tincidunt nunc nunc id nunc. Sed euismod, nisi vel consectetur interdum,
+          nisl nunc
           egestas nunc, vitae tincidunt nisl nunc euismod nunc.</p>
       </div>
     </div>
-    <div class="container section-padding routeMap_section">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="route_filter">
-            <p class="h3">LTD Real-time Map</p>
-            <p>Select the real-time routes you wish to see on the interactive map </p>
-            <div class="seprator"></div>
-            <div class="custom-multiselect">
-              <div class="dropdown">
-                <button class="form-control dropdown-toggle input-group inlineLabel" type="button"
-                  id="dropdownMenuButton">
-                  <span class="title">Routes</span>
-                  <div class="selected-labels"></div>
-                </button>
-                <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-                  <label class="dropdown-item title">
-                    <input name="EMX" type="checkbox" value="emx" class=""> EMX
-                  </label>
-                  <label class="dropdown-item title">
-                    <input name="Santa Clara" type="checkbox" value="51" class=""> Santa Clara
-                  </label>
-                  <label class="dropdown-item title">
-                    <input name="VRC/Coburg" type="checkbox" value="66" class=""> VRC/Coburg
-                  </label>
-                  <label class="dropdown-item title">
-                    <input name="VRC/CoburgVRC/CoburgVRC" type="checkbox" value="33" class=""> VRC/Coburg
-                  </label>
+    <div class="container section-padding routeMap_section news-section">
+      <div class="topTitle">
+        <h2>Featured Projects</h2>
+      </div>
+      <div class="img_text_card_row row">
+        <div class="col-md-4  img_text_card_col">
+          <div class="text-img-wrap">
+            <a href="#">
+              <div class="img_card_block">
+                <img src="img/news1.png" alt="">
+
+              </div>
+              <div class="text_card_block">
+                <div class="category">
+                  Category
+                </div>
+                <h3>This is the Title of an Event</h3>
+                <div class="progress complete">
+                  Completed
                 </div>
               </div>
-              <div class="selected-items"></div>
-            </div>
+            </a>
           </div>
         </div>
-        <div class="col-md-8">
-          <!-- map section -->
+        <div class="col-md-4  img_text_card_col">
+          <div class="text-img-wrap">
+            <a href="#">
+              <div class="img_card_block">
+                <img src="img/news1.png" alt="">
+
+              </div>
+              <div class="text_card_block">
+                <div class="category">
+                  Category
+                </div>
+                <h3>This is the Title of an Event</h3>
+                <div class="progress ongoing">
+                  Ongoing
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4  img_text_card_col">
+          <div class="text-img-wrap">
+            <a href="#">
+              <div class="img_card_block">
+                <img src="img/news1.png" alt="">
+
+              </div>
+              <div class="text_card_block">
+                <div class="category">
+                  Category
+                </div>
+                <h3>This is the Title of an Event</h3>
+                <div class="progress proposed">
+                  Proposed
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="container section-padding routeMap_section">
-      <h2 class="text-center topTitle">All Lane Transit District Bus Routes</h2>
+    <div class="container section-padding routeMap_section border-0 pt-0 news-section">
+      <div class="topTitle">
+        <h2>Plans and Projects Archive</h2>
+      </div>
       <div class="row">
         <div class="col-md-4">
-          <div class="route_filter">
+          <div class="route_filter news_filter">
             <div class="input-group inlineLabel search-box">
               <label for="search">Search</label>
               <input type="text" class="form-control" name="search">
@@ -302,15 +334,35 @@
               </button>
             </div>
             <div class="seprator"></div>
+            <div class="input-group type_filter">
+              <label class="title" for="postype">
+                <input type="radio" id="postype" name="type" value="news_blogs">
+                News & blog posts
+              </label>
+              <label class="title" for="postype">
+                <input type="radio" id="postype" name="type" value="news">
+                News only
+              </label>
+              <label class="title" for="postype">
+                <input type="radio" id="postype" name="type" value="blogs">
+                Blogs only
+              </label>
+            </div>
             <div class="input-group inlineLabel">
-              <label for="filter1">Filter</label>
-              <select class="form-control" name="filter1" id="filter1">
+              <label for="category">Category</label>
+              <select class="form-control" name="category" id="category">
                 <option value="">All</option>
               </select>
             </div>
             <div class="input-group inlineLabel">
-              <label for="filter1">Filter</label>
-              <select class="form-control" name="filter1" id="filter1">
+              <label for="month">Category</label>
+              <select class="form-control" name="month" id="month">
+                <option value="">All</option>
+              </select>
+            </div>
+            <div class="input-group inlineLabel">
+              <label for="year">Category</label>
+              <select class="form-control" name="year" id="year">
                 <option value="">All</option>
               </select>
             </div>
@@ -323,67 +375,62 @@
           </div>
         </div>
         <div class="col-md-8">
-          <div class="bus_routeWrapper">
-            <div class="acc__main ">
-              <!-- add the info ,no-service,reduce-service,weather-alert according to alert -->
-              <div class="acc__card info">
-                <div class="acc__title" tabindex="0">
-                  <h3>
-                    <div class="route-badge r-emx">
-                      EMX
+          <div class="img_text_card_row row">
+            <div class="col-md-6 col-lg-4 img_text_card_col">
+              <div class="text-img-wrap">
+                <a href="#">
+                  <div class="img_card_block">
+                    <img src="img/news1.png" alt="">
+
+                  </div>
+                  <div class="text_card_block">
+                    <div class="category">
+                      Category
                     </div>
-                    EMX
-                  </h3>
-                  <div class="acco_sign">
-                    <img src="img/select-arrow.svg" alt="down-arrow">
-                  </div>
-                </div>
-                <div class="acc__panel">
-                  <!-- add the info ,no-service,reduce-service,weather-alert according to alert -->
-                  <div class="service-alert info">
-                    <p class="title">
-                      <!-- add the image according to the alert -->
-                      <!-- info -> info.svg -->
-                      <!-- no service -> no-service.svg -->
-                      <!-- reduce service -> reduce-service.svg -->
-                      <!-- weather alert -> weather-alert.svg -->
-                      <img src="./img/info.svg" alt="info">
-                      Information
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur
-                      interdum, nisl nunc egestas nunc, vitae tincidunt nisl nunc euismod.</p>
-                  </div>
-                  <div class="overview">
-                    <p class="h5">Route Overview:</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur
-                      interdum, nisl nunc egestas nunc, vitae tincidunt nisl nunc euismod nunc. Sed euismod, nisi vel
-                      consectetur .</p>
-                  </div>
-                  <div class="tags">
-                    <span class="tag">Park & Ride</span>
-                  </div>
-                  <div class="service">
-                    <p><span>Service Span:</span>Wed, Sat, Sun</p>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <a href="#" class="doc_block">
-                        <img src="./img/PDF.svg" alt="">
-                        <span>Map & Schedule</span>
-                      </a>
-                    </div>
-                    <div class="col-lg-6 text-lg-right">
-                      <a href="#" class="btn_sm">
-                        Go to Route Page
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path
-                            d="M16.7688 10.547C16.9156 10.4064 17 10.2095 17 10.0033C17 9.797 16.9156 9.60325 16.7688 9.4595L11.2688 4.2095C10.9688 3.922 10.4938 3.9345 10.2094 4.2345C9.925 4.5345 9.93437 5.0095 10.2344 5.29388L14.3781 9.25325H3.75C3.33437 9.25325 3 9.58763 3 10.0033C3 10.4189 3.33437 10.7533 3.75 10.7533H14.3781L10.2312 14.7095C9.93125 14.997 9.92188 15.4689 10.2063 15.7689C10.4906 16.0689 10.9656 16.0783 11.2656 15.7939L16.7656 10.5439L16.7688 10.547Z"
-                            fill="white" />
-                        </svg>
-                      </a>
+                    <h3>This is the Title of an Event</h3>
+                    <div class="progress active">
+                      Active
                     </div>
                   </div>
-                </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 img_text_card_col">
+              <div class="text-img-wrap">
+                <a href="#">
+                  <div class="img_card_block">
+                    <img src="img/news1.png" alt="">
+
+                  </div>
+                  <div class="text_card_block">
+                    <div class="category">
+                      Category
+                    </div>
+                    <h3>This is the Title of an Event</h3>
+                    <div class="progress active">
+                      Active
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 img_text_card_col">
+              <div class="text-img-wrap">
+                <a href="#">
+                  <div class="img_card_block">
+                    <img src="img/news1.png" alt="">
+
+                  </div>
+                  <div class="text_card_block">
+                    <div class="category">
+                      Category
+                    </div>
+                    <h3>This is the Title of an Event</h3>
+                    <div class="progress active">
+                      Active
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
