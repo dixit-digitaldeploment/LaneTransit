@@ -1058,7 +1058,7 @@ $route-groups: (
     grid-template-columns: 65% 1fr;
     grid-template-rows: auto;
     background: $blue;
-    background-image: url("/img/dotsbg.png");
+    background-image: url("../img/dotsbg.png");
     background-repeat: no-repeat;
     background-size: cover;
     > .wp-block-media-text__media {
@@ -1799,12 +1799,12 @@ $route-groups: (
     grid-template-rows: auto;
     background: $blue;
     &.pattrenbg {
-      background-image: url("/img/pattrenbg.png");
+      background-image: url("../img/pattrenbg.png");
       background-repeat: no-repeat;
       background-size: cover;
     }
     &.dotsbg {
-      background-image: url("/img/dotsbg.png");
+      background-image: url("../img/dotsbg.png");
       background-repeat: no-repeat;
       background-size: cover;
     }
