@@ -1,12 +1,12 @@
-$(document).ready(function () {
-  $(".center-grp .wp-block-table").each(function () {
-    $(this).wrap('<div class="table-wrapper"></div>');
+jQuery(document).ready(function () {
+  jQuery(".center-grp .wp-block-table").each(function () {
+    jQuery(this).wrap('<div class="table-wrapper"></div>');
   });
-  const $carousel = $("#demo");
+  const $carousel = jQuery("#demo");
 
   // Handle click on any dot (in any caption)
   $carousel.find(".carousel-indicators li").on("click", function () {
-    const index = $(this).data("slide-to");
+    const index = jQuery(this).data("slide-to");
     $carousel.carousel(index);
   });
 
@@ -17,7 +17,7 @@ $(document).ready(function () {
       .find(`.carousel-indicators li[data-slide-to="${e.to}"]`)
       .addClass("active");
   });
-  $(".owl-general .owl-carousel").owlCarousel({
+  jQuery(".owl-general .owl-carousel").owlCarousel({
     loop: true,
     dots: true,
     autoplay: true,
@@ -45,9 +45,9 @@ $(document).ready(function () {
   });
 
   // for thumb slider
-  $(document).ready(function () {
-    var bigimage = $(".thumb #big");
-    var thumbs = $(".thumb  #thumbs");
+  jQuery(document).ready(function () {
+    var bigimage = jQuery(".thumb #big");
+    var thumbs = jQuery(".thumb  #thumbs");
     //var totalslides = 10;
     var syncedSecondary = true;
 
@@ -129,7 +129,7 @@ $(document).ready(function () {
 
     thumbs.on("click", ".owl-item", function (e) {
       e.preventDefault();
-      var number = $(this).index();
+      var number = jQuery(this).index();
       bigimage.data("owl.carousel").to(number, 300, true);
     });
   });
@@ -137,17 +137,17 @@ $(document).ready(function () {
   // Function to activate the tab based on URL fragment
   var hash = window.location.hash;
   if (hash) {
-    $('.nav-link[href="' + hash + '"]').tab("show");
+    jQuery('.nav-link[href="' + hash + '"]').tab("show");
   }
 
   // Update URL when tab is clicked
-  $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+  jQuery('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
     history.pushState(null, null, e.target.hash);
   });
 
   //Navbar
   if (jQuery(window).width() < 1200) {
-    // $(
+    // jQuery(
     //   ".navbar-nav  > li.menu-item-has-children, .navbar-nav  > li.megamenu_item   "
     // ).append('<div class="plusMinus"></div>');
     // jQuery(
@@ -156,46 +156,46 @@ $(document).ready(function () {
     //   //jQuery(".show-mobile").slideToggle('fast');
     //   //jQuery(this).parent().siblings('li').find('ul.sub-menu').slideUp("fast");
     //   //jQuery(this).parent().siblings('li').find('.plus-minus').removeClass("minusIcon");
-    //   $(this)
+    //   jQuery(this)
     //     .parent()
     //     .find(".dropdown-menu ,.megamenu_drop,.megamenu")
     //     .slideToggle("fast");
-    //   $(this).parent().toggleClass("activeBlue");
-    //   $(this).toggleClass("minsicon");
+    //   jQuery(this).parent().toggleClass("activeBlue");
+    //   jQuery(this).toggleClass("minsicon");
     // });
-    // //$(".select_language ").insertBefore('.navbar-toggler  ');
-    // // $(".soc_nav_wrap ").insertAfter('.nav_bottom');
-    // // $(".social_media ").insertAfter('.nav_bottom  ');
-    // $(".megamenu_drop  li.menu-item-has-children  ").append(
+    // //jQuery(".select_language ").insertBefore('.navbar-toggler  ');
+    // // jQuery(".soc_nav_wrap ").insertAfter('.nav_bottom');
+    // // jQuery(".social_media ").insertAfter('.nav_bottom  ');
+    // jQuery(".megamenu_drop  li.menu-item-has-children  ").append(
     //   '<div class="pls_minus"></div>'
     // );
 
     // jQuery(".megamenu_drop  li.menu-item-has-children  .pls_minus").click(
     //   function () {
-    //     $(this).parent().find(".sub-menu").slideToggle("fast");
-    //     $(this).parent().toggleClass("active-item");
-    //     $(this).toggleClass("minus-info");
+    //     jQuery(this).parent().find(".sub-menu").slideToggle("fast");
+    //     jQuery(this).parent().toggleClass("active-item");
+    //     jQuery(this).toggleClass("minus-info");
     //   }
     // );
-    $(".wp-block-advgb-table").each(function () {
-      $(this).wrap('<div class="table-wrap"></div>');
+    jQuery(".wp-block-advgb-table").each(function () {
+      jQuery(this).wrap('<div class="table-wrap"></div>');
     });
-    $(".wp-block-group > table").wrap('<div class="table-wrapper"></div>');
+    jQuery(".wp-block-group > table").wrap('<div class="table-wrapper"></div>');
   }
   /*if (jQuery(window).width() < 992 ) {
-           $('.navbar-nav  > li.megamenu_item   ').append('<div class="plusMinus"></div>');
+           jQuery('.navbar-nav  > li.megamenu_item   ').append('<div class="plusMinus"></div>');
            jQuery(".navbar-nav  > li.megamenu_item   > .plusMinus").click( function () {
-           $(this).parent().find('.megamenu').slideToggle("fast");
-           $(this).parent().toggleClass('activeBlue');
-           $(this).toggleClass("minsicon");
+           jQuery(this).parent().find('.megamenu').slideToggle("fast");
+           jQuery(this).parent().toggleClass('activeBlue');
+           jQuery(this).toggleClass("minsicon");
            });
            }
            */
-  $(".navbar-toggler").on("click", function () {
-    $(this).toggleClass("active");
-    $(".main_header").toggleClass("headerActive");
+  jQuery(".navbar-toggler").on("click", function () {
+    jQuery(this).toggleClass("active");
+    jQuery(".main_header").toggleClass("headerActive");
   });
-  // $(".dropdown-menu  > li.menu-item-has-children").append(
+  // jQuery(".dropdown-menu  > li.menu-item-has-children").append(
   //   '<div class="plus-minus"></div>'
   // );
   // jQuery(".dropdown-menu   > li.menu-item-has-children  > .plus-minus").click(
@@ -215,7 +215,7 @@ $(document).ready(function () {
   //   }
   // );
 
-  // $(".mega-submenu  > li.menu-item-has-children").append(
+  // jQuery(".mega-submenu  > li.menu-item-has-children").append(
   //   '<div class="plus-minus"></div>'
   // );
   // jQuery(".mega-submenu   > li.menu-item-has-children  > .plus-minus").click(
@@ -234,22 +234,22 @@ $(document).ready(function () {
   //     jQuery(this).toggleClass("minus-icon");
   //   }
   // );
-  $(".text_card_block .btn_sm  ")
+  jQuery(".text_card_block .btn_sm  ")
     .parents(".img_text_card_col")
     .find(".text-img-wrap")
     .addClass("has-button ");
 
-  $(".advgb-accordion-body").each(function () {
-    $(this).wrapInner('<div class="accordion-content"></div>');
+  jQuery(".advgb-accordion-body").each(function () {
+    jQuery(this).wrapInner('<div class="accordion-content"></div>');
   });
   /*
-                     $('.main_content > *').wrapAll('<div class="main-wrap"></div>');*/
+                     jQuery('.main_content > *').wrapAll('<div class="main-wrap"></div>');*/
   if (window.location.hash) {
-    var target = $(window.location.hash); // Get the element based on the hash
+    var target = jQuery(window.location.hash); // Get the element based on the hash
     if (target.length) {
       // Check if the element exists
-      var offset = $(".advgb-tabs-panel").outerHeight() + 30; // Adjust the offset
-      $("html, body").animate(
+      var offset = jQuery(".advgb-tabs-panel").outerHeight() + 30; // Adjust the offset
+      jQuery("html, body").animate(
         {
           scrollTop: target.offset().top - offset, // Scroll to the element
         },
@@ -257,60 +257,60 @@ $(document).ready(function () {
       );
     }
   }
-  $(".rel_forms").parent(".col_right").addClass("has_forms ");
-  $(".alerticon").parent(".rtTitle").addClass("p-left ");
-  $('a[href$=".pdf"]').each(function () {
+  jQuery(".rel_forms").parent(".col_right").addClass("has_forms ");
+  jQuery(".alerticon").parent(".rtTitle").addClass("p-left ");
+  jQuery('a[href$=".pdf"]').each(function () {
     // Open the PDF link in a new window
-    $(this).attr("target", "_blank");
+    jQuery(this).attr("target", "_blank");
   });
-  $(".carousel-inner").each(function () {
-    if ($(this).children("div").length === 1)
-      $(this)
+  jQuery(".carousel-inner").each(function () {
+    if (jQuery(this).children("div").length === 1)
+      jQuery(this)
         .siblings(
           ".carousel-indicators, .carousel-control-prev, .carousel-control-next"
         )
         .hide();
   });
-  $(".img_block .img_block_descr").each(function () {
+  jQuery(".img_block .img_block_descr").each(function () {
     // Check if this div contains a p tag
-    if ($(this).find("p").length === 0) {
+    if (jQuery(this).find("p").length === 0) {
       // If no p tag is found, add the class to the closest div
-      $(this).closest(".img_block").addClass("no-p-tag");
+      jQuery(this).closest(".img_block").addClass("no-p-tag");
     }
   });
-  $(".main_wrapper").attr("id", "page_content");
-  $(".links li .expand_det").matchHeight({
+  jQuery(".main_wrapper").attr("id", "page_content");
+  jQuery(".links li .expand_det").matchHeight({
     byRow: true,
     property: "height",
     target: null,
     remove: false,
   });
 
-  $(".img_text_card_col .text_card_block ").matchHeight({
+  jQuery(".img_text_card_col .text_card_block ").matchHeight({
     byRow: true,
     property: "height",
     target: null,
     remove: false,
   });
-  $(".advgb-accordion-item .advgb-accordion-body").css("border", "0px");
+  jQuery(".advgb-accordion-item .advgb-accordion-body").css("border", "0px");
 
   //Translate using keyboard
   setTimeout(function () {
-    let $translateButton = $(".gt_selected");
-    let $translateMenu = $(".gt_option");
+    let $translateButton = jQuery(".gt_selected");
+    let $translateMenu = jQuery(".gt_option");
 
     if ($translateButton.length && $translateMenu.length) {
       $translateButton.on("click", function () {
         setTimeout(function () {
-          let $iframe = $(".gt_option");
+          let $iframe = jQuery(".gt_option");
           if ($iframe.length) {
             $iframe.attr("tabindex", "-1").focus();
           }
         }, 500);
       });
-      $(document).on("keydown", function (event) {
+      jQuery(document).on("keydown", function (event) {
         if (event.key === "Escape") {
-          let $iframe = $(".gt_option");
+          let $iframe = jQuery(".gt_option");
           if ($iframe.length) {
             $iframe.hide();
             $translateButton.focus();
@@ -321,26 +321,26 @@ $(document).ready(function () {
   }, 2000);
 });
 
-$(window).on("resize", function () {
+jQuery(window).on("resize", function () {
   /*
    if (jQuery(window).width() < 1200) {
-      $(".select_language ").insertBefore('.navbar-toggler  ');
-      $(".soc_nav_wrap ").insertAfter('.nav_bottom');
+      jQuery(".select_language ").insertBefore('.navbar-toggler  ');
+      jQuery(".soc_nav_wrap ").insertAfter('.nav_bottom');
    }
    if (jQuery(window).width() > 1200) {
-      $(".select_language ").insertBefore('.top_search  ');
-      $(".soc_nav_wrap ").insertBefore('.select_language');
+      jQuery(".select_language ").insertBefore('.top_search  ');
+      jQuery(".soc_nav_wrap ").insertBefore('.select_language');
    }*/
 });
 
 //Url in window target
 (function ($, window) {
   var adjustAnchor = function () {
-    var $anchor = $(":target"),
+    var $anchor = jQuery(":target"),
       fixedElementHeight = 150;
 
     if ($anchor.length > 0) {
-      $("html, body")
+      jQuery("html, body")
         .stop()
         .animate(
           {
@@ -352,34 +352,34 @@ $(window).on("resize", function () {
     }
   };
 
-  $(window).on("hashchange load", function () {
+  jQuery(window).on("hashchange load", function () {
     adjustAnchor();
   });
 })(jQuery, window);
 
 //Header shrink on scroll
-$(document).on("scroll ", function () {
-  if ($(document).scrollTop() > 0) {
-    $(".main_header ").addClass("shrink ");
+jQuery(document).on("scroll ", function () {
+  if (jQuery(document).scrollTop() > 0) {
+    jQuery(".main_header ").addClass("shrink ");
   } else {
-    $(".main_header ").removeClass("shrink ");
+    jQuery(".main_header ").removeClass("shrink ");
   }
 });
 
 //main accordion
 
 (function ($) {
-  $(".accmain .acctitle").click(function (j) {
-    var dropDown = $(this).closest(".acccard").find(".accpanel");
-    $(this).closest(".accmain").find(".accpanel").not(dropDown).slideUp();
-    if ($(this).hasClass("active")) {
-      $(this).removeClass("active");
+  jQuery(".accmain .acctitle").click(function (j) {
+    var dropDown = jQuery(this).closest(".acccard").find(".accpanel");
+    jQuery(this).closest(".accmain").find(".accpanel").not(dropDown).slideUp();
+    if (jQuery(this).hasClass("active")) {
+      jQuery(this).removeClass("active");
     } else {
-      $(this)
+      jQuery(this)
         .closest(".accmain")
         .find(".acctitle.active")
         .removeClass("active");
-      $(this).addClass("active");
+      jQuery(this).addClass("active");
     }
 
     dropDown.stop(false, true).slideToggle();
@@ -388,16 +388,16 @@ $(document).on("scroll ", function () {
   });
 })(jQuery);
 (function ($) {
-  /* $('.accordion_event > li:eq(0) .acco_title').addClass('active').next().slideDown();*/
+  /* jQuery('.accordion_event > li:eq(0) .acco_title').addClass('active').next().slideDown();*/
 
-  $(".acc__main .acc__title").on("click keydown", function (event) {
+  jQuery(".acc__main .acc__title").on("click keydown", function (event) {
     if (
       event.type === "click" ||
       event.key === "Enter" ||
       event.key === " "
     ) {
-      var dropDown = $(this).closest(".acc__card").find(".acc__panel");
-      var parentAccordion = $(this).closest(".acc__main");
+      var dropDown = jQuery(this).closest(".acc__card").find(".acc__panel");
+      var parentAccordion = jQuery(this).closest(".acc__main");
 
       parentAccordion.find(".acc__panel").not(dropDown).slideUp();
       parentAccordion
@@ -405,10 +405,10 @@ $(document).on("scroll ", function () {
         .not(this)
         .removeClass("active");
 
-      if ($(this).hasClass("active")) {
-        $(this).removeClass("active");
+      if (jQuery(this).hasClass("active")) {
+        jQuery(this).removeClass("active");
       } else {
-        $(this).addClass("active");
+        jQuery(this).addClass("active");
       }
 
       dropDown.stop(false, true).slideToggle();
@@ -417,23 +417,23 @@ $(document).on("scroll ", function () {
     }
   });
 })(jQuery);
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
+jQuery(function () {
+  jQuery('[data-toggle="tooltip"]').tooltip();
 });
 
-$(window).on("load", function () {
-  $(".wp-block-image.alignleft,  .wp-block-image.alignright").wrap(
+jQuery(window).on("load", function () {
+  jQuery(".wp-block-image.alignleft,  .wp-block-image.alignright").wrap(
     '<div class="left_right_wraper"></div>'
   );
 });
 
 function checkOverflow() {
-  $(".advgb-tabs-wrapper").each(function () {
-    var $tabs = $(this).find(".advgb-tabs-panel");
+  jQuery(".advgb-tabs-wrapper").each(function () {
+    var $tabs = jQuery(this).find(".advgb-tabs-panel");
     if ($tabs[0].scrollWidth > $tabs[0].clientWidth) {
-      $(this).addClass("overflowing");
+      jQuery(this).addClass("overflowing");
     } else {
-      $(this).removeClass("overflowing");
+      jQuery(this).removeClass("overflowing");
     }
   });
 }
@@ -442,17 +442,17 @@ function checkOverflow() {
 checkOverflow();
 
 // Check on window resize
-$(window).on("resize", function () {
+jQuery(window).on("resize", function () {
   checkOverflow();
 });
 
 function checkOverflow1() {
-  $(".kt-tabs-wrap").each(function () {
-    var $tabs1 = $(this).find(".kt-tabs-title-list");
+  jQuery(".kt-tabs-wrap").each(function () {
+    var $tabs1 = jQuery(this).find(".kt-tabs-title-list");
     if ($tabs1[0].scrollWidth > $tabs1[0].clientWidth) {
-      $(this).addClass("overflowing");
+      jQuery(this).addClass("overflowing");
     } else {
-      $(this).removeClass("overflowing");
+      jQuery(this).removeClass("overflowing");
     }
   });
 }
@@ -461,22 +461,22 @@ function checkOverflow1() {
 checkOverflow1();
 
 // Check on window resize
-$(window).on("resize", function () {
+jQuery(window).on("resize", function () {
   checkOverflow1();
 });
 
 function setHeroHeight() {
-  var headerHeight = $("header").outerHeight();
-  var alertbar = $(".alert-area").is(":visible")
-    ? $(".alert-area").outerHeight()
+  var headerHeight = jQuery("header").outerHeight();
+  var alertbar = jQuery(".alert-area").is(":visible")
+    ? jQuery(".alert-area").outerHeight()
     : 0;
-  $(".main_wrapper, .main_banner").css("padding-top", headerHeight + "px");
-  if ($("#wpadminbar").length) {
-    $(".alert-area").css("top", headerHeight + 30 + "px");
-    $(".kt-tabs-title-list").css("top", headerHeight + alertbar + 30 + "px");
+  jQuery(".main_wrapper, .main_banner").css("padding-top", headerHeight + "px");
+  if (jQuery("#wpadminbar").length) {
+    jQuery(".alert-area").css("top", headerHeight + 30 + "px");
+    jQuery(".kt-tabs-title-list").css("top", headerHeight + alertbar + 30 + "px");
   } else {
-    $(".alert-area").css("top", headerHeight + "px");
-    $(".kt-tabs-title-list").css("top", headerHeight + alertbar + "px");
+    jQuery(".alert-area").css("top", headerHeight + "px");
+    jQuery(".kt-tabs-title-list").css("top", headerHeight + alertbar + "px");
   }
 }
 
@@ -492,28 +492,28 @@ if (header && "ResizeObserver" in window) {
   });
   resizeObserver.observe(header);
 }
-$(document).ready(function () {
-  $(".swap").click(function (e) {
+jQuery(document).ready(function () {
+  jQuery(".swap").click(function (e) {
     e.preventDefault();
-    let fromVal = $("#fromInput").val();
-    let toVal = $("#toInput").val();
-    $("#fromInput").val(toVal);
-    $("#toInput").val(fromVal);
+    let fromVal = jQuery("#fromInput").val();
+    let toVal = jQuery("#toInput").val();
+    jQuery("#fromInput").val(toVal);
+    jQuery("#toInput").val(fromVal);
   });
 });
 
 // for header megamenu desktop
 if (jQuery(window).width() >= 1200) {
-  $(document).ready(function () {
+  jQuery(document).ready(function () {
     // Handle click on parent menu
-    $(".menu-item-has-children > .nav-link").on("click", function (e) {
+    jQuery(".menu-item-has-children > .nav-link").on("click", function (e) {
       e.preventDefault(); // prevent default anchor behavior
 
-      var $parentItem = $(this).parent(); // get .nav-item
+      var $parentItem = jQuery(this).parent(); // get .nav-item
       var $dropdown = $parentItem.find(".megamenu").first();
 
       // Close all other dropdowns
-      $(".menu-item-has-children")
+      jQuery(".menu-item-has-children")
         .not($parentItem)
         .removeClass("active")
         .find(".megamenu")
@@ -525,10 +525,10 @@ if (jQuery(window).width() >= 1200) {
     });
 
     // Optional: Click outside to close
-    $(document).on("click", function (e) {
-      if (!$(e.target).closest(".menu-item-has-children").length) {
-        $(".menu-item-has-children").removeClass("active");
-        $(".megamenu").slideUp(200);
+    jQuery(document).on("click", function (e) {
+      if (!jQuery(e.target).closest(".menu-item-has-children").length) {
+        jQuery(".menu-item-has-children").removeClass("active");
+        jQuery(".megamenu").slideUp(200);
       }
     });
   });
@@ -537,10 +537,10 @@ if (jQuery(window).width() >= 1200) {
 if (jQuery(window).width() < 1200) {
   jQuery(document).ready(function ($) {
     // Main megamenu open
-    $(".menu-item-has-children > a").on("click", function (e) {
+    jQuery(".menu-item-has-children > a").on("click", function (e) {
       e.preventDefault();
 
-      const $trigger = $(this);
+      const $trigger = jQuery(this);
       const $megamenu = $trigger.next(".megamenu");
       const $wrapper = $megamenu.children(".megamenuWrapper");
 
@@ -563,10 +563,10 @@ if (jQuery(window).width() < 1200) {
     });
 
     // Nested submenu (megasubmenu2) open
-    $(".megasubmenu .menu-item-has-children > a").on("click", function (e) {
+    jQuery(".megasubmenu .menu-item-has-children > a").on("click", function (e) {
       e.preventDefault();
 
-      const $trigger = $(this);
+      const $trigger = jQuery(this);
       const $submenu = $trigger.next(".megasubmenu2");
 
       // Add back button only once
@@ -580,7 +580,7 @@ if (jQuery(window).width() < 1200) {
         // Back from nested submenu
         $submenu.find(".back").on("click", function (e) {
           e.preventDefault();
-          $(this).closest(".megasubmenu2").hide();
+          jQuery(this).closest(".megasubmenu2").hide();
         });
       }
 
@@ -590,9 +590,9 @@ if (jQuery(window).width() < 1200) {
 }
 
 // from multiselect
-$(document).ready(function () {
-  $(".custom-multiselect").each(function () {
-    const $container = $(this);
+jQuery(document).ready(function () {
+  jQuery(".custom-multiselect").each(function () {
+    const $container = jQuery(this);
     const $dropdownButton = $container.find(".dropdown-toggle");
     const $dropdownMenu = $container.find(".dropdown-menu");
     const $checkboxes = $dropdownMenu.find('input[type="checkbox"]');
@@ -610,7 +610,7 @@ $(document).ready(function () {
     });
 
     // Close dropdown when clicking outside
-    $(document).on("click", function () {
+    jQuery(document).on("click", function () {
       $dropdownMenu.removeClass("show");
     });
 
@@ -620,13 +620,13 @@ $(document).ready(function () {
       $selectedItems.empty();
 
       $checkboxes.each(function () {
-        if ($(this).is(":checked")) {
-          const value = $(this).val();
-          console.log($(this))
-          const name = $(this).attr('name');
+        if (jQuery(this).is(":checked")) {
+          const value = jQuery(this).val();
+          console.log(jQuery(this))
+          const name = jQuery(this).attr('name');
           selectedOptions.push(name);
 
-          const $item = $(`
+          const $item = jQuery(`
                   <span class="route-item r-${value}">
                 ${name}
                       <span class="remove" data-value="${value}">✕</span>
@@ -651,7 +651,7 @@ $(document).ready(function () {
 
     // Remove selected item
     $selectedItems.on("click", ".remove", function () {
-      const value = $(this).data("value");
+      const value = jQuery(this).data("value");
       $checkboxes.filter(`[value="${value}"]`).prop("checked", false);
       updateSelectedItems();
     });
