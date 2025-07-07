@@ -722,7 +722,7 @@ label {
     //   background-color: transparent;
     //   padding-left: 8px;
     // }
-    &+.inlineLabel{
+    & + .inlineLabel {
       margin-top: 24px;
     }
   }
@@ -743,7 +743,7 @@ label {
       transform: translateY(-50%);
       height: 20px;
     }
-    .title{
+    .title {
       flex: 0 0 auto;
     }
     .selected-labels {
@@ -898,7 +898,7 @@ label.title {
 }
 
 .main_wrapper {
-  padding-top: 90px;
+  padding-top: 0px !important;
   p {
     margin-bottom: 16px;
   }
@@ -1015,7 +1015,7 @@ label.title {
     right: 0;
     width: 35%;
   }
-  >.container{
+  > .container {
     max-width: 1200px;
   }
   .col {
@@ -1361,7 +1361,7 @@ label.title {
     align-items: center;
     font-size: 18px;
     font-weight: 500;
-    padding: 16px;
+    padding: 8px 16px;
     border-radius: 8px;
     background: #002b49;
     height: 100%;
@@ -2114,7 +2114,7 @@ figure.aligncenter {
   .wp-block-media-text,
   .wp-block-table,
   .wp-block-kadence-table {
-    max-width: 1350px !important;
+    max-width: 1200px !important;
   }
 }
 
@@ -2140,6 +2140,18 @@ figure.aligncenter {
   }
   .wp-block-media-text__media {
     position: relative;
+    margin-right: 32px !important;
+    height: 100% !important;
+    img {
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      // custom css
+      max-width: unset;
+      vertical-align: middle;
+      width: 100%;
+      border-radius: 16px;
+    }
   }
   .wp-block-button__link:hover {
   }
@@ -2147,11 +2159,106 @@ figure.aligncenter {
     position: relative;
     padding-left: 32px !important;
     padding-right: 32px !important;
-    h2 {
-      margin-bottom: 24px;
+    padding: 40px !important;
+    height: auto;
+    // background: #fff;
+    // h2 {
+    //   margin-bottom: 24px;
+    // }
+    // > p {
+    //   max-width: 600px;
+    // }
+  }
+  &.alignfull,
+  .alignfull > & {
+    grid-template-columns: 60% 1fr;
+    > .wp-block-media-text__media {
+      // custom css
+      position: relative;
+      margin-right: 0px !important;
+      height: 100% !important;
+      img {
+        // custom css
+        max-width: unset;
+        vertical-align: middle;
+        width: 100%;
+        border-radius: 0;
+      }
     }
-    > p {
-      max-width: 600px;
+    > .wp-block-media-text__content {
+      // custom css
+      position: relative;
+      border-radius: 16px !important;
+      padding: 40px !important;
+      height: auto;
+      background: #fff;
+      align-self: center;
+      left: -10%;
+      // min-width: 588px;
+      max-width: 588px;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    &.is-stacked-on-mobile {
+      grid-template-columns: 50% 1fr;
+      > .wp-block-media-text__media {
+        margin-right: 0px !important;
+      }
+      > .wp-block-media-text__content {
+        // padding: 0 !important;
+        // padding-top: 16px !important;
+        // max-width: none;
+        // grid-column: unset;
+        // grid-row: unset;
+      }
+      &.alignfull {
+        padding: 0;
+        &.pattrenbg {
+          background-image: url("../img/pattrenbg.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        &.dotsbg {
+          background-image: url("../img/dotsbg.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        > .wp-block-media-text__content {
+          // left: -10%;
+          // padding: 16px !important;
+          // margin-right: 16px;
+          // margin-left: 16px;
+          // margin-bottom: 16px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    &.is-stacked-on-mobile {
+      grid-template-columns: 100% !important;
+      > .wp-block-media-text__media {
+        margin-right: 0px !important;
+      }
+      > .wp-block-media-text__content {
+        padding: 0 !important;
+        padding-top: 16px !important;
+        max-width: none;
+        grid-column: unset;
+        grid-row: unset;
+      }
+      &.alignfull {
+        > .wp-block-media-text__content {
+          left: 0%;
+          top: -20%;
+          max-width: none;
+          grid-column: unset;
+          grid-row: unset;
+          padding: 16px !important;
+          margin-right: 16px;
+          margin-left: 16px;
+          margin-bottom: 16px;
+        }
+      }
     }
   }
 }
@@ -2711,37 +2818,38 @@ p + ol {
 .wp-block-kadence-accordion {
   padding-bottom: 20px;
   .wp-block-kadence-pane {
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.25);
-    background: #fff;
-    border-radius: 5px;
+    // box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.25);
+    // background: #fff;
+    // border-radius: 5px;
   }
   .kt-blocks-accordion-header {
-    border: 0 !important;
     background: none !important;
-    padding: 15px;
+    padding: 16px;
     outline: none;
+    border-bottom: 0.5px solid $gray-400 !important;
+    background: $white !important;
     &:focus-visible {
       outline: 1px solid $primary;
     }
     .kt-blocks-accordion-title {
-      font-size: 21px;
-      font-weight: 700;
-      color: $primary;
-      text-transform: uppercase;
-      font-family: "Proxima Nova Th";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      color: $gray-900;
     }
     &:hover {
       .kt-blocks-accordion-title {
-        text-decoration: underline;
-        color: $secondary;
+        // text-decoration: underline;
+        // color: $secondary;
       }
       .kt-blocks-accordion-icon-trigger {
-        @include img-red;
+        // @include img-red;
       }
     }
     &.kt-accordion-panel-active {
       .kt-blocks-accordion-icon-trigger {
-        @include rotate;
+        // @include rotate;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none"><path d="M24.75 15.2734C24.75 15.8969 24.2484 16.3984 23.625 16.3984H6.375C5.75156 16.3984 5.25 15.8969 5.25 15.2734C5.25 14.65 5.75156 14.1484 6.375 14.1484H23.625C24.2484 14.1484 24.75 14.65 24.75 15.2734Z" fill="%23404040"/></svg>');
       }
     }
   }
@@ -2753,7 +2861,7 @@ p + ol {
     row-gap: 15px !important;
   }
   .kt-blocks-accordion-icon-trigger {
-    background-image: url(../img/select-arrow.svg);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none"><path d="M16.125 6.64844C16.125 6.025 15.6234 5.52344 15 5.52344C14.3766 5.52344 13.875 6.025 13.875 6.64844V14.1484H6.375C5.75156 14.1484 5.25 14.65 5.25 15.2734C5.25 15.8969 5.75156 16.3984 6.375 16.3984H13.875V23.8984C13.875 24.5219 14.3766 25.0234 15 25.0234C15.6234 25.0234 16.125 24.5219 16.125 23.8984V16.3984H23.625C24.2484 16.3984 24.75 15.8969 24.75 15.2734C24.75 14.65 24.2484 14.1484 23.625 14.1484H16.125V6.64844Z" fill="%23404040"/></svg>');
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -2764,14 +2872,14 @@ p + ol {
   }
   .kt-accordion-panel-inner {
     border: 0;
-    padding: 16px 16px;
-    padding-bottom: 8px;
+    padding: 32px;
+    // padding-bottom: 8px;
   }
 }
 
 //Kadence tabs
 .wp-block-kadence-tabs {
-  max-width: 100% !important;
+  max-width: 900px !important;
   &.alignwide {
     max-width: 1200px !important;
   }
@@ -2794,31 +2902,33 @@ p + ol {
       }
     }
     .kt-tabs-content-wrap {
-      border-top: 1px solid #504d49;
+      // border-top: 1px solid #504d49;
+      border-radius: 0px 0px 16px 16px;
+      background: var(--Grayscale-Gray-50, #f5f5f5);
     }
     .kt-title-item {
       margin-right: 4px !important;
       border: 0 !important;
       .kt-tab-title {
-        color: $black !important;
+        color: $white !important;
         text-align: center;
-        font-size: 21px !important;
-        font-family: "Proxima Nova Th";
-        font-weight: bold !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
         width: 100%;
-        height: 100%;
+        // height: 100%;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         position: relative;
         overflow: visible !important;
-        border: 0 !important;
-        padding: 15px 15px !important;
+        border: 2px solid transparent !important;
+        border-bottom: none !important;
+        padding: 12px 16px !important;
         border-radius: 0px !important;
-        background: #efefef !important;
-        text-transform: uppercase;
-        border-radius: 5px 5px 0px 0px !important;
-        min-width: 175px;
+        background: $primary !important;
+        // text-transform: uppercase;
+        border-radius: 16px 16px 0px 0px !important;
+        min-width: 200px;
         &:focus {
           outline: 0;
         }
@@ -2828,8 +2938,9 @@ p + ol {
         @include md {
         }
         &:hover {
-          background: $secondary !important;
+          background: $black !important;
           color: $white !important;
+          border-color: #9ecde8 !important;
           p {
             color: $white !important;
           }
@@ -2837,8 +2948,8 @@ p + ol {
       }
       &.kt-tab-title-active {
         .kt-tab-title {
-          color: #fff !important;
-          background: $primary !important;
+          color: $gray-900 !important;
+          background: $gray-50 !important;
           p {
             color: $black !important;
           }
@@ -2857,10 +2968,10 @@ p + ol {
     .kt-tab-inner-content {
       border: 0 !important;
       background: none !important;
-      padding: 40px 20px !important;
+      padding: 32px !important;
     }
     .kt-tab-inner-content-inner {
-      max-width: 900px;
+      // max-width: 900px;
       margin: 0 auto;
       .container {
         padding: 0px;
@@ -2890,12 +3001,12 @@ p + ol {
         width: 25%;
         .kt-title-item {
           margin-right: 0px !important;
-          margin-bottom: 4px !important;
+          margin-bottom: 0px !important;
           background: none !important;
           min-height: 50px;
           .kt-tab-title {
-            min-height: 50px;
-            border-radius: 5px !important;
+            min-height: 40px;
+            border-radius: 16px 0px 0px 16px !important;
           }
           &.kt-tab-title-active {
           }
@@ -2915,9 +3026,9 @@ p + ol {
         }
       }
       .kt-tab-inner-content {
-        padding-top: 0px !important;
+        // padding-top: 0px !important;
         @include md {
-          padding-top: 20px !important;
+          // padding-top: 20px !important;
         }
       }
     }

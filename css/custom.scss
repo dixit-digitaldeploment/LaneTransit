@@ -920,7 +920,7 @@ $route-groups: (
 
 //banner
 .main_banner {
-  padding-top: 90px;
+  padding-top: 0 !important;
   position: relative;
   .iframe_wrap {
     width: 100%;
@@ -1861,21 +1861,21 @@ $route-groups: (
         margin-right: 0px !important;
       }
       > .wp-block-media-text__content {
-        padding: 0 !important;
-        padding-top: 16px !important;
-        max-width: none;
-        grid-column: unset;
-        grid-row: unset;
+        // padding: 0 !important;
+        // padding-top: 16px !important;
+        // max-width: none;
+        // grid-column: unset;
+        // grid-row: unset;
       }
       &.alignfull {
         > .wp-block-media-text__content {
           left: -10%;
           // top: -20%;
 
-          padding: 16px !important;
-          margin-right: 16px;
-          margin-left: 16px;
-          margin-bottom: 16px;
+          // padding: 16px !important;
+          // margin-right: 16px;
+          // margin-left: 16px;
+          // margin-bottom: 16px;
         }
       }
     }
@@ -2868,6 +2868,7 @@ p.date {
   }
 }
 
+
 //Contact Page
 .contact-us-detail-block {
   .wp-block-columns {
@@ -2918,6 +2919,9 @@ p.date {
     padding: 16px;
     padding-right: 40px;
     border-radius: 0;
+  }
+  .h5{
+    margin-bottom: 16px;
   }
   p {
     color: $white;
@@ -4803,63 +4807,10 @@ ul.icons {
 }
 
 //Meeting detail
-.meeting-detail {
-  padding-bottom: 60px;
-  .container {
-    max-width: 1200px;
-  }
-  .link {
-    margin-bottom: 0px;
-  }
-  .address {
-    padding-top: 10px;
-  }
-  .date {
-    font-weight: 500;
-  }
-  .agenda {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    padding-top: 10px;
-    text-transform: uppercase;
-    .doc_block {
-      margin-bottom: 0px;
-      padding-left: 10px;
-    }
-  }
-  .cancel-info {
-    margin-bottom: 20px;
-  }
-  .addeventatc.addtocal {
-  }
-  h5 {
-    padding-top: 12px;
-  }
-  .slider_info {
-    .carousel-control-next,
-    .carousel-control-prev {
-      width: 45px;
-      height: 55px;
-      top: 40%;
-      opacity: 1;
-      background: rgba(255, 255, 255, 0.9);
-      &:hover {
-        img {
-          filter: brightness(0) saturate(100%) invert(51%) sepia(78%) saturate(5573%) hue-rotate(149deg) brightness(94%)
-            contrast(99%);
-        }
-      }
-    }
-    .carousel-control-next img {
-      @include rotate;
-    }
-    .carousel-item {
-      img {
-        width: 100%;
-        object-fit: cover;
-      }
-    }
+.single{
+  .back{
+    padding-bottom: 40px;
+    border-bottom: 1px solid $gray-400;
   }
 }
 

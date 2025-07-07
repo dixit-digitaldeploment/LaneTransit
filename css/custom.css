@@ -924,7 +924,7 @@
 }
 
 .main_banner {
-  padding-top: 90px;
+  padding-top: 0 !important;
   position: relative;
 }
 .main_banner .iframe_wrap {
@@ -1739,19 +1739,8 @@
   .wp-block-media-text.homesec.is-stacked-on-mobile > .wp-block-media-text__media {
     margin-right: 0px !important;
   }
-  .wp-block-media-text.homesec.is-stacked-on-mobile > .wp-block-media-text__content {
-    padding: 0 !important;
-    padding-top: 16px !important;
-    max-width: none;
-    grid-column: unset;
-    grid-row: unset;
-  }
   .wp-block-media-text.homesec.is-stacked-on-mobile.alignfull > .wp-block-media-text__content {
     left: -10%;
-    padding: 16px !important;
-    margin-right: 16px;
-    margin-left: 16px;
-    margin-bottom: 16px;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -2695,6 +2684,9 @@ p.date {
   padding: 16px;
   padding-right: 40px;
   border-radius: 0;
+}
+.alert-area .h5 {
+  margin-bottom: 16px;
 }
 .alert-area p {
   color: #ffffff;
@@ -4420,57 +4412,9 @@ ul.icons li span img {
   margin-bottom: 0px;
   padding-left: 10px;
 }
-.meeting-detail {
-  padding-bottom: 60px;
-}
-.meeting-detail .container {
-  max-width: 1200px;
-}
-.meeting-detail .link {
-  margin-bottom: 0px;
-}
-.meeting-detail .address {
-  padding-top: 10px;
-}
-.meeting-detail .date {
-  font-weight: 500;
-}
-.meeting-detail .agenda {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-  padding-top: 10px;
-  text-transform: uppercase;
-}
-.meeting-detail .agenda .doc_block {
-  margin-bottom: 0px;
-  padding-left: 10px;
-}
-.meeting-detail .cancel-info {
-  margin-bottom: 20px;
-}
-.meeting-detail h5 {
-  padding-top: 12px;
-}
-.meeting-detail .slider_info .carousel-control-next,
-.meeting-detail .slider_info .carousel-control-prev {
-  width: 45px;
-  height: 55px;
-  top: 40%;
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.9);
-}
-.meeting-detail .slider_info .carousel-control-next:hover img,
-.meeting-detail .slider_info .carousel-control-prev:hover img {
-  filter: brightness(0) saturate(100%) invert(51%) sepia(78%) saturate(5573%) hue-rotate(149deg) brightness(94%) contrast(99%);
-}
-.meeting-detail .slider_info .carousel-control-next img {
-  transform: rotate(180deg);
-}
-.meeting-detail .slider_info .carousel-item img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.single .back {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #A0A0A0;
 }
 
 .proc_wrap {
