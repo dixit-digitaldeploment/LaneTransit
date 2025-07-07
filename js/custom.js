@@ -391,11 +391,7 @@ jQuery(document).on("scroll ", function () {
   /* jQuery('.accordion_event > li:eq(0) .acco_title').addClass('active').next().slideDown();*/
 
   jQuery(".acc__main .acc__title").on("click keydown", function (event) {
-    if (
-      event.type === "click" ||
-      event.key === "Enter" ||
-      event.key === " "
-    ) {
+    if (event.type === "click" || event.key === "Enter" || event.key === " ") {
       var dropDown = jQuery(this).closest(".acc__card").find(".acc__panel");
       var parentAccordion = jQuery(this).closest(".acc__main");
 
@@ -473,7 +469,10 @@ function setHeroHeight() {
   jQuery(".main_wrapper, .main_banner").css("padding-top", headerHeight + "px");
   if (jQuery("#wpadminbar").length) {
     jQuery(".alert-area").css("top", headerHeight + 30 + "px");
-    jQuery(".kt-tabs-title-list").css("top", headerHeight + alertbar + 30 + "px");
+    jQuery(".kt-tabs-title-list").css(
+      "top",
+      headerHeight + alertbar + 30 + "px"
+    );
   } else {
     jQuery(".alert-area").css("top", headerHeight + "px");
     jQuery(".kt-tabs-title-list").css("top", headerHeight + alertbar + "px");
@@ -481,17 +480,18 @@ function setHeroHeight() {
 }
 
 // Initial run
-setHeroHeight();
+// setHeroHeight();
 
 // Observe header size changes
-const header = document.querySelector("header");
+// const header = document.querySelector("header");
 
-if (header && "ResizeObserver" in window) {
-  const resizeObserver = new ResizeObserver(() => {
-    setHeroHeight();
-  });
-  resizeObserver.observe(header);
-}
+// if (header && "ResizeObserver" in window) {
+//   const resizeObserver = new ResizeObserver(() => {
+//     setHeroHeight();
+//   });
+//   resizeObserver.observe(header);
+// }
+
 jQuery(document).ready(function () {
   jQuery(".swap").click(function (e) {
     e.preventDefault();
@@ -563,7 +563,9 @@ if (jQuery(window).width() < 1200) {
     });
 
     // Nested submenu (megasubmenu2) open
-    jQuery(".megasubmenu .menu-item-has-children > a").on("click", function (e) {
+    jQuery(".megasubmenu .menu-item-has-children > a").on("click", function (
+      e
+    ) {
       e.preventDefault();
 
       const $trigger = jQuery(this);
@@ -622,8 +624,8 @@ jQuery(document).ready(function () {
       $checkboxes.each(function () {
         if (jQuery(this).is(":checked")) {
           const value = jQuery(this).val();
-          console.log(jQuery(this))
-          const name = jQuery(this).attr('name');
+          console.log(jQuery(this));
+          const name = jQuery(this).attr("name");
           selectedOptions.push(name);
 
           const $item = jQuery(`

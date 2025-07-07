@@ -229,7 +229,7 @@ $route-groups: (
 
 //Header
 .main_header {
-  position: fixed;
+  // position: fixed;
   border-bottom: 0.5px solid var(--Grayscale-Gray-400, #a0a0a0);
   background: var(--Grayscale-Gray-50, #f5f5f5);
   z-index: 99;
@@ -2298,16 +2298,12 @@ $route-groups: (
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 15px 32px 15px;
+  padding: 40px 0;
   flex-direction: column;
-  .h6 {
+  border-bottom: 1px solid $gray-400;
+  .h3 {
     margin-right: 0px;
     margin-bottom: 15px;
-    color: $gray;
-    font-size: 21px;
-    font-family: $secondary-font;
-    font-weight: normal;
-    text-transform: none;
   }
   .search_box {
     margin-bottom: 0px;
@@ -2413,9 +2409,13 @@ $route-groups: (
 .rslt_txt {
   padding: 40px 0px 30px 0px;
   margin: auto;
-  background: #f5f5f5;
+  border-bottom: 1px solid $gray-400;
+  // background: #f5f5f5;
   .container {
     max-width: 900px;
+  }
+  .h5 {
+    margin-bottom: 8px;
   }
   .topTitle.text-left {
     margin-bottom: 20px;
@@ -2502,28 +2502,27 @@ $route-groups: (
 }
 
 .result_row {
+  position: relative;
   background: $white;
   margin-bottom: 15px;
-  border-radius: 0px;
-  position: relative;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
-  border: 0;
-  padding: 15px;
+  border-radius: 16px;
+  padding: 16px;
   h3,
   h4,
   h5,
   h2 {
-    font-size: 21px;
-    color: $primary;
+    font-size: 22px;
   }
   .rsltBody {
   }
   .re_category {
-    font-size: 14px;
-    color: $gray;
-    font-family: $secondary-font;
-    display: block;
-    margin-bottom: 10px;
+    font-family: Roboto;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 16px;
+    background: #9ecde8;
+    border-radius: 16px;
+    padding: 6px 8px;
   }
   > a {
     display: block;
@@ -2540,17 +2539,15 @@ $route-groups: (
 }
 
 .filterBlocks {
-  max-width: 900px;
+  // max-width: 900px;
   margin: 0 auto;
   .topTitle {
     margin-bottom: 20px;
   }
   .filter_sort {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 10px;
-    position: relative;
-    margin-bottom: 15px;
+    padding: 32px;
+    background: $gray-50;
+    border-radius: 16px;
     .reset_link {
       position: absolute;
       right: 0;
@@ -2572,7 +2569,7 @@ $route-groups: (
 }
 
 .resull_filter {
-  padding: 40px 0px 70px 0px;
+  padding: 40px 0px 40px 0px;
 }
 
 .pagination {
@@ -2588,7 +2585,11 @@ $route-groups: (
   min-width: 270px;
   //result end
 }
-
+.result_wrapper {
+  padding: 32px;
+  border-radius: 16px;
+  background: $gray-50;
+}
 //News page
 .news-section {
   .img_text_card_row {
@@ -2904,26 +2905,28 @@ p.date {
 
 //Alerts
 .alert-area {
-  background: #1e2859;
+  // background: #1e2859;
   /*  position: absolute;
         top: 118px;
         z-index: 9;*/
   width: 100%;
   .alert {
     background: none;
-    border: 0;
-    text-align: center;
+    border-left: 16px solid;
+    text-align: left;
     margin: 0;
+    padding: 16px;
     padding-right: 40px;
+    border-radius: 0;
   }
   p {
     color: $white;
-    font-weight: 700;
+    // font-weight: 700;
     margin-bottom: 2px;
   }
   a {
-    color: $white;
-    font-weight: 700;
+    color: inherit;
+    // font-weight: 700;
   }
   p:empty {
     display: none;
@@ -4176,7 +4179,7 @@ ul.icons {
         margin-left: 20px;
         gap: 8px;
         &:after {
-         height: 90%;
+          height: 90%;
         }
       }
     }
