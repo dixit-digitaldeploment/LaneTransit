@@ -2685,6 +2685,7 @@ p.date {
 }
 .alert-area .alert {
   background: none;
+  border: 0;
   border-left: 16px solid;
   text-align: left;
   margin: 0;
