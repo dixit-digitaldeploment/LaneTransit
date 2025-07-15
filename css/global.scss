@@ -1263,7 +1263,7 @@ label.title {
       display: inline-block;
       left: 0px;
       margin-bottom: 8px;
-      &+.category{
+      & + .category {
         margin-left: 5px;
       }
     }
@@ -2264,6 +2264,7 @@ figure.aligncenter {
   &.alignfull,
   .alignfull > & {
     grid-template-columns: 60% 1fr;
+    background: $blue;
     > .wp-block-media-text__media {
       // custom css
       position: relative;
@@ -2290,68 +2291,112 @@ figure.aligncenter {
       max-width: 588px;
     }
   }
-  @media screen and (max-width: 1100px) {
-    &.is-stacked-on-mobile {
-      grid-template-columns: 50% 1fr;
-      > .wp-block-media-text__media {
-        margin-right: 0px !important;
-      }
-      > .wp-block-media-text__content {
-        // padding: 0 !important;
-        // padding-top: 16px !important;
-        // max-width: none;
-        // grid-column: unset;
-        // grid-row: unset;
-      }
-      &.alignfull {
-        padding: 0;
-        &.pattrenbg {
-          background-image: url("../img/pattrenbg.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
-        &.dotsbg {
-          background-image: url("../img/dotsbg.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
-        > .wp-block-media-text__content {
-          // left: -10%;
-          // padding: 16px !important;
-          // margin-right: 16px;
-          // margin-left: 16px;
-          // margin-bottom: 16px;
+  &.captionmode {
+    grid-template-columns: 1fr;
+    .wp-block-media-text__media {
+      aspect-ratio: 1440/619;
+    }
+    .wp-block-media-text__content {
+      left: 0;
+      max-width: 672px;
+      grid-column: 1;
+      padding: 24px 24px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 16px;
+      color: #fff;
+      position: absolute;
+      left: 8%;
+      bottom: 10%;
+      > * {
+        color: $white;
+        .wp-block-button__link {
+          background: #f5f5f5 !important;
+          color: #000 !important;
+          border: 2px solid transparent;
+          border-radius: 8px !important;
+          display: inline-block;
+          text-decoration: none;
+          &::after {
+          }
+          &:hover {
+            background: #9ecde8 !important;
+            text-decoration: none !important;
+            border-color: #0081c6 !important;
+          }
         }
       }
     }
   }
-  @media screen and (max-width: 1024px) {
-    &.is-stacked-on-mobile {
-      grid-template-columns: 100% !important;
-      > .wp-block-media-text__media {
-        margin-right: 0px !important;
+  @media screen and (max-width: 1100px) {
+    // &.is-stacked-on-mobile {
+    grid-template-columns: 50% 1fr;
+    > .wp-block-media-text__media {
+      margin-right: 0px !important;
+    }
+    > .wp-block-media-text__content {
+      // padding: 0 !important;
+      // padding-top: 16px !important;
+      // max-width: none;
+      // grid-column: unset;
+      // grid-row: unset;
+    }
+    &.alignfull {
+      padding: 0;
+      &.pattrenbg {
+        background-image: url("../img/pattrenbg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      &.dotsbg {
+        background-image: url("../img/dotsbg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
       }
       > .wp-block-media-text__content {
-        padding: 0 !important;
-        padding-top: 16px !important;
+        // left: -10%;
+        // padding: 16px !important;
+        // margin-right: 16px;
+        // margin-left: 16px;
+        // margin-bottom: 16px;
+      }
+    }
+    // }
+  }
+  @media screen and (max-width: 1024px) {
+
+    grid-template-columns: 100% !important;
+    > .wp-block-media-text__media {
+      margin-right: 0px !important;
+    }
+    > .wp-block-media-text__content {
+      padding: 0 !important;
+      padding-top: 16px !important;
+      max-width: none;
+      grid-column: unset !important;
+      grid-row: unset !important;
+    }
+    &.alignfull {
+      > .wp-block-media-text__content {
+        left: 0%;
+        top: -20%;
         max-width: none;
         grid-column: unset;
         grid-row: unset;
-      }
-      &.alignfull {
-        > .wp-block-media-text__content {
-          left: 0%;
-          top: -20%;
-          max-width: none;
-          grid-column: unset;
-          grid-row: unset;
-          padding: 16px !important;
-          margin-right: 16px;
-          margin-left: 16px;
-          margin-bottom: 16px;
-        }
+        padding: 16px !important;
+        margin-right: 16px;
+        margin-left: 16px;
+        margin-bottom: 16px;
       }
     }
+    &.captionmode {
+      .wp-block-media-text__content {
+        max-width: unset;
+        position: relative;
+        left: 0;
+        bottom: 10%;
+      }
+    }
+
   }
 }
 
@@ -3140,40 +3185,54 @@ p + ol {
 //Tables
 .wp-block-table,
 .wp-block-advgb-table {
-  border: 1px solid $black;
+  // border: 1px solid $black;
   thead {
     border-bottom: none !important;
   }
   td {
-    padding: 10px 20px !important;
-    border: 1px solid #000 !important;
+    padding: 16px !important;
+    border: 1px solid $gray-400 !important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  td:first-child {
+    background: #9ECDE8;
+    font-size: 16px;
+    font-weight: 600;
   }
   td:last-child {
-    border-right: 0px !important;
+    // border-right: 0px !important;
   }
   th {
-    background: $darkblue;
+    background: $primary;
     text-transform: none;
     color: #fff;
     border-top: 0 !important;
     border-bottom: 0px !important;
-    padding: 15px 20px !important;
+    padding: 16px !important;
     border: 0 !important;
-    font-weight: 700;
-    font-size: 21px;
+    font-weight: 600;
+    font-size: 16px;
     text-align: center;
-    border-right: 1px solid $white !important;
+    border-right: 1px solid $gray-400 !important;
+  }
+  th:first-child {
+  visibility: hidden;
   }
   th:last-child {
-    border-right: 0px;
+    // border-right: 0px;s
   }
   tbody {
-    tr:nth-child(2n + 1) {
-      background: $lightgray !important;
+    tr{
+      background: $gray-50;
     }
-    tr:nth-child(2n) {
-      background: #fff !important;
-    }
+    // tr:nth-child(2n + 1) {
+    //   background: $lightgray !important;
+    // }
+    // tr:nth-child(2n) {
+    //   background: #fff !important;
+    // }
   }
 }
 
@@ -3183,49 +3242,49 @@ p + ol {
   thead {
     th {
       background: $primary;
-      font-family: "Proxima Nova Th";
-      font-weight: bold;
-      font-size: 18px;
+      // font-family: "Proxima Nova Th";
+      font-weight: 600;
+      font-size: 16px;
       color: #fff;
-      padding: 15px 24px !important;
-      border-right: 1px solid #fff;
+      padding: 16px !important;
+      border-right: 1px solid $gray-400;
       p {
-        font-family: "Proxima Nova Th";
-        font-weight: bold;
-        font-size: 18px;
+        // font-family: "Proxima Nova Th";
+        font-weight: 600;
+        font-size: 16px;
         color: #fff;
         margin-bottom: 0px;
       }
       &:first-child {
-        border-radius: 5px 0px 0px 0px;
+        // border-radius: 5px 0px 0px 0px;
       }
       &:last-child {
-        border-radius: 0px 5px 0px 0px;
+        // border-radius: 0px 5px 0px 0px;
       }
     }
   }
   tbody {
     td {
-      padding: 15px 24px !important;
-      background: #efefef;
-      border-right: 1px solid #504d49;
+      padding: 16px !important;
+      background: $gray-50;
+      border-right: 1px solid $gray-400;
       p {
         margin: 0px;
       }
     }
-    tr:last-child {
-      td:first-child {
-        border-radius: 0px 0px 5px 5px;
-      }
-      td:last-child {
-        border-radius: 0px 0px 5px 5px;
-      }
-    }
-    tr {
-      td:last-child {
-        border: 0;
-      }
-    }
+    // tr:last-child {
+    //   td:first-child {
+    //     border-radius: 0px 0px 5px 5px;
+    //   }
+    //   td:last-child {
+    //     border-radius: 0px 0px 5px 5px;
+    //   }
+    // }
+    // tr {
+    //   td:last-child {
+    //     border: 0;
+    //   }
+    // }
   }
 }
 

@@ -2002,6 +2002,7 @@ figure.aligncenter {
 }
 .wp-block-media-text.alignfull, .alignfull > .wp-block-media-text {
   grid-template-columns: 60% 1fr;
+  background: #0081C6;
 }
 .wp-block-media-text.alignfull > .wp-block-media-text__media, .alignfull > .wp-block-media-text > .wp-block-media-text__media {
   position: relative;
@@ -2024,42 +2025,76 @@ figure.aligncenter {
   left: -10%;
   max-width: 588px;
 }
+.wp-block-media-text.captionmode {
+  grid-template-columns: 1fr;
+}
+.wp-block-media-text.captionmode .wp-block-media-text__media {
+  aspect-ratio: 1440/619;
+}
+.wp-block-media-text.captionmode .wp-block-media-text__content {
+  left: 0;
+  max-width: 672px;
+  grid-column: 1;
+  padding: 24px 24px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 16px;
+  color: #fff;
+  position: absolute;
+  left: 8%;
+  bottom: 10%;
+}
+.wp-block-media-text.captionmode .wp-block-media-text__content > * {
+  color: #ffffff;
+}
+.wp-block-media-text.captionmode .wp-block-media-text__content > * .wp-block-button__link {
+  background: #f5f5f5 !important;
+  color: #000 !important;
+  border: 2px solid transparent;
+  border-radius: 8px !important;
+  display: inline-block;
+  text-decoration: none;
+}
+.wp-block-media-text.captionmode .wp-block-media-text__content > * .wp-block-button__link:hover {
+  background: #9ecde8 !important;
+  text-decoration: none !important;
+  border-color: #0081c6 !important;
+}
 @media screen and (max-width: 1100px) {
-  .wp-block-media-text.is-stacked-on-mobile {
+  .wp-block-media-text {
     grid-template-columns: 50% 1fr;
   }
-  .wp-block-media-text.is-stacked-on-mobile > .wp-block-media-text__media {
+  .wp-block-media-text > .wp-block-media-text__media {
     margin-right: 0px !important;
   }
-  .wp-block-media-text.is-stacked-on-mobile.alignfull {
+  .wp-block-media-text.alignfull {
     padding: 0;
   }
-  .wp-block-media-text.is-stacked-on-mobile.alignfull.pattrenbg {
+  .wp-block-media-text.alignfull.pattrenbg {
     background-image: url("../img/pattrenbg.png");
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .wp-block-media-text.is-stacked-on-mobile.alignfull.dotsbg {
+  .wp-block-media-text.alignfull.dotsbg {
     background-image: url("../img/dotsbg.png");
     background-repeat: no-repeat;
     background-size: cover;
   }
 }
 @media screen and (max-width: 1024px) {
-  .wp-block-media-text.is-stacked-on-mobile {
+  .wp-block-media-text {
     grid-template-columns: 100% !important;
   }
-  .wp-block-media-text.is-stacked-on-mobile > .wp-block-media-text__media {
+  .wp-block-media-text > .wp-block-media-text__media {
     margin-right: 0px !important;
   }
-  .wp-block-media-text.is-stacked-on-mobile > .wp-block-media-text__content {
+  .wp-block-media-text > .wp-block-media-text__content {
     padding: 0 !important;
     padding-top: 16px !important;
     max-width: none;
-    grid-column: unset;
-    grid-row: unset;
+    grid-column: unset !important;
+    grid-row: unset !important;
   }
-  .wp-block-media-text.is-stacked-on-mobile.alignfull > .wp-block-media-text__content {
+  .wp-block-media-text.alignfull > .wp-block-media-text__content {
     left: 0%;
     top: -20%;
     max-width: none;
@@ -2069,6 +2104,12 @@ figure.aligncenter {
     margin-right: 16px;
     margin-left: 16px;
     margin-bottom: 16px;
+  }
+  .wp-block-media-text.captionmode .wp-block-media-text__content {
+    max-width: unset;
+    position: relative;
+    left: 0;
+    bottom: 10%;
   }
 }
 
@@ -2774,48 +2815,45 @@ p + ol {
   }
 }
 
-.wp-block-table,
-.wp-block-advgb-table {
-  border: 1px solid #000000;
-}
 .wp-block-table thead,
 .wp-block-advgb-table thead {
   border-bottom: none !important;
 }
 .wp-block-table td,
 .wp-block-advgb-table td {
-  padding: 10px 20px !important;
-  border: 1px solid #000 !important;
+  padding: 16px !important;
+  border: 1px solid #A0A0A0 !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
 }
-.wp-block-table td:last-child,
-.wp-block-advgb-table td:last-child {
-  border-right: 0px !important;
+.wp-block-table td:first-child,
+.wp-block-advgb-table td:first-child {
+  background: #9ECDE8;
+  font-size: 16px;
+  font-weight: 600;
 }
 .wp-block-table th,
 .wp-block-advgb-table th {
-  background: #10204E;
+  background: #002B49;
   text-transform: none;
   color: #fff;
   border-top: 0 !important;
   border-bottom: 0px !important;
-  padding: 15px 20px !important;
+  padding: 16px !important;
   border: 0 !important;
-  font-weight: 700;
-  font-size: 21px;
+  font-weight: 600;
+  font-size: 16px;
   text-align: center;
-  border-right: 1px solid #ffffff !important;
+  border-right: 1px solid #A0A0A0 !important;
 }
-.wp-block-table th:last-child,
-.wp-block-advgb-table th:last-child {
-  border-right: 0px;
+.wp-block-table th:first-child,
+.wp-block-advgb-table th:first-child {
+  visibility: hidden;
 }
-.wp-block-table tbody tr:nth-child(2n+1),
-.wp-block-advgb-table tbody tr:nth-child(2n+1) {
-  background: #EFEFEF !important;
-}
-.wp-block-table tbody tr:nth-child(2n),
-.wp-block-advgb-table tbody tr:nth-child(2n) {
-  background: #fff !important;
+.wp-block-table tbody tr,
+.wp-block-advgb-table tbody tr {
+  background: #F5F5F5;
 }
 
 .kb-table {
@@ -2823,42 +2861,25 @@ p + ol {
 }
 .kb-table thead th {
   background: #002B49;
-  font-family: "Proxima Nova Th";
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 16px;
   color: #fff;
-  padding: 15px 24px !important;
-  border-right: 1px solid #fff;
+  padding: 16px !important;
+  border-right: 1px solid #A0A0A0;
 }
 .kb-table thead th p {
-  font-family: "Proxima Nova Th";
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 16px;
   color: #fff;
   margin-bottom: 0px;
 }
-.kb-table thead th:first-child {
-  border-radius: 5px 0px 0px 0px;
-}
-.kb-table thead th:last-child {
-  border-radius: 0px 5px 0px 0px;
-}
 .kb-table tbody td {
-  padding: 15px 24px !important;
-  background: #efefef;
-  border-right: 1px solid #504d49;
+  padding: 16px !important;
+  background: #F5F5F5;
+  border-right: 1px solid #A0A0A0;
 }
 .kb-table tbody td p {
   margin: 0px;
-}
-.kb-table tbody tr:last-child td:first-child {
-  border-radius: 0px 0px 5px 5px;
-}
-.kb-table tbody tr:last-child td:last-child {
-  border-radius: 0px 0px 5px 5px;
-}
-.kb-table tbody tr td:last-child {
-  border: 0;
 }
 
 .table-wrapper {
