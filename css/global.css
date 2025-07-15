@@ -2035,7 +2035,7 @@ figure.aligncenter {
   left: 0;
   max-width: 672px;
   grid-column: 1;
-  padding: 24px 24px;
+  padding: 24px 24px !important;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 16px;
   color: #fff;
@@ -2619,7 +2619,7 @@ p + ol {
 }
 .wp-block-kadence-accordion .kt-blocks-accordion-header {
   background: none !important;
-  padding: 16px;
+  padding: 16px !important;
   outline: none;
   border-bottom: 0.5px solid #A0A0A0 !important;
   background: #ffffff !important;
@@ -2640,9 +2640,6 @@ p + ol {
   max-width: 900px !important;
   margin: 0 auto;
 }
-.wp-block-kadence-accordion .kt-accordion-inner-wrap {
-  row-gap: 15px !important;
-}
 .wp-block-kadence-accordion .kt-blocks-accordion-icon-trigger {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none"><path d="M16.125 6.64844C16.125 6.025 15.6234 5.52344 15 5.52344C14.3766 5.52344 13.875 6.025 13.875 6.64844V14.1484H6.375C5.75156 14.1484 5.25 14.65 5.25 15.2734C5.25 15.8969 5.75156 16.3984 6.375 16.3984H13.875V23.8984C13.875 24.5219 14.3766 25.0234 15 25.0234C15.6234 25.0234 16.125 24.5219 16.125 23.8984V16.3984H23.625C24.2484 16.3984 24.75 15.8969 24.75 15.2734C24.75 14.65 24.2484 14.1484 23.625 14.1484H16.125V6.64844Z" fill="%23404040"/></svg>');
   background-repeat: no-repeat;
@@ -2661,7 +2658,7 @@ p + ol {
 .wp-block-kadence-tabs {
   max-width: 900px !important;
 }
-.wp-block-kadence-tabs.alignwide {
+.wp-block-kadence-tabs.alignwide, .alignwide > .wp-block-kadence-tabs {
   max-width: 1200px !important;
 }
 .wp-block-kadence-tabs .kt-tabs-wrap {
@@ -2678,7 +2675,6 @@ p + ol {
   margin-left: auto;
   margin-right: auto;
   border-bottom: 0;
-  max-width: 900px;
 }
 @media (max-width: 768px) {
   .wp-block-kadence-tabs .kt-tabs-wrap .kt-tabs-title-list {
@@ -2693,8 +2689,10 @@ p + ol {
   background: var(--Grayscale-Gray-50, #f5f5f5);
 }
 .wp-block-kadence-tabs .kt-tabs-wrap .kt-title-item {
-  margin-right: 4px !important;
   border: 0 !important;
+}
+.wp-block-kadence-tabs .kt-tabs-wrap .kt-title-item:not(:last-child) {
+  margin-right: 4px !important;
 }
 .wp-block-kadence-tabs .kt-tabs-wrap .kt-title-item .kt-tab-title {
   color: #ffffff !important;
@@ -2829,7 +2827,7 @@ p + ol {
 }
 .wp-block-table td:first-child,
 .wp-block-advgb-table td:first-child {
-  background: #9ECDE8;
+  background: #9ecde8;
   font-size: 16px;
   font-weight: 600;
 }
