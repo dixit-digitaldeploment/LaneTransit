@@ -853,19 +853,19 @@ $route-groups: (
         color: $primary !important;
         position: relative;
         &::before {
-          content: "";
-          position: absolute;
-          bottom: 0px;
-          left: 10px;
-          right: 10px;
-          width: calc(100% - 20px);
-          height: 5px;
-          background: $red;
-          @media (max-width: 1199.9px) {
-            left: 0px;
-            right: 0px;
-            width: calc(100% - 0px);
-          }
+          // content: "";
+          // position: absolute;
+          // bottom: 0px;
+          // left: 10px;
+          // right: 10px;
+          // width: calc(100% - 20px);
+          // height: 5px;
+          // background: $red;
+          // @media (max-width: 1199.9px) {
+          //   left: 0px;
+          //   right: 0px;
+          //   width: calc(100% - 0px);
+          // }
         }
       }
     }
@@ -890,8 +890,8 @@ $route-groups: (
     color: #000 !important;
     padding: 4px;
     border: 0.5px solid var(--Grayscale-Gray-400, #a0a0a0);
-    background-color: var(--Grayscale-White, #fff);
-    backdrop-filter: blur(2px);
+    background-color: transparent;
+    // backdrop-filter: blur(2px);
     border-radius: 4px;
     // padding-left: 30px;
     // padding-right: 20px;
@@ -914,6 +914,8 @@ $route-groups: (
   > div {
     display: flex;
     position: relative;
+    background-color: #fff;
+    z-index: 0;
     &:after {
       content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M9.99998 13.6031L10.1781 13.425L15.6781 7.92501L15.8562 7.74688L15.5 7.39688L15.3218 7.57501L9.99998 12.8969L4.6781 7.57188L4.49998 7.39688L4.14685 7.75001L4.32498 7.92813L9.82498 13.4281L10.0031 13.6063L9.99998 13.6031Z" fill="black"/></svg>');
       position: absolute;
@@ -921,6 +923,7 @@ $route-groups: (
       right: 5px;
       top: 50%;
       transform: translateY(-50%);
+      z-index: -1;
     }
   }
 }
@@ -980,7 +983,7 @@ $route-groups: (
   }
   .carousel-caption {
     position: absolute;
-    width: 650px;
+    width: 75%;
     bottom: 20%;
     z-index: 9;
     margin: 0 auto;
@@ -1058,7 +1061,7 @@ $route-groups: (
     }
   }
   // for full width
-  .wp-block-media-text {
+  .wp-block-media-text.alignfull {
     box-sizing: border-box;
     direction: ltr;
     display: grid;
@@ -1085,6 +1088,7 @@ $route-groups: (
         max-width: unset;
         vertical-align: middle;
         width: 100%;
+        height: 712px;
       }
     }
     > .wp-block-media-text__content {
@@ -1109,6 +1113,9 @@ $route-groups: (
         grid-template-columns: 100% !important;
         > .wp-block-media-text__media {
           margin-right: 0px !important;
+          img {
+            height: 450px;
+          }
         }
         > .wp-block-media-text__content {
           left: 0%;
@@ -1116,6 +1123,10 @@ $route-groups: (
           grid-column: unset;
           grid-row: unset;
           padding: 0 !important;
+          top: 0;
+          background: none;
+          margin-left: 16px;
+          margin-right: 16px;
         }
         .tripPlanner_wrap {
           position: unset;
@@ -1128,6 +1139,9 @@ $route-groups: (
     }
     @media screen and (max-width: 767px) {
       &.is-stacked-on-mobile {
+        > .wp-block-media-text__content {
+          margin: 0;
+        }
         .tripPlanner_wrap {
           .nav-item {
             margin-bottom: -10px;
@@ -1239,6 +1253,7 @@ $route-groups: (
     padding: 32px;
     background: #f5f5f5;
     border-radius: 0px 0px 16px 16px;
+    margin-top: -2px;
     label {
       // font-weight: 700;
     }
@@ -1939,6 +1954,17 @@ $route-groups: (
       }
     }
   }
+  .foot_col {
+    p {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+  }
+  .gform_wrapper.gravity-theme .gform_footer {
+    justify-content: start;
+  }
   @include xl {
     .container-fluid {
       padding-left: 50px;
@@ -1985,6 +2011,10 @@ $route-groups: (
       img {
       }
       &:hover {
+        img {
+          filter: brightness(0) saturate(100%) invert(34%) sepia(22%) saturate(25%) hue-rotate(8deg) brightness(104%)
+            contrast(90%);
+        }
         // background: $secondary;
       }
       .menu-image-title {
@@ -2278,10 +2308,11 @@ $route-groups: (
 
 //404
 .no-found-info {
-  padding: 120px 0px 120px 0px;
+  padding: 80px 0px 80px 0px;
   text-align: center;
-  max-width: 800px;
+  max-width: 1360px;
   margin: auto;
+
   .larger-text {
     margin-bottom: 40px;
   }
@@ -2291,10 +2322,18 @@ $route-groups: (
   h2 {
     font-size: 21px;
   }
+  p {
+    margin: 0;
+  }
   .btn_sm {
-    min-width: 140px;
-    margin-top: 15px;
-    padding: 8px 20px;
+    // min-width: 140px;
+    margin: 40px 0 0;
+    // padding: 8px 20px;
+  }
+  .seprator{
+    background: #a0a0a0;
+    height: 0.5px;
+    margin: 40px 0 0;
   }
 }
 /* result page start */
@@ -2331,12 +2370,12 @@ $route-groups: (
     }
     .innericon {
       background-image: url(../img/search-blue.svg) !important;
-      background-size: 26px !important;
+      background-size: 20px !important;
       svg {
         display: none !important;
       }
       &:hover {
-        @include img-red;
+        // @include img-red;
       }
     }
     .promagnifier {
@@ -2350,15 +2389,43 @@ $route-groups: (
     .asp_main_container {
       overflow: visible !important;
       border-radius: 0;
-      width: 325px;
+      // width: 325px;
       box-shadow: none !important;
     }
+    .d-flex {
+      border-radius: 6px !important;
+      border: 0.5px solid var(--Grayscale-Gray-400, #a0a0a0) !important;
+      background: var(--Grayscale-White, #fff);
+      padding: 8px;
+      align-items: center;
+      gap: 0;
+      max-width: 315px;
+      width: 315px;
+      margin: auto;
+      > span {
+        color: #404040;
+        margin: 0;
+        padding: 0 8px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        border-right: 1px solid #a0a0a0;
+        display: block;
+      }
+    }
     .probox {
-      border: 1px solid #000 !important;
-      overflow: visible !important;
-      height: auto;
-      width: 185px;
-      background: #fff !important;
+      // border: 1px solid #000 !important;
+      // overflow: visible !important;
+      // height: auto;
+      // width: 185px;
+      // background: #fff !important;
+      border: none !important;
+      .promagnifier .innericon {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M14 8.50137C14 7.17528 13.4732 5.90351 12.5355 4.96583C11.5979 4.02815 10.3261 3.50137 9 3.50137C7.67392 3.50137 6.40215 4.02815 5.46447 4.96583C4.52678 5.90351 4 7.17528 4 8.50137C4 9.82745 4.52678 11.0992 5.46447 12.0369C6.40215 12.9746 7.67392 13.5014 9 13.5014C10.3261 13.5014 11.5979 12.9746 12.5355 12.0369C13.4732 11.0992 14 9.82745 14 8.50137ZM13.0344 13.5982C11.9281 14.4764 10.525 15.0014 9 15.0014C5.40937 15.0014 2.5 12.092 2.5 8.50137C2.5 4.91074 5.40937 2.00137 9 2.00137C12.5906 2.00137 15.5 4.91074 15.5 8.50137C15.5 10.0264 14.975 11.4295 14.0969 12.5357L18.2812 16.7201C18.575 17.0139 18.575 17.4889 18.2812 17.7795C17.9875 18.0701 17.5125 18.0732 17.2219 17.7795L13.0344 13.5982Z" fill="%23202020"/></svg>') !important;
+        width: 20px !important;
+        // height: 20px !important;
+        background-repeat: no-repeat;
+      }
     }
     .proinput input.orig {
       font-size: 14px !important;
@@ -2390,7 +2457,7 @@ $route-groups: (
     .promagnifier {
       background: none !important;
       border-radius: 0px 0px 0px 0px !important;
-      width: 40px !important;
+      // width: 40px !important;
       &:hover {
         svg {
         }
@@ -2401,7 +2468,7 @@ $route-groups: (
     .promagnifier,
     .innericon,
     .proclose {
-      height: 50px !important;
+      // height: 50px !important;
     }
   }
   .form-control {
@@ -2540,7 +2607,7 @@ $route-groups: (
   }
   &:hover {
     h3 {
-      color: $secondary;
+      color: $primary;
       text-decoration: underline;
     }
   }
@@ -3033,8 +3100,13 @@ p.date {
         align-items: center;
         // padding: 16px;
         background: $white;
-        &::before {
-          content: "";
+        // &::before {
+        //   content: "";
+        //   width: 30px;
+        //   height: 30px;
+        //   margin-right: 16px;
+        // }
+        > img {
           width: 30px;
           height: 30px;
           margin-right: 16px;
@@ -3115,42 +3187,42 @@ p.date {
           }
         }
       }
-      &.info {
-        .acc__title {
-          &::before {
-            background-image: url("../img/info.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-          }
-        }
-      }
-      &.no-service {
-        .acc__title {
-          &::before {
-            background-image: url("../img/no-service.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-          }
-        }
-      }
-      &.reduce-service {
-        .acc__title {
-          &::before {
-            background-image: url("../img/reduce-service.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-          }
-        }
-      }
-      &.weather-alert {
-        .acc__title {
-          &::before {
-            background-image: url("../img/weather-alert.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-          }
-        }
-      }
+      // &.info {
+      //   .acc__title {
+      //     &::before {
+      //       background-image: url("../img/info.svg");
+      //       background-size: contain;
+      //       background-repeat: no-repeat;
+      //     }
+      //   }
+      // }
+      // &.no-service {
+      //   .acc__title {
+      //     &::before {
+      //       background-image: url("../img/no-service.svg");
+      //       background-size: contain;
+      //       background-repeat: no-repeat;
+      //     }
+      //   }
+      // }
+      // &.reduce-service {
+      //   .acc__title {
+      //     &::before {
+      //       background-image: url("../img/reduce-service.svg");
+      //       background-size: contain;
+      //       background-repeat: no-repeat;
+      //     }
+      //   }
+      // }
+      // &.weather-alert {
+      //   .acc__title {
+      //     &::before {
+      //       background-image: url("../img/weather-alert.svg");
+      //       background-size: contain;
+      //       background-repeat: no-repeat;
+      //     }
+      //   }
+      // }
     }
   }
 }
@@ -4293,8 +4365,8 @@ ul.icons {
     }
   }
 }
-// plan and progress template
-.plan-and-project-template {
+// plan and project template
+.page-template-template-plan-project {
   .img_text_card_row {
     .text-img-wrap {
       .img_card_block {
@@ -4306,6 +4378,7 @@ ul.icons {
       .category {
         background: #9ecde8;
       }
+
       .progress {
         padding: 4px 8px;
         font-size: 14px;
@@ -4338,6 +4411,36 @@ ul.icons {
 
 // plan and progress template end
 
+// single-plans_and_projects
+.single-plans_and_projects {
+  .progress {
+    padding: 4px 8px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: auto;
+    width: max-content;
+    border-radius: 16px;
+    background: $white;
+    border: 2px solid $gray-400;
+    // margin-bottom: 16px;
+    &.proposed {
+      background: $gray-100;
+      border-color: $gray-400;
+    }
+    &.active {
+      border-color: #f69944;
+    }
+    &.ongoing {
+      border-color: #0081c6;
+    }
+    &.complete {
+      border-color: #7bc043;
+    }
+  }
+}
+// single-plans_and_projects end
 //Meeting
 .meeting-section {
   .acc__card.info {
@@ -4973,33 +5076,38 @@ ul.icons {
   padding-top: 30px;
 }
 
-.addeventatc.add-to-cal {
-  color: $primary !important;
-  font-weight: 700;
+.addeventatc.addtocal {
+  color: #303030 !important;
+  font-weight: 400;
   font-size: 16px !important;
   box-shadow: none !important;
   background: none !important;
+  padding: 0;
   padding-left: 30px !important;
-  font-family: "Helvetica Neue";
   text-decoration: underline !important;
   z-index: 9;
   margin-bottom: 10px;
   text-shadow: none;
+  display: block;
+  margin-bottom: 10px;
+  @include roboto;
   &::before {
     content: "";
     position: absolute;
-    background-image: url(../img/calendar-days.svg);
-    background-repeat: no-repeat;
-    width: 21px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.75 2.75V2H6.25V2.75V4H3V6.5V8V16.5V18H4.5H15.5H17V16.5V8V6.5V4H13.75V2.75V2H12.25V2.75V4H7.75V2.75ZM4.5 8H15.5V16.5H4.5V8Z" fill="%23404040"/></svg>');
+    background-size: cover;
+    width: 24px;
     height: 24px;
     background-repeat: no-repeat;
     left: 0;
-    top: 8px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   &:hover {
-    color: $red !important;
+    color: $black !important;
     &:before {
-      @include img-red;
+      filter: brightness(0) saturate(100%) invert(0%) sepia(96%) saturate(14%) hue-rotate(273deg) brightness(99%)
+        contrast(104%);
     }
   }
 }
@@ -5099,13 +5207,38 @@ button.is-pressed {
 }
 
 //general form styles
+.gfield {
+  display: flex;
+  align-items: center;
+  border: 0.5px solid #a0a0a0;
+  border-radius: 6px !important;
+  background-color: $white;
+  overflow: hidden;
+  .gform-field-label {
+    margin: 0 !important;
+    padding: 0 8px !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    min-width: 39px;
+    border-right: 1px solid #a0a0a0;
+    color: $gray-600;
+  }
+  .ginput_container {
+    flex: 1;
+    input,
+    select {
+      border: none !important;
+    }
+  }
+}
 .gform-field-label {
   display: block;
   font-weight: 700;
   padding-bottom: 10px;
   padding-top: 5px;
   margin-bottom: 0px;
-  @include proxima;
+  // @include proxima;
 }
 
 legend.gform-field-label {
@@ -5133,8 +5266,8 @@ legend.gform-field-label {
 div.asp_r.asp_r_1.vertical {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25) !important;
   border: 0px !important;
-  left: auto !important;
-  right: 40px !important;
+  // left: auto !important;
+  // right: 40px !important;
 }
 
 .ajaxsearchpro {
@@ -5153,7 +5286,29 @@ div.asp_r.asp_r_1.vertical {
     @include proxima;
   }
 }
-
+.search .main_search {
+  .search_box {
+    > span {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 16px;
+      display: block;
+    }
+  }
+  .ajaxsearchpro {
+    // .probox {
+    //   border-radius: 6px !important;
+    //   border: 0.5px solid var(--Grayscale-Gray-400, #a0a0a0) !important;
+    //   background: var(--Grayscale-White, #fff);
+    //   .promagnifier .innericon {
+    //     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M14 8.50137C14 7.17528 13.4732 5.90351 12.5355 4.96583C11.5979 4.02815 10.3261 3.50137 9 3.50137C7.67392 3.50137 6.40215 4.02815 5.46447 4.96583C4.52678 5.90351 4 7.17528 4 8.50137C4 9.82745 4.52678 11.0992 5.46447 12.0369C6.40215 12.9746 7.67392 13.5014 9 13.5014C10.3261 13.5014 11.5979 12.9746 12.5355 12.0369C13.4732 11.0992 14 9.82745 14 8.50137ZM13.0344 13.5982C11.9281 14.4764 10.525 15.0014 9 15.0014C5.40937 15.0014 2.5 12.092 2.5 8.50137C2.5 4.91074 5.40937 2.00137 9 2.00137C12.5906 2.00137 15.5 4.91074 15.5 8.50137C15.5 10.0264 14.975 11.4295 14.0969 12.5357L18.2812 16.7201C18.575 17.0139 18.575 17.4889 18.2812 17.7795C17.9875 18.0701 17.5125 18.0732 17.2219 17.7795L13.0344 13.5982Z" fill="%23202020"/></svg>');
+    //     width: 20px !important;
+    //     height: 20px !important;
+    //     background-repeat: no-repeat;
+    //   }
+    // }
+  }
+}
 div.asp_r.asp_r_1.vertical .item {
   border-bottom: 1px solid #000 !important;
 }
@@ -5252,8 +5407,8 @@ div.asp_r.asp_r_1.vertical .item {
 div.asp_r.asp_r_1.vertical {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25) !important;
   border: 0px !important;
-  left: auto !important;
-  right: 40px !important;
+  // left: auto !important;
+  // right: 40px !important;
 }
 /*page builder map*/
 
@@ -5771,7 +5926,17 @@ div.asp_r.asp_r_1.vertical {
     left: 0px;
   }
 }
-
+.event_wrap {
+  &.main_content > * {
+    max-width: 1350px;
+  }
+  .wp-block-group > * {
+    max-width: 1350px;
+  }
+  .thumb .owl-carousel .owl-item img {
+    height: 440px;
+  }
+}
 //Leadership page
 .page-id-36577 {
   .expand_img img {

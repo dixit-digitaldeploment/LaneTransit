@@ -424,19 +424,29 @@ strong {
 }
 
 .gform_button {
-  background: #F69944 !important;
-  color: #ffffff !important;
+  background: #f5f5f5 !important;
+  color: #000 !important;
   font-size: 18px !important;
-  font-weight: 700;
+  font-weight: 500;
   position: relative;
-  padding: 10px 15px;
+  padding: 10px 16px;
   text-transform: uppercase;
-  border-radius: 0px !important;
-  border: 0;
+  border: 2px solid transparent;
+  border-radius: 8px !important;
+  line-height: normal;
 }
 .gform_button:hover {
-  background: #C50105 !important;
+  border-color: #0081c6;
+  background: #9ecde8 !important;
   text-decoration: none !important;
+}
+.gform_button img {
+  margin-right: 10px;
+}
+.gform_button:focus-visible {
+  color: #fff;
+  background: #000000;
+  outline: 2px solid #9837ff;
 }
 
 #wpbody-content .gform_button {
@@ -1115,8 +1125,12 @@ label.title {
   font-weight: 400;
   padding: 6px 8px;
   font-family: "Roboto", sans-serif;
+  display: inline-block;
   left: 0px;
   margin-bottom: 8px;
+}
+.img_text_card_row .text-img-wrap .category + .category {
+  margin-left: 5px;
 }
 .img_text_card_row .text-img-wrap.no-img {
   padding-top: 30px;
@@ -3070,17 +3084,24 @@ p + ol {
 }
 
 .wp-pagenavi,
-.pagination {
+.pagination ul,
+.pagination,
+.custom-pagination > ul {
   padding-top: 30px;
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: center;
+  list-style: none;
 }
 .wp-pagenavi a,
 .wp-pagenavi span,
+.pagination ul a,
+.pagination ul span,
 .pagination a,
-.pagination span {
+.pagination span,
+.custom-pagination > ul a,
+.custom-pagination > ul span {
   border: 0;
   color: #000000;
   font-weight: normal;
@@ -3091,71 +3112,139 @@ p + ol {
   text-decoration: none !important;
   padding: 2px 4px;
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  min-width: 24px;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid transparent;
 }
-.wp-pagenavi .next.page-numbers,
-.wp-pagenavi .prev.page-numbers,
-.pagination .next.page-numbers,
-.pagination .prev.page-numbers {
-  display: none;
+.wp-pagenavi a:hover:not(span),
+.wp-pagenavi span:hover:not(span),
+.pagination ul a:hover:not(span),
+.pagination ul span:hover:not(span),
+.pagination a:hover:not(span),
+.pagination span:hover:not(span),
+.custom-pagination > ul a:hover:not(span),
+.custom-pagination > ul span:hover:not(span) {
+  border-radius: 4px;
+  border: 1px solid var(--Brand-colors-Light-blue, #9ecde8);
+  background: var(--Grayscale-Gray-100, #f0f0f0);
+}
+.wp-pagenavi li:last-child > a::before,
+.pagination ul li:last-child > a::before,
+.pagination li:last-child > a::before,
+.custom-pagination > ul li:last-child > a::before {
+  content: "";
+  background: var(--Grayscale-Gray-400, #a0a0a0);
+  width: 1px;
+  height: 20px;
+  position: absolute;
+  left: -5px;
+}
+.wp-pagenavi li:first-child > a::after,
+.pagination ul li:first-child > a::after,
+.pagination li:first-child > a::after,
+.custom-pagination > ul li:first-child > a::after {
+  content: "";
+  background: var(--Grayscale-Gray-400, #a0a0a0);
+  width: 1px;
+  height: 20px;
+  position: absolute;
+  right: -5px;
+}
+.wp-pagenavi li.active span,
+.pagination ul li.active span,
+.pagination li.active span,
+.custom-pagination > ul li.active span {
+  color: #fff;
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid var(--Brand-colors-Light-blue, #002b49);
+  background: var(--Brand-colors-Dark-blue, #002b49);
 }
 .wp-pagenavi span.current,
-.pagination span.current {
-  font-weight: bold;
-  color: #1e2859;
+.pagination ul span.current,
+.pagination span.current,
+.custom-pagination > ul span.current {
+  color: #fff;
   position: relative;
-}
-.wp-pagenavi span.current::after,
-.pagination span.current::after {
-  content: "";
-  position: absolute;
-  bottom: 3px;
-  width: calc(100% - 4px);
-  left: 3px;
-  height: 2px;
-  background: #1e2859;
-  right: 2px;
+  border-radius: 4px;
+  border: 1px solid var(--Brand-colors-Light-blue, #002b49);
+  background: var(--Brand-colors-Dark-blue, #002b49);
 }
 .wp-pagenavi a:hover,
-.pagination a:hover {
+.pagination ul a:hover,
+.pagination a:hover,
+.custom-pagination > ul a:hover {
   font-weight: 700;
   color: #002B49;
 }
 .wp-pagenavi .nextpostslink,
-.pagination .nextpostslink {
+.pagination ul .nextpostslink,
+.pagination .nextpostslink,
+.custom-pagination > ul .nextpostslink {
   position: relative;
   font-size: 0px;
   visibility: visible;
 }
 .wp-pagenavi .nextpostslink::after,
-.pagination .nextpostslink::after {
+.pagination ul .nextpostslink::after,
+.pagination .nextpostslink::after,
+.custom-pagination > ul .nextpostslink::after {
   /* content: 'NEXT';
             font-size: 15px;
             color: $black;*/
 }
 .wp-pagenavi .nextpostslink:hover::after,
-.pagination .nextpostslink:hover::after {
+.pagination ul .nextpostslink:hover::after,
+.pagination .nextpostslink:hover::after,
+.custom-pagination > ul .nextpostslink:hover::after {
   font-weight: bold;
 }
 .wp-pagenavi .previouspostslink,
-.pagination .previouspostslink {
+.pagination ul .previouspostslink,
+.pagination .previouspostslink,
+.custom-pagination > ul .previouspostslink {
   position: relative;
   font-size: 0px;
   visibility: visible;
 }
 .wp-pagenavi .previouspostslink:after,
-.pagination .previouspostslink:after {
+.pagination ul .previouspostslink:after,
+.pagination .previouspostslink:after,
+.custom-pagination > ul .previouspostslink:after {
   /* content: 'PREV';
             font-size: 15px;
             color: $black;*/
 }
 .wp-pagenavi .previouspostslink:hover::after,
-.pagination .previouspostslink:hover::after {
+.pagination ul .previouspostslink:hover::after,
+.pagination .previouspostslink:hover::after,
+.custom-pagination > ul .previouspostslink:hover::after {
   font-weight: bold;
+}
+.wp-pagenavi li:first-child > a,
+.wp-pagenavi li:last-child > a,
+.pagination ul li:first-child > a,
+.pagination ul li:last-child > a,
+.pagination li:first-child > a,
+.pagination li:last-child > a,
+.custom-pagination > ul li:first-child > a,
+.custom-pagination > ul li:last-child > a {
+  font-weight: 400;
+  text-decoration: underline !important;
 }
 .wp-pagenavi .next-page,
 .wp-pagenavi .nextpostslink,
+.pagination ul .next-page,
+.pagination ul .nextpostslink,
 .pagination .next-page,
-.pagination .nextpostslink {
+.pagination .nextpostslink,
+.custom-pagination > ul .next-page,
+.custom-pagination > ul .nextpostslink {
   font-size: 0px;
   background-image: url(../img/angle-right-blue.svg);
   width: 12px;
@@ -3166,8 +3255,12 @@ p + ol {
 }
 .wp-pagenavi .previous-page,
 .wp-pagenavi .previouspostslink,
+.pagination ul .previous-page,
+.pagination ul .previouspostslink,
 .pagination .previous-page,
-.pagination .previouspostslink {
+.pagination .previouspostslink,
+.custom-pagination > ul .previous-page,
+.custom-pagination > ul .previouspostslink {
   font-size: 0px;
   background-image: url(../img/angle-right-blue.svg);
   width: 12px;
@@ -3178,19 +3271,29 @@ p + ol {
   top: 1px;
 }
 .wp-pagenavi .pages,
-.pagination .pages {
+.pagination ul .pages,
+.pagination .pages,
+.custom-pagination > ul .pages {
   display: none;
 }
 .wp-pagenavi .last,
 .wp-pagenavi .first,
+.pagination ul .last,
+.pagination ul .first,
 .pagination .last,
-.pagination .first {
+.pagination .first,
+.custom-pagination > ul .last,
+.custom-pagination > ul .first {
   display: none;
 }
 .wp-pagenavi span.next-prev-btn.previous-page,
 .wp-pagenavi span.next-prev-btn.next-page,
+.pagination ul span.next-prev-btn.previous-page,
+.pagination ul span.next-prev-btn.next-page,
 .pagination span.next-prev-btn.previous-page,
-.pagination span.next-prev-btn.next-page {
+.pagination span.next-prev-btn.next-page,
+.custom-pagination > ul span.next-prev-btn.previous-page,
+.custom-pagination > ul span.next-prev-btn.next-page {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7430%) hue-rotate(280deg) brightness(133%) contrast(70%);
 }
 
