@@ -1631,6 +1631,7 @@ $route-groups: (
     &:hover {
       .navblock_icon {
         // background: $primary;
+        transform: scale(1.1);
         img {
           // @include img-white;
         }
@@ -1645,6 +1646,7 @@ $route-groups: (
   }
   .navblock_icon {
     margin-bottom: 15px;
+    transition: all 0.2s ease-in;
   }
   h4,
   h3 {
@@ -2330,7 +2332,7 @@ $route-groups: (
     margin: 40px 0 0;
     // padding: 8px 20px;
   }
-  .seprator{
+  .seprator {
     background: #a0a0a0;
     height: 0.5px;
     margin: 40px 0 0;
@@ -4597,6 +4599,47 @@ ul.icons {
   }
 }
 
+// event page
+.eventWrapper {
+  .img_text_card_row {
+    .text-img-wrap {
+      display: block;
+      .date {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+.tribeFilter {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  margin-bottom: 24px;
+  .prevNext {
+    button {
+      background: none;
+      border: none;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .currentday {
+    padding: 8px;
+    line-height: 1;
+  }
+  .flatpickr {
+    input {
+      border: none;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      color: $gray-900;
+    }
+  }
+}
 //Event Details
 .event-detail {
   padding-top: 70px;
