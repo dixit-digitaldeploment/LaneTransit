@@ -324,6 +324,14 @@
                 <option value="">Numerical (Ascending)</option>
               </select>
             </div>
+            <div class="reset-btn">
+              <button type="reset" class="btn_sm tertiary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                  <path
+                    d="M3.75 9.5C3.33437 9.5 3 9.16563 3 8.75V4.25C3 3.83437 3.33437 3.5 3.75 3.5C4.16562 3.5 4.5 3.83437 4.5 4.25V6.75313L5.125 6.01875C6.40625 4.48125 8.34062 3.5 10.5 3.5C14.3656 3.5 17.5 6.63438 17.5 10.5C17.5 14.3656 14.3656 17.5 10.5 17.5C8.925 17.5 7.46875 16.9781 6.3 16.1C5.96875 15.85 5.90313 15.3813 6.15 15.05C6.39688 14.7188 6.86875 14.6531 7.2 14.9C8.11875 15.5906 9.25938 16 10.5 16C13.5375 16 16 13.5375 16 10.5C16 7.4625 13.5375 5 10.5 5C8.80312 5 7.28438 5.76875 6.275 6.98125L6.27187 6.9875L5.40937 8H8.25C8.66563 8 9 8.33437 9 8.75C9 9.16563 8.66563 9.5 8.25 9.5H3.75Z"
+                    fill="#202020" />
+                </svg> Reset Filters</button>
+            </div>
           </div>
         </div>
         <div class="col-md-8">
@@ -389,7 +397,7 @@
                     </div>
                     <h3>This is the Title of an Event</h3>
                     <span class="date">
-                     March 26, 2025 | 3:00 p.m
+                      March 26, 2025 | 3:00 p.m
                     </span>
                     <p>
                       Culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
@@ -455,12 +463,24 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="js/custom.js "></script>
   <script>
-    $(".flatpickr").flatpickr(
+    jQuery(".flatpickr").flatpickr(
       {
         wrap: true,
         mode: "range",
         minDate: "today",
-        dateFormat: "Y-m-d"
+        dateFormat: "Y-m-d",
+        onChange: function (selectedDates, dateStr, instance) {
+          if (selectedDates.length === 2) {
+            const start = DateTime.fromJSDate(selectedDates[0], { zone: 'America/New_York' }).toFormat('yyyy-MM-dd');
+            const end = DateTime.fromJSDate(selectedDates[1], { zone: 'America/New_York' }).toFormat('yyyy-MM-dd');
+            instance._input.value = `${start} to ${end}`;
+          } else if (selectedDates.length === 1) {
+            const single = DateTime.fromJSDate(selectedDates[0], { zone: 'America/New_York' }).toFormat('yyyy-MM-dd');
+            instance._input.value = single;
+          } else {
+            instance._input.value = "";
+          }
+        }
       }
     );
   </script>
