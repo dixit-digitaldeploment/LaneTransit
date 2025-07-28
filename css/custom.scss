@@ -6556,6 +6556,11 @@ div.asp_r.asp_r_1.vertical {
       height: 0.5px;
       margin: 24px 0;
     }
+    .h3{
+      &:has(+p){
+        margin: 0;
+      }
+    }
     .summaryTable {
       .item {
         display: flex;
@@ -6620,6 +6625,34 @@ div.asp_r.asp_r_1.vertical {
             margin: 0;
           }
         }
+      }
+    }
+    .group {
+      margin-bottom: 32px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      .input-group + .field {
+        margin-top: 16px;
+      }
+      .seprator {
+        background: var(--Grayscale-Gray-400, #a0a0a0);
+        height: 0.5px;
+        margin: 32px 0;
+      }
+      &.shipping,
+      &.pickup {
+        display: none;
+      }
+    }
+    &:has(input[value="shiptome"]:checked) {
+      .shipping {
+        display: block;
+      }
+    }
+    &:has(input[value="pickup"]:checked) {
+      .pickup {
+        display: block;
       }
     }
   }

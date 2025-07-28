@@ -665,6 +665,7 @@ input {
   &[type="radio"] {
     width: 16px;
     height: 16px;
+    border: 1px solid var(--Grayscale-Gray-900, #202020);
   }
   &[type="checkbox"] {
     width: 16px;
