@@ -5920,4 +5920,97 @@ div.asp_r.asp_r_1.vertical {
 .onlineStore .img_text_card_row .text-img-wrap .text_card_block .addtocart .addcart_btn {
   border: none;
   background: none;
+}
+
+.checkout .checkoutOptions {
+  margin-bottom: 16px;
+}
+.checkout .checkoutOptions .row {
+  --bs-gutter-x: 8px;
+  row-gap: 8px;
+}
+.checkout .checkoutOptions .box {
+  border-radius: 16px;
+  background: var(--Grayscale-Gray-50, #f5f5f5);
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.checkout .checkoutOptions .box .h6 {
+  margin-bottom: 8px;
+}
+.checkout .checkoutOptions .box .btn_sm {
+  display: block;
+  padding: 8px;
+  margin-top: auto;
+  width: 100%;
+}
+.checkout .orderSummary {
+  padding: 32px;
+  border-radius: 16px;
+  background: #F5F5F5;
+}
+.checkout .orderSummary .seprator {
+  background: #a0a0a0;
+  height: 0.5px;
+  margin: 24px 0;
+}
+.checkout .orderSummary .summaryTable .item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.checkout .orderSummary .summaryTable .item .h6 {
+  margin-bottom: 0px;
+}
+.checkout .orderSummary .summaryTable .item span {
+  color: #606060;
+}
+.checkout .orderSummary .summaryTable .item .detail {
+  flex: 1;
+}
+.checkout .orderSummary .summaryTable .item .price {
+  margin-left: auto;
+}
+.checkout .orderSummary .summaryTable + .seprator {
+  margin: 16px 0;
+}
+.checkout .orderSummary .note {
+  border: 1px solid var(--Grayscale-Gray-400, #a0a0a0);
+  background: var(--Grayscale-White, #fff);
+  padding: 8px;
+  margin-top: 32px;
+}
+.checkout .orderSummary .note p {
+  margin: 0;
+}
+.checkout .signinWrapper {
+  padding: 32px;
+  border-radius: 16px;
+  background: #F5F5F5;
+  margin-bottom: 16px;
+}
+.checkout .signinWrapper p {
+  margin-bottom: 24px;
+}
+.checkout .signinWrapper form .input-group.inlineLabel + .inlineLabel {
+  margin-top: 16px;
+}
+.checkout .signinWrapper form .d-flex {
+  margin-top: 16px;
+}
+.checkout .signinWrapper form input[type=submit] {
+  margin-top: 32px;
+}
+.checkout .signinWrapper form .field {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.checkout .signinWrapper form .field.field_width_half .inlineLabel {
+  width: 50%;
+  margin: 0;
 }/*# sourceMappingURL=custom.css.map */

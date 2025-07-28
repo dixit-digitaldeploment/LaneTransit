@@ -223,7 +223,7 @@ p.has-large-font-size {
 }
 
 a {
-  color: #002b49;
+  color: #303030;
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-thickness: 0.5px;
@@ -237,7 +237,7 @@ a:hover {
 }
 
 p a {
-  color: #002b49;
+  color: #303030;
 }
 p a:hover {
   color: #000000;

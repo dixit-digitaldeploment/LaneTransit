@@ -282,7 +282,8 @@ p.has-large-font-size {
 }
 
 a {
-  color: #002b49;
+  // color: #002b49;
+  color: $gray-800;
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-thickness: 0.5px;
@@ -297,7 +298,8 @@ a {
 
 p a {
   // text-decoration: underline;
-  color: #002b49;
+  // color: #002b49;
+  color: $gray-800;
   &:hover {
     color: $black;
     // text-decoration: underline;

@@ -6518,3 +6518,109 @@ div.asp_r.asp_r_1.vertical {
     }
   }
 }
+
+// checkout
+.checkout {
+  .checkoutOptions {
+    .row {
+      --bs-gutter-x: 8px;
+      row-gap: 8px;
+    }
+    .box {
+      border-radius: 16px;
+      background: var(--Grayscale-Gray-50, #f5f5f5);
+      padding: 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      .h6 {
+        margin-bottom: 8px;
+      }
+      .btn_sm {
+        display: block;
+        padding: 8px;
+        margin-top: auto;
+        width: 100%;
+      }
+    }
+    margin-bottom: 16px;
+  }
+  .orderSummary {
+    padding: 32px;
+    border-radius: 16px;
+    background: $gray-50;
+    .seprator {
+      background: #a0a0a0;
+      height: 0.5px;
+      margin: 24px 0;
+    }
+    .summaryTable {
+      .item {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+        .h6 {
+          margin-bottom: 0px;
+        }
+        span {
+          color: $gray-600;
+        }
+        .detail {
+          flex: 1;
+        }
+        .price {
+          margin-left: auto;
+        }
+      }
+      & + .seprator {
+        margin: 16px 0;
+      }
+    }
+    .note {
+      border: 1px solid var(--Grayscale-Gray-400, #a0a0a0);
+      background: var(--Grayscale-White, #fff);
+      padding: 8px;
+      margin-top: 32px;
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .signinWrapper {
+    padding: 32px;
+    border-radius: 16px;
+    background: $gray-50;
+    margin-bottom: 16px;
+    p {
+      margin-bottom: 24px;
+    }
+    form {
+      .input-group {
+        &.inlineLabel {
+          & + .inlineLabel {
+            margin-top: 16px;
+          }
+        }
+      }
+      .d-flex {
+        margin-top: 16px;
+      }
+      input[type="submit"] {
+        margin-top: 32px;
+      }
+      .field {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+        &.field_width_half {
+          .inlineLabel {
+            width: 50%;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
