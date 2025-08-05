@@ -218,7 +218,8 @@
   padding: 12px 16px;
   background: #002B49;
   text-align: center;
-  border: 0;
+  border: 2px solid transparent !important;
+  border-bottom: none !important;
   border-radius: 16px 16px 0px 0px !important;
   box-shadow: none;
   text-decoration: none;
@@ -227,13 +228,13 @@
   height: 100%;
 }
 .nav-tabs a:hover {
-  background: #f5f5f5;
-  color: #000;
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #9ecde8 !important;
 }
 .nav-tabs a.active {
+  color: #202020 !important;
   background: #f5f5f5 !important;
-  color: #000 !important;
-  border: none !important;
 }
 .nav-tabs a span {
   font-size: 16px;
@@ -826,6 +827,7 @@
   color: #000000;
   font-size: 18px;
   padding: 8px;
+  padding-right: 30px;
   line-height: normal;
 }
 .main_header .navbar-nav .megamenu a:hover {
@@ -1346,6 +1348,7 @@
   right: -22px;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 9;
 }
 .tripPlanner .tab-content .plan_trip .form-container #leave {
   margin-bottom: 16px;
@@ -1374,6 +1377,18 @@
   border-right: 1px solid;
   display: flex;
   align-items: center;
+}
+.tripPlanner .tab-content .service_alert:has([style*="color: #af5a00"]) .icon {
+  border-color: #af5a00 !important;
+}
+.tripPlanner .tab-content .service_alert:has([style*="color: #0081c6"]) .icon {
+  border-color: #0081c6 !important;
+}
+.tripPlanner .tab-content .service_alert:has([style*="color: #B20837"]) .icon {
+  border-color: #b20837 !important;
+}
+.tripPlanner .tab-content .service_alert:has([style*="color: #2A5D00"]) .icon {
+  border-color: #2a5d00 !important;
 }
 .tripPlanner .tab-content .service_alert .content p {
   margin-bottom: 10px;
@@ -1938,8 +1953,11 @@
   align-items: center;
   justify-content: center;
 }
+.footer-content .foot_media a img {
+  padding: 0 !important;
+}
 .footer-content .foot_media a:hover img {
-  filter: brightness(0) saturate(100%) invert(34%) sepia(22%) saturate(25%) hue-rotate(8deg) brightness(104%) contrast(90%);
+  filter: brightness(0) saturate(100%) invert(91%) sepia(46%) saturate(3646%) hue-rotate(175deg) brightness(102%) contrast(108%);
 }
 .footer-content .foot_media a .menu-image-title {
   display: none;
@@ -2013,7 +2031,7 @@
   display: none;
 }
 
-.trip-planner-template .main_wrapper > *.container {
+.trip-planner-template.main_wrapper > *.container {
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -2083,17 +2101,6 @@
   position: absolute;
   left: -30px;
 }
-.trip-planner-template .tripPlanner .tab-content .plan_trip .form-container .swap {
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  background: var(--Routes-EmX, #7bc043);
-  border: none;
-  position: absolute;
-  right: -22px;
-  top: 50%;
-  transform: translateY(-50%);
-}
 .trip-planner-template .tripPlanner .tab-content .plan_trip .form-container #leave {
   margin-bottom: 16px;
 }
@@ -2131,6 +2138,7 @@
   display: flex;
   justify-content: space-between;
   color: #404040;
+  gap: 10px;
 }
 .trip-planner-template .tripPlanner .tab-content .plan_trip .routes .accordion-item .accordion-button span {
   font-size: 16px;
@@ -2139,6 +2147,7 @@
 }
 .trip-planner-template .tripPlanner .tab-content .plan_trip .routes .accordion-item .accordion-button .route {
   display: flex;
+  flex-wrap: wrap;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -2432,6 +2441,7 @@
   margin-bottom: 15px;
   border-radius: 16px;
   padding: 16px;
+  border: 2px solid transparent;
 }
 .result_row h3,
 .result_row h4,
@@ -2454,11 +2464,9 @@
   color: #000000;
   font-weight: normal;
 }
-.result_row:hover h3 {
-  color: #002B49;
-  text-decoration: underline;
+.result_row:hover {
+  border-color: #9ecde8;
 }
-
 .filterBlocks {
   margin: 0 auto;
 }
@@ -2533,6 +2541,7 @@
 }
 .news-section .img_text_card_row .text-img-wrap .category {
   background: #9ecde8;
+  font-size: 16px;
 }
 .news-section .news_filter .type_filter {
   flex-direction: column;
@@ -2743,7 +2752,7 @@ p.date {
   background: var(--Brand-colors-Extra-light-blue, #9ecde8);
   color: #000;
   text-transform: none;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   padding: 6px 8px;
@@ -2782,16 +2791,27 @@ p.date {
   background: var(--Grayscale-White, #fff);
   padding: 24px;
 }
-.contact_wrapper .whitebox .gray-900 {
+.contact_wrapper .whitebox.gray-900 {
   background: #202020;
+}
+.contact_wrapper .whitebox.gray-900 a {
+  color: #fff;
+}
+.contact_wrapper .acf-map.testyy {
+  border-radius: 16px;
+  min-height: 396px;
+  height: 100%;
 }
 .main_wrapper .contact_wrapper .wp-block-columns {
   max-width: 1350px !important;
 }
-.contact_wrapper .wp-block-kadence-tabs {
+.contact_wrapper.alignwide .wp-block-kadence-tabs {
   max-width: 1350px !important;
 }
-.contact_wrapper .wp-block-kadence-tabs .kt-tabs-wrap .kt-tabs-title-list .kt-title-item {
+.contact_wrapper.alignwide .wp-block-kadence-tabs .wp-block-kadence-accordion .kt-accordion-wrap {
+  max-width: 100% !important;
+}
+.contact_wrapper.alignwide .kt-tabs-wrap .kt-tabs-title-list .kt-title-item {
   width: 25%;
 }
 
@@ -2841,17 +2861,21 @@ p.date {
   padding-right: 40px;
   border-radius: 0;
 }
-.alert-area .alert[style*="background-color: #ceeeff"] {
-  border-color: #0081c6 !important;
+.alert-area .alert.warning-1-alert {
+  background: #fff7e3;
+  border-color: #af5a00;
 }
-.alert-area .alert[style*="background-color: #fff7e3"] {
-  border-color: #af5a00 !important;
+.alert-area .alert.warning-2-alert {
+  background: #ffebeb;
+  border-color: #b20837;
 }
-.alert-area .alert[style*="background-color: #fffbeb"] {
-  border-color: #b20837 !important;
+.alert-area .alert.informational-alert {
+  background: #ceeeff;
+  border-color: #0081c6;
 }
-.alert-area .alert[style*="background-color: #b20837"] {
-  border-color: #b20837 !important;
+.alert-area .alert.severe-warning-alert {
+  background: #b20837;
+  border-color: #b20837;
 }
 .alert-area .h5 {
   margin-bottom: 16px;
@@ -3881,6 +3905,21 @@ ul.icons li span img {
   gap: 8px;
   margin-bottom: 24px;
 }
+.glossary-section .alpha_filter .view-all {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ceeeff;
+  background: #ffffff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  justify-content: center;
+}
 .glossary-section .alpha_filter button {
   padding: 8px;
   border-radius: 4px;
@@ -3894,6 +3933,7 @@ ul.icons li span img {
   display: flex;
   align-items: center;
   justify-self: center;
+  justify-content: center;
 }
 .glossary-section .glossary_wrapper .acc__card .acc__title::before {
   display: none;
@@ -4098,6 +4138,7 @@ ul.icons li span img {
 }
 .page-template-template-plan-project .img_text_card_row .text-img-wrap .category {
   background: #9ecde8;
+  font-size: 16px;
 }
 .page-template-template-plan-project .img_text_card_row .text-img-wrap .progress {
   padding: 4px 8px;
@@ -4195,6 +4236,9 @@ ul.icons li span img {
 .meeting-section .acc__card.info .acc__panel .cancel-info {
   vertical-align: 3px;
   margin-left: 10px;
+}
+.meeting-section .document_era div[class*=col-] {
+  padding: 0;
 }
 
 .meeting-wraper {
@@ -4298,6 +4342,9 @@ ul.icons li span img {
   font-weight: 400;
   margin-bottom: 8px;
 }
+.eventWrapper .img_text_card_row .text-img-wrap .category {
+  font-size: 16px;
+}
 
 .tribeFilter {
   display: flex;
@@ -4323,6 +4370,11 @@ ul.icons li span img {
   color: #202020;
 }
 
+.flatpickr-months select {
+  height: auto !important;
+  min-height: unset !important;
+}
+
 .single-tribe_events .category {
   width: -moz-max-content;
   width: max-content;
@@ -4330,7 +4382,7 @@ ul.icons li span img {
   background: var(--Brand-colors-Extra-light-blue, #9ecde8);
   color: #000;
   text-transform: none;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   padding: 6px 8px;
@@ -4616,9 +4668,8 @@ ul.icons li span img {
   font-weight: 400;
   border: 1px solid #d32f2f;
   border-radius: 16px;
-  position: absolute;
   margin-left: 10px;
-  top: 2px;
+  vertical-align: 3px;
 }
 
 .acco_panel {
@@ -4923,15 +4974,112 @@ button.is-pressed .dashicons::before {
   max-width: 100%;
 }
 
-.gfield {
-  display: flex;
+.gform_title {
+  display: none;
+}
+
+.gform_wrapper.gravity-theme .gform_fields {
+  grid-row-gap: 32px !important;
+}
+.gform_wrapper.gravity-theme .gform_fields textarea {
+  height: 40px !important;
+}
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio) {
+  display: flex !important;
   align-items: center;
-  border: 0.5px solid #a0a0a0;
+  border: 0.5px solid #a0a0a0 !important;
   border-radius: 6px !important;
-  background-color: #ffffff;
+  background-color: white !important;
   position: relative;
 }
-.gfield .gform-field-label {
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio) .gform-field-label {
+  margin: 0 !important;
+  padding: 0 8px !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  min-width: 39px;
+  border-right: 1px solid #a0a0a0;
+  width: auto;
+  color: #404040;
+}
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio) .ginput_container {
+  flex: 1;
+}
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio) .ginput_container input,
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio) .ginput_container select,
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio) .ginput_container textarea {
+  border: none !important;
+}
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio) .gfield_description {
+  position: absolute;
+  bottom: -25px;
+}
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio).gfield--type-date .ginput_container {
+  max-width: unset;
+}
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio).gfield--type-time .ginput_container {
+  max-width: unset;
+}
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio).gfield--type-time .ginput_container .ginput_container_time {
+  min-width: unset;
+}
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio).gfield--type-captcha {
+  border: none !important;
+}
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio):hover {
+  border-width: 1px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.gform_wrapper.gravity-theme .gform_fields > *:not(.gsection, .gfield--type-radio):has(.gfield_description) {
+  margin-bottom: 16px;
+}
+.gform_wrapper.gravity-theme .gform_fields > *.gfield--type-radio legend {
+  font-size: 18px !important;
+  border: none !important;
+  padding-bottom: 0px;
+}
+.gform_wrapper.gravity-theme .gform_fields > *.gfield--type-radio .ginput_container .gchoice {
+  margin-bottom: 16px;
+}
+.gform_wrapper.gravity-theme .gform_fields > *.gfield--type-radio .ginput_container .gchoice:last-child {
+  margin-bottom: 0;
+}
+.gform_wrapper.gravity-theme .gform_fields > *.gfield--type-radio .ginput_container .gform-field-label {
+  padding: 0;
+  padding-left: 8px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+.gform_wrapper.gravity-theme .gform_fields > *.gsection {
+  padding: 0 !important;
+  border: none !important;
+}
+.gform_wrapper.gravity-theme .gform_fields > *.gsection .gsection_title {
+  font-size: 18px !important;
+  border: none !important;
+  padding-bottom: 0px;
+  margin: 0;
+  margin-bottom: -10px;
+}
+.gform_wrapper.gravity-theme .gform_fields > fieldset {
+  display: flex !important;
+  align-items: center;
+  border: 0.5px solid #a0a0a0 !important;
+  border-radius: 6px !important;
+  background-color: white !important;
+  position: relative;
+}
+.gform_wrapper.gravity-theme .gform_fields > fieldset input,
+.gform_wrapper.gravity-theme .gform_fields > fieldset select,
+.gform_wrapper.gravity-theme .gform_fields > fieldset textarea {
+  border: none !important;
+}
+.gform_wrapper.gravity-theme .gform_fields > fieldset > .ginput_container {
+  flex: 1;
+}
+.gform_wrapper.gravity-theme .gform_fields > fieldset legend {
   margin: 0 !important;
   padding: 0 8px !important;
   font-size: 16px !important;
@@ -4939,29 +5087,9 @@ button.is-pressed .dashicons::before {
   font-weight: 600 !important;
   min-width: 39px;
   border-right: 1px solid #a0a0a0;
+  width: auto;
   color: #606060;
 }
-.gfield .ginput_container {
-  flex: 1;
-}
-.gfield .ginput_container input,
-.gfield .ginput_container select,
-.gfield .ginput_container textarea {
-  border: none !important;
-}
-.gfield.gfield--type-textarea .gform-field-label {
-  height: 90%;
-  display: flex !important;
-  align-items: center;
-}
-.gfield.gfield--type-captcha {
-  border: none;
-}
-.gfield:hover {
-  border-width: 1px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-}
-
 .gform-field-label {
   display: block;
   font-weight: 700;
@@ -5585,7 +5713,7 @@ div.asp_r.asp_r_1.vertical {
 .event_wrap .wp-block-group > * {
   max-width: 1350px;
 }
-.event_wrap .thumb .owl-carousel .owl-item img {
+.event_wrap .thumb .swiper-slide img {
   height: 440px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -6039,4 +6167,8 @@ div.asp_r.asp_r_1.vertical {
 }
 .checkout .signinWrapper:has(input[value=pickup]:checked) .pickup {
   display: block;
+}
+
+.place-card.place-card-large {
+  display: none !important;
 }/*# sourceMappingURL=custom.css.map */

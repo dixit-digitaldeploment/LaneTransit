@@ -140,6 +140,10 @@ html {
 :root {
   --bs-gutter-x: 15px;
 }
+:root :where(.is-layout-flow) > * {
+  margin-block-start: 16px;
+  margin-block-end: 0;
+}
 
 h1,
 .h1,
@@ -1452,27 +1456,6 @@ label.title {
      object-fit: cover;
   border-radius: 10px;
 }
-.thumb {
-  position: relative;
-  margin: 0px auto;
-  max-width: 1200px;
-}
-.thumb .owl-carousel .owl-item img {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-  height: 900px;
-}
-@media (max-width: 767px) {
-  .thumb .owl-carousel .owl-item img {
-    height: 300px;
-  }
-}
-.thumb .owl-item:not(:has(figcaption)) {
-  margin-bottom: 16px;
-}
-
 .owl-general {
   position: relative;
   margin: 0px auto;
@@ -1555,6 +1538,89 @@ label.title {
 .owl-general .owl-carousel .owl-dot.active {
   background: #4e453b;
   height: 3px;
+}
+
+#thumbs {
+  margin: 0 auto;
+  max-width: 90%;
+  overflow: hidden;
+}
+#thumbs .swiper-slide {
+  width: 20%;
+  aspect-ratio: 1/1;
+}
+#thumbs .swiper-slide:not(.swiper-slide-active) .item::before {
+  content: "";
+  background: #000;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  border-radius: 10px;
+}
+#thumbs .swiper-slide .item {
+  aspect-ratio: 1/1;
+}
+#thumbs .swiper-slide img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.thumb {
+  position: relative;
+  margin: 0px auto;
+  max-width: 1350px;
+  overflow: hidden;
+}
+.thumb figcaption {
+  text-align: center;
+  margin-top: 8px;
+}
+.thumb .swiper-slide img {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  height: 900px;
+}
+@media (max-width: 767px) {
+  .thumb .swiper-slide img {
+    height: 300px;
+  }
+}
+.thumb .thumbWrapper {
+  position: relative;
+  margin-top: 8px;
+}
+.thumb .thumbWrapper .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+.thumb .thumbWrapper .nav-btn:hover {
+  border: 1px solid var(--Brand-colors-Light-blue, #9ecde8);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.thumb .thumbWrapper .nav-btn.slider__prev {
+  left: 5px;
+}
+.thumb .thumbWrapper .nav-btn.slider__next {
+  right: 5px;
+}
+.thumb .thumb-counter {
+  margin-top: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
 }
 
 h2 + .expand_img_grid {
@@ -2353,6 +2419,12 @@ div.advgb-tab-body > iframe {
   top: 280px !important;
 }
 
+.gform_wrapper input:focus-visible,
+.gform_wrapper select:focus-visible,
+.gform_wrapper textarea:focus-visible {
+  outline: 1px auto #9837ff;
+}
+
 .wp-block-image.alignfull {
   width: 100vw;
   margin-left: 0;
@@ -2546,10 +2618,6 @@ p + ol {
   justify-content: flex-start;
   margin-left: 0;
   margin-right: 0px;
-}
-
-.page_title + .main_content > p:first-of-type:first-child {
-  padding-top: 0px;
 }
 
 .components-panel__body-title .components-flex.components-input-control {
@@ -2754,7 +2822,7 @@ p + ol {
   border: 0 !important;
 }
 .wp-block-kadence-tabs .kt-tabs-wrap .kt-title-item:not(:last-child) {
-  margin-right: 4px !important;
+  margin-right: 0px !important;
 }
 .wp-block-kadence-tabs .kt-tabs-wrap .kt-title-item .kt-tab-title {
   color: #ffffff !important;
@@ -3465,38 +3533,44 @@ p + ol {
   font-weight: bold;
 }
 #wpcontent .edit-post-visual-editor .wp-block-post-title {
-  font-family: "Proxima Nova Th";
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
 }
 #wpcontent .edit-post-visual-editor h1.wp-block-post-title {
-  font-size: 42px;
-  font-family: "Proxima Nova Th";
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
   font-weight: bold;
+  line-height: 38px;
 }
 #wpcontent .edit-post-visual-editor h2.wp-block-heading {
-  font-size: 36px;
-  font-family: "Proxima Nova Th";
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
   font-weight: bold;
+  line-height: 32px;
 }
 #wpcontent .edit-post-visual-editor h3.wp-block-heading {
-  font-size: 24px;
-  font-family: "Proxima Nova Th";
-  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
 }
 #wpcontent .edit-post-visual-editor h4.wp-block-heading {
-  font-size: 21px;
-  font-family: "Proxima Nova Th";
-  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
 }
 #wpcontent .edit-post-visual-editor h5.wp-block-heading {
-  font-size: 15px;
-  font-family: "Proxima Nova Th";
-  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
 }
 #wpcontent .edit-post-visual-editor h6.wp-block-heading {
-  font-size: 14px;
-  font-family: "Proxima Nova Th";
-  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
 }
 /* link color*/
 button.is-pressed svg {

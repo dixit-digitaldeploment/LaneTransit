@@ -45,94 +45,124 @@ jQuery(document).ready(function () {
   });
 
   // for thumb slider
-  jQuery(document).ready(function () {
-    var bigimage = jQuery(".thumb #big");
-    var thumbs = jQuery(".thumb  #thumbs");
-    //var totalslides = 10;
-    var syncedSecondary = true;
+  // jQuery(document).ready(function () {
+  //   var bigimage = jQuery(".thumb #big");
+  //   var thumbs = jQuery(".thumb  #thumbs");
+  //   //var totalslides = 10;
+  //   var syncedSecondary = true;
 
-    bigimage
-      .owlCarousel({
-        // loop: true,
-        dots: false,
-        autoplay: true,
-        margin: 10,
-        nav: false,
-        autoWidth: false,
-        items: 1,
-        // navText: [
-        //   '<img src="/wp-content/themes/planeteriaweb/img/arrow_forward.svg">',
-        //   '<img src="/wp-content/themes/planeteriaweb/img/arrow_forward.svg">',
-        // ],
-        // navContainer: ".owl-general .custom-nav",
-      })
-      .on("changed.owl.carousel", syncPosition);
+  //   bigimage
+  //     .owlCarousel({
+  //       // loop: true,
+  //       dots: false,
+  //       autoplay: true,
+  //       margin: 10,
+  //       nav: false,
+  //       autoWidth: false,
+  //       items: 1,
+  //       // navText: [
+  //       //   '<img src="/wp-content/themes/planeteriaweb/img/arrow_forward.svg">',
+  //       //   '<img src="/wp-content/themes/planeteriaweb/img/arrow_forward.svg">',
+  //       // ],
+  //       // navContainer: ".owl-general .custom-nav",
+  //     })
+  //     .on("changed.owl.carousel", syncPosition);
 
-    thumbs
-      .on("initialized.owl.carousel", function () {
-        thumbs.find(".owl-item").eq(0).addClass("current");
-      })
-      .owlCarousel({
-        items: 5,
-        dots: true,
-        nav: true,
-        margin: 4,
-        navText: [
-          '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
-          '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
-        ],
-        smartSpeed: 200,
-        slideSpeed: 500,
-        slideBy: 5,
-        responsiveRefreshRate: 100,
-      })
-      .on("changed.owl.carousel", syncPosition2);
+  //   thumbs
+  //     .on("initialized.owl.carousel", function () {
+  //       thumbs.find(".owl-item").eq(0).addClass("current");
+  //     })
+  //     .owlCarousel({
+  //       items: 5,
+  //       dots: true,
+  //       nav: true,
+  //       margin: 4,
+  //       navText: [
+  //         '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+  //         '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
+  //       ],
+  //       smartSpeed: 200,
+  //       slideSpeed: 500,
+  //       slideBy: 5,
+  //       responsiveRefreshRate: 100,
+  //     })
+  //     .on("changed.owl.carousel", syncPosition2);
 
-    function syncPosition(el) {
-      //if loop is set to false, then you have to uncomment the next line
-      //var current = el.item.index;
+  //   function syncPosition(el) {
+  //     //if loop is set to false, then you have to uncomment the next line
+  //     //var current = el.item.index;
 
-      //to disable loop, comment this block
-      var count = el.item.count - 1;
-      var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+  //     //to disable loop, comment this block
+  //     var count = el.item.count - 1;
+  //     var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
 
-      if (current < 0) {
-        current = count;
-      }
-      if (current > count) {
-        current = 0;
-      }
-      //to this
-      thumbs
-        .find(".owl-item")
-        .removeClass("current")
-        .eq(current)
-        .addClass("current");
-      var onscreen = thumbs.find(".owl-item.active").length - 1;
-      var start = thumbs.find(".owl-item.active").first().index();
-      var end = thumbs.find(".owl-item.active").last().index();
+  //     if (current < 0) {
+  //       current = count;
+  //     }
+  //     if (current > count) {
+  //       current = 0;
+  //     }
+  //     //to this
+  //     thumbs
+  //       .find(".owl-item")
+  //       .removeClass("current")
+  //       .eq(current)
+  //       .addClass("current");
+  //     var onscreen = thumbs.find(".owl-item.active").length - 1;
+  //     var start = thumbs.find(".owl-item.active").first().index();
+  //     var end = thumbs.find(".owl-item.active").last().index();
 
-      if (current > end) {
-        thumbs.data("owl.carousel").to(current, 100, true);
-      }
-      if (current < start) {
-        thumbs.data("owl.carousel").to(current - onscreen, 100, true);
-      }
-    }
+  //     if (current > end) {
+  //       thumbs.data("owl.carousel").to(current, 100, true);
+  //     }
+  //     if (current < start) {
+  //       thumbs.data("owl.carousel").to(current - onscreen, 100, true);
+  //     }
+  //   }
 
-    function syncPosition2(el) {
-      if (syncedSecondary) {
-        var number = el.item.index;
-        bigimage.data("owl.carousel").to(number, 100, true);
-      }
-    }
+  //   function syncPosition2(el) {
+  //     if (syncedSecondary) {
+  //       var number = el.item.index;
+  //       bigimage.data("owl.carousel").to(number, 100, true);
+  //     }
+  //   }
 
-    thumbs.on("click", ".owl-item", function (e) {
-      e.preventDefault();
-      var number = jQuery(this).index();
-      bigimage.data("owl.carousel").to(number, 300, true);
-    });
+  //   thumbs.on("click", ".owl-item", function (e) {
+  //     e.preventDefault();
+  //     var number = jQuery(this).index();
+  //     bigimage.data("owl.carousel").to(number, 300, true);
+  //   });
+  // });
+
+  const mainSwiper = new Swiper(".main-slider", {
+    slidesPerView: 1,
+    centeredSlides: true,
+    loop: true,
+    loopedSlides: 5, //スライドの枚数と同じ値を指定 
+    navigation: {
+      nextEl: ".slider__next",
+      prevEl: ".slider__prev",
+    },
+    on: {
+      slideChange: function () {
+        const current = this.realIndex + 1;
+        const total = this.slides.length; // Remove duplicate slides created by loop
+        document.getElementById(
+          "thumb-counter"
+        ).innerText = `${current} / ${total}`;
+      },
+    },
   });
+  const thumbsSwiper = new Swiper(".thumb-slider", {
+    slidesPerView: "5",
+    spaceBetween: 8,
+    centeredSlides: true,
+    loop: true,
+    slideToClickedSlide: true,
+  });
+
+  mainSwiper.controller.control = thumbsSwiper;
+  thumbsSwiper.controller.control = mainSwiper;
 
   // Function to activate the tab based on URL fragment
   var hash = window.location.hash;
