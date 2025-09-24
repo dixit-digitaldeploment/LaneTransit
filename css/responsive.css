@@ -85,6 +85,7 @@
   }
   .faq_main .search-filter-title {
     grid-template-columns: auto;
+    justify-content: unset !important;
   }
   .page_title img {
     display: none;
@@ -205,9 +206,6 @@
   .newsimg img {
     height: auto;
   }
-  .col-three label {
-    display: none;
-  }
   .slider-main {
     padding-top: 0px;
   }
@@ -247,8 +245,8 @@
     min-width: 600px;
   }
   .advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab.advgb-tab.advgb-tab-active {
-    border-right: 1px solid #B1ADAD !important;
-    border-left: 1px solid #B1ADAD !important;
+    border-right: 1px solid #b1adad !important;
+    border-left: 1px solid #b1adad !important;
   }
   .main_wrapper .advgb-tabs-wrapper.advgb-tab-horz-desktop ul.advgb-tabs-panel {
     flex-wrap: wrap;
@@ -752,7 +750,7 @@
   }
   .main_header .navbar-nav > li:last-child > .dropdown-menu {
     left: auto;
-    right: -20px;
+    right: 0;
   }
   .detail-row .det-left-col {
     flex: 0 0 27%;
@@ -919,8 +917,8 @@
     width: 100%;
     transform: none;
     box-shadow: none;
-    border-top: 5px solid #0033A1;
-    border-bottom: 5px solid #0033A1;
+    border-top: 5px solid #0033a1;
+    border-bottom: 5px solid #0033a1;
     padding: 15px;
   }
   .main_header .megamenu a {
@@ -980,7 +978,7 @@
     text-align: center;
     cursor: pointer;
     top: 6px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
   }
@@ -993,7 +991,7 @@
     right: 6px;
     font-weight: 600;
     font-size: 28px;
-    color: #1E2859;
+    color: #1e2859;
   }
   .main_header .navbar-nav .plusMinus.minsicon::after {
     content: "−";
@@ -1063,6 +1061,13 @@
 @media (max-width: 768px) and (min-width: 430px) {
   .wp-block-media-text.is-image-fill .wp-block-media-text__media {
     min-height: 400px;
+  }
+}
+@media (max-width: 1200px) {
+  .wp-block-group.alignwide > .wp-block-media-text,
+  .wp-block-media-text.alignwide {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
 }
 @media (max-width: 1023px) {
@@ -1157,11 +1162,6 @@
   .dp_detail_info .wp-block-group > * {
     padding-left: 0px !important;
     padding-right: 0px !important;
-  }
-  .wp-block-group.alignwide > .wp-block-media-text,
-  .wp-block-media-text.alignwide {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
   }
   .wp-block-group.alignwide > .wp-block-media-text .wp-block-media-text__content,
   .wp-block-media-text.alignwide .wp-block-media-text__content {
