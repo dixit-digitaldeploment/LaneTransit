@@ -244,7 +244,7 @@ $route-groups: (
         color: #ffffff !important;
         border-color: #9ecde8 !important;
       }
-      &:not(.collapsed){
+      &:not(.collapsed) {
         color: #202020 !important;
         background: #f5f5f5 !important;
       }
@@ -1480,7 +1480,14 @@ $route-groups: (
           }
         }
       }
-
+      select,
+      input[type="date"],
+      input[type="time"] {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        color: #606060;
+      }
       .seprator {
         background: #a0a0a0;
         height: 0.5px;
@@ -1737,7 +1744,7 @@ $route-groups: (
       }
     }
   }
-  @media screen and (max-width:767px) {
+  @media screen and (max-width: 767px) {
     .nav-item {
       margin-bottom: -14px;
       .nav-link {
@@ -2250,17 +2257,16 @@ $route-groups: (
   }
 }
 
-.home{
-  .img_text_card{
-    .container-fluid{
-      >div:has(>.btn_sm){
-          text-align: right;
-          @media screen and (max-width:767px) {
-            text-align: left;
-          }
+.home {
+  .img_text_card {
+    .container-fluid {
+      > div:has(> .btn_sm) {
+        text-align: right;
+        @media screen and (max-width: 767px) {
+          text-align: left;
+        }
       }
     }
-
   }
 }
 //footer
@@ -3440,7 +3446,7 @@ p.date {
           &:first-child {
             max-width: 200px;
             width: 200px;
-            @media screen and (max-width:767px) {
+            @media screen and (max-width: 767px) {
               width: 55%;
             }
           }
@@ -6004,14 +6010,16 @@ button.is-pressed {
     background: #f5f5f5;
     padding: 32px;
     border-radius: 16px;
-    .wp-block-kadence-tabs &, .faq_list & ,.wp-block-kadence-accordion &{
-      padding: 32px 0; 
+    .wp-block-kadence-tabs &,
+    .faq_list &,
+    .wp-block-kadence-accordion & {
+      padding: 32px 0;
     }
   }
   .gform_fields {
     grid-row-gap: 32px !important;
-    &:has(.gfield--type-captcha){
-    // margin-bottom: -32px;
+    &:has(.gfield--type-captcha) {
+      // margin-bottom: -32px;
     }
     textarea {
       height: 120px !important;
@@ -6066,7 +6074,8 @@ button.is-pressed {
           // bottom: -25px;
           padding: 0;
         }
-        &.gfield--type-date,&.gfield--type-number {
+        &.gfield--type-date,
+        &.gfield--type-number {
           .ginput_container {
             max-width: unset;
             input {
@@ -6176,7 +6185,7 @@ button.is-pressed {
               }
             }
           }
-          &:not(.hidden_label){
+          &:not(.hidden_label) {
             .gfield_required {
               top: 0 !important;
             }
@@ -6221,7 +6230,7 @@ button.is-pressed {
         // overflow: hidden;
         // clip: rect(0, 0, 0, 0);
         // border: 0;
-        .inLine{
+        .inLine {
           border: 0 !important;
         }
       }

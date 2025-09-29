@@ -703,7 +703,7 @@ input {
   &[type="time"] {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><path d="M16.5 10.5C16.5 12.2239 15.8152 13.8772 14.5962 15.0962C13.3772 16.3152 11.7239 17 10 17C8.27609 17 6.62279 16.3152 5.40381 15.0962C4.18482 13.8772 3.5 12.2239 3.5 10.5C3.5 8.77609 4.18482 7.12279 5.40381 5.90381C6.62279 4.68482 8.27609 4 10 4C11.7239 4 13.3772 4.68482 14.5962 5.90381C15.8152 7.12279 16.5 8.77609 16.5 10.5ZM2 10.5C2 12.6217 2.84285 14.6566 4.34315 16.1569C5.84344 17.6571 7.87827 18.5 10 18.5C12.1217 18.5 14.1566 17.6571 15.6569 16.1569C17.1571 14.6566 18 12.6217 18 10.5C18 8.37827 17.1571 6.34344 15.6569 4.84315C14.1566 3.34285 12.1217 2.5 10 2.5C7.87827 2.5 5.84344 3.34285 4.34315 4.84315C2.84285 6.34344 2 8.37827 2 10.5ZM9.25 6.25V10.5V10.9L9.58437 11.1219L12.5844 13.1219L13.2094 13.5375L14.0406 12.2906L13.4156 11.875L10.75 10.1V6.25V5.5H9.25V6.25Z" fill="%23606060"/></svg>');
     background-repeat: no-repeat;
-    background-position: 96%;
+    background-position: 90%;
   }
 }
 label {
@@ -738,6 +738,12 @@ label {
 .input-group {
   position: relative;
   gap: 16px;
+  label,
+  .title {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+  }
   &.inlineLabel {
     display: flex;
     align-items: center;
@@ -2469,6 +2475,7 @@ figure.aligncenter {
       vertical-align: middle;
       width: 100%;
       border-radius: 16px;
+      aspect-ratio: 3 / 2;
     }
   }
   .wp-block-button__link:hover {
@@ -2558,6 +2565,15 @@ figure.aligncenter {
       z-index: 1;
       > * {
         color: $white;
+        p{
+          a{
+            color: $white;
+            text-decoration: underline;
+            &:hover{
+              text-decoration: none;
+            }
+          }
+        }
         .wp-block-button__link {
           background: #f5f5f5 !important;
           color: #000 !important;

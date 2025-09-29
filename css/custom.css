@@ -1402,6 +1402,14 @@
 .tripPlanner .tab-content .plan_trip .d-flex .content p {
   margin: 0;
 }
+.tripPlanner .tab-content .plan_trip select,
+.tripPlanner .tab-content .plan_trip input[type=date],
+.tripPlanner .tab-content .plan_trip input[type=time] {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  color: #606060;
+}
 .tripPlanner .tab-content .plan_trip .seprator {
   background: #a0a0a0;
   height: 0.5px;
